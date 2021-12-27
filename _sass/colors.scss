@@ -1,0 +1,40 @@
+/*
+    black: #000000
+    light gray: #D9DCD6
+    yellow: #EFCA08
+    dark blue: #08415C
+    dark gray: #235789
+*/
+
+$background-color: white; 
+$text-color: black; 
+$grey-color: #646E78;
+
+::-moz-selection { 
+    color: black;
+    background: #EFCA08;
+}
+  
+::selection {
+    color: black;
+    background: #EFCA08;
+}
+
+a {
+    color: #08415C !important;
+}
+
+pre, code {
+    border: none !important;
+    background-color: #D9DCD6 !important;
+}
+
+.site-header {
+    background-color: #08415C;
+    a {
+        color: #D9DCD6 !important;
+    }
+}
+
+
+  
