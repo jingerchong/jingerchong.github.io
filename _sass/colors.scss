@@ -29,12 +29,29 @@ pre, code {
     background-color: #D9DCD6 !important;
 }
 
-.site-header {
+.h2-divider {
+    border-top-color: #08415C !important;
+}
+
+.site-header, .site-footer {
     background-color: #08415C;
-    a {
+    color: #D9DCD6 !important;
+    a:active, a:hover {
+        color:#EFCA08 !important;
+    } a {
         color: #D9DCD6 !important;
     }
 }
 
+.site-footer {
+    .h2-divider {
+        border-top-color: #EFCA08 !important;
+    }
+}
 
-  
+.svg-icon {
+    fill: #D9DCD6 !important;
+    :active, :hover {
+        fill: #EFCA08;
+    } 
+}
