@@ -29,8 +29,8 @@ pre, code {
     background-color: #D9DCD6 !important;
 }
 
-.h2-divider {
-    border-top-color: #08415C !important;
+h2:after {
+    background: #08415C;
 }
 
 .site-header, .site-footer {
@@ -44,8 +44,8 @@ pre, code {
 }
 
 .site-footer {
-    .h2-divider {
-        border-top-color: #EFCA08 !important;
+    h2:after {
+        background: #EFCA08;
     }
 }
 

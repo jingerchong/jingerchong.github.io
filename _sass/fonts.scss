@@ -10,10 +10,21 @@ $base-font-weight: 300 !default;
     text-decoration: none !important;
 }
 
-h2 {
+h2.section-heading {
     text-transform: uppercase;
     font-size: 2em !important;
     font-weight: 700 !important;
+    margin-bottom: 0.71em !important;
+}
+
+h2.section-heading:after {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100px;
+    float: left;
+    margin-top: 0.26125em;
 }
 
 .site-header, .site-footer a{
