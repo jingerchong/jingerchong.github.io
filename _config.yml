@@ -20,13 +20,15 @@
 
 title: Jinger Chong
 email: me@jingerchong.com
-logo: /logo.png
+logo: /assets/logo.png
+description: Portfolio
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g. http://example.com
 
-linkedin_username:  jingerchong
-github_username:  jingerchong
-instagram_username: jinger.chong
+social_links:
+  linkedin:  jingerchong
+  github:  jingerchong
+  instagram: jinger.chong
 
 # Build settings
 theme: minima
