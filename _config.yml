@@ -20,14 +20,15 @@
 
 title: Jinger Chong
 email: me@jingerchong.com
-logo: /assets/logo.webp
-banner: /assets/banner.webp
-headshot: /assets/headshot.webp
 description: Portfolio
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: :title/
+
+logo: /assets/logo.webp
+banner: /assets/banner.webp
+headshot: /assets/headshot.webp
 
 social_links:
   linkedin:  jingerchong
