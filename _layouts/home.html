@@ -4,7 +4,23 @@ layout: with-banner
 
 <div class="home">
 
-  {{ content }}
+  <h2><a href="{{ site.url | relative_url }}/about/">About</a></h2>
+  
+  <img class="headshot" src="{{ site.headshot }}" alt="Sketch of myself"> 
+
+  <div class="post-content">
+    
+    To answer the burning question, my name is pronounced like the root crop, ginger. <br><br>
+      
+    I'm an undergrad at <a href="https://mit.edu/">MIT</a>, majoring in <b>Mechanical Engineering</b> 
+    with a concentration in Controls, Instrumentation, and Robotics (Course 2A-6). I like building things, 
+    and then making them to do stuff for me. Oh, and I like Japanese food. <br><br>
+      
+    I'm always on the lookout for any opportunity to learn new skills. 
+    Feel free to <a href="{{ site.url | relative_url }}/#footer">reach out</a>!
+    
+  </div> 
+  
 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
@@ -14,9 +30,8 @@ layout: with-banner
 
 
   {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
+
+    <h2><a href="{{ site.url | relative_url }}/projects/">Projects</a></h2>
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}

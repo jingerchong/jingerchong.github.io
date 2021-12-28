@@ -8,6 +8,8 @@ order: 3
 ## Gallery
 Coming soon!
 
+&nbsp;
+
 ## Gear
 - Nikon D750
 - AF-S Nikkor 50mm f/1.8G 
