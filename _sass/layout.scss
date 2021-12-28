@@ -8,12 +8,9 @@
     padding-left: 10px;
 }
 
-.site-footer {
+.site-header, .site-footer {
     border-top: none !important;
-}
-
-.site-header {
-    border-top: none !important;
+    border-bottom: none !important;
 }
 
 .site-logo {
@@ -30,12 +27,36 @@
     margin-top: 5.76665px; // Hacky fix for vertical alignment
 }}
 
-h2.section-heading:after {
+h2 {
+    margin-bottom: 0.75em !important;
+}
+
+h2:after {
     position: absolute;
     content: '';
     display: block;
     height: 3px;
     width: 100px;
     float: left;
-    margin-top: 0.26125em;
+    margin-top: 0.25em;
+}
+
+#banner-image {
+    width: 100%;
+    background-image: url("/assets/banner.png");
+    background-size: cover;
+    height: 400px;
+    background-position: center;
+    text-align: right;
+}
+
+@media screen and (max-width: 600px) { #banner-image {
+    height: 300px;
+}}
+
+
+.banner-text {
+    font-weight: 300;
+    color: #D9DCD6;
+    font-size: 5em;
 }

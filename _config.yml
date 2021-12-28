@@ -21,6 +21,8 @@
 title: Jinger Chong
 email: me@jingerchong.com
 logo: /assets/logo.png
+banner: /assets/banner.png
+headshot: /assets/headshot.png
 description: Portfolio
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g. http://example.com

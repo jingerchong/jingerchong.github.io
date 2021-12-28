@@ -23,7 +23,7 @@
 
         <div class="trigger">
           {%- for page in sorted_pages -%}
-            {%- if page.title -%}
+            {%- if page.title and page.title != "Home" -%}
             <a class="page-link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
             {%- endif -%}
           {%- endfor -%}
