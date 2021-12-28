@@ -1,8 +1,6 @@
 ---
-layout: page
+layout: projects
 title: Projects
 permalink: /projects/
 order: 2
 ---
-
-Here are some projects

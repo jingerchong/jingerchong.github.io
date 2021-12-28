@@ -1,14 +1,10 @@
 ---
-layout: page
+layout: photography
 title: Photography
 permalink: /photography/
 order: 3
 ---
 
-## Gallery
-Coming soon! <br><br>
-
-## Gear
 - Nikon D750
 - AF-S Nikkor 50mm f/1.8G 
 - Samyang 16mm f/2.0 ED AS UMC CS  
