@@ -20,10 +20,10 @@
 
 title: Jinger Chong
 email: me@jingerchong.com
-description: >- # this means to ignore newlines until "baseurl:"
-  An online portfolio
+logo: /logo.png
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g. http://example.com
+
 linkedin_username:  jingerchong
 github_username:  jingerchong
 instagram_username: jinger.chong
