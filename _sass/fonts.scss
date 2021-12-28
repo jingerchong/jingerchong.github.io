@@ -28,3 +28,21 @@ h2 {
     font-size: 0.83em !important;
     text-align: center;
 }
+
+.banner-text-1 {
+    font-size: 6em;
+}
+
+.banner-text-2 {
+    font-size: 6em;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 600px) { 
+    .banner-text-1 {
+        font-size: 4.5em;
+    }
+    .banner-text-2 {
+        font-size: 4.5em;
+    }
+}

@@ -12,4 +12,6 @@ I’m an undergrad at [MIT](https://mit.edu/), majoring in **Mechanical Engineer
 
 I’m always on the lookout for any opportunity to learn new skills. Feel free to [reach out](https://jingerchong.com/#footer)!
 
+
+
 ## [Projects](https://jingerchong.com/projects/)
