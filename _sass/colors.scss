@@ -55,3 +55,11 @@ pre, code {
         fill: #EFCA08;
     } 
 }
+
+@media screen and (max-width: 600px) { .site-nav {
+    background-color: #08415C !important;
+    .menu-icon > svg {
+        fill: #D9DCD6 !important;
+    }
+    border-color: #D9DCD6 !important;
+}}

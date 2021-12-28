@@ -26,6 +26,15 @@
 }
 
 .site-logo {
-    height: 2em;
+    margin: 0.5em 0em;
+    height: 2.5em;
     display: inline-block;
 }
+
+.site-nav {
+    margin-top: 5.8165px; // Hacky fix for vertical alignment
+}
+
+@media screen and (max-width: 600px) { .site-nav {
+    margin-top: 5.76665px; // Hacky fix for vertical alignment
+}}
