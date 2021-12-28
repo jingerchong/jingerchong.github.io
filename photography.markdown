@@ -5,4 +5,4 @@ permalink: /photography/
 order: 3
 ---
 
-Here are some pics
+Coming soon!
