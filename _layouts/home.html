@@ -4,7 +4,7 @@ layout: with-banner
 
 <div class="home">
 
-  <h2><a href="{{ site.url | relative_url }}/about/">About</a></h2>
+  <h2><a href="{{ site.url | relative_url }}/about/">Bio</a></h2>
   
   <img class="headshot" src="{{ site.headshot }}" alt="Sketch of myself"> 
 
@@ -21,7 +21,7 @@ layout: with-banner
 
   {%- if posts.size > 0 -%}
 
-    <h2><a href="{{ site.url | relative_url }}/projects/">Projects</a></h2>
+    <h2><a href="{{ site.url | relative_url }}/projects/">Featured</a></h2>
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
