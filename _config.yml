@@ -20,9 +20,9 @@
 
 title: Jinger Chong
 email: me@jingerchong.com
-logo: /assets/logo.png
-banner: /assets/banner.png
-headshot: /assets/headshot.png
+logo: /assets/logo.webp
+banner: /assets/banner.webp
+headshot: /assets/headshot.webp
 description: Portfolio
 
 baseurl: "" # the subpath of your site, e.g. /blog
