@@ -15,16 +15,7 @@ h2.section-heading {
     font-size: 2em !important;
     font-weight: 700 !important;
     margin-bottom: 0.71em !important;
-}
-
-h2.section-heading:after {
-    position: absolute;
-    content: '';
-    display: block;
-    height: 3px;
-    width: 100px;
-    float: left;
-    margin-top: 0.26125em;
+    letter-spacing: 0.05em;
 }
 
 .site-header, .site-footer a{

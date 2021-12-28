@@ -29,3 +29,13 @@
 @media screen and (max-width: 600px) { .site-nav {
     margin-top: 5.76665px; // Hacky fix for vertical alignment
 }}
+
+h2.section-heading:after {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100px;
+    float: left;
+    margin-top: 0.26125em;
+}
