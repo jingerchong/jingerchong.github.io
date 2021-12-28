@@ -4,7 +4,7 @@ subtitle: Massachusetts Institute of Technology
 link: https://mit.edu/
 duration:   Sep 2019 - Present
 location:   Cambridge, USA
-order: 1
+order: -2
 show: true
 ---
 

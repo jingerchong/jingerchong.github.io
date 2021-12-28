@@ -4,7 +4,7 @@ subtitle: Orange and Bronze Software Labs
 link: https://orangeandbronze.com/
 duration:   May 2021 - July 2021
 location:   Remote
-order: 3
+order: -5
 show: true
 ---
 

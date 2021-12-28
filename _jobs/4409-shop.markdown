@@ -4,9 +4,9 @@ subtitle: MIT Edgerton Center Student Project Lab
 link: https://edgerton.mit.edu/
 duration:   Aug 2021 - Present
 location:   Cambridge, USA
-order: 2
+order: -6
 show: true
 ---
 
 - train and assist community members on safe and proper use of shop tools
-- maintain inventory and organize, label, and order stock materials
+- maintain inventory and organize, label, and order stock materials 
