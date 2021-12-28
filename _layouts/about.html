@@ -15,9 +15,9 @@ layout: default
       <div class="resume"> 
         <div class="resume-col-1">
             <h3>{{ school.title }}</h3>
-            <h4>{{ school.subtitle }}</h4>
-            <span class="duration">{{ school.duration }}</span>
-            <span class="location">{{ school.location }}</span>
+            <a href="{{ school.link }}"><h4>{{ school.subtitle }}</h4></a>
+            <div class="duration">{{ school.duration }}</div>
+            <div class="location">{{ school.location }}</div>
         </div> 
         <div class="resume-col-2">
             {{ school.content }}
@@ -39,9 +39,9 @@ layout: default
       <div class="resume"> 
         <div class="resume-col-1">
             <h3>{{ job.title }}</h3>
-            <h4>{{ job.subtitle }}</h4>
-            <span class="duration">{{ job.duration }}</span>
-            <span class="location">{{ job.location }}</span>
+            <a href="{{ job.link }}"><h4>{{ job.subtitle }}</h4></a>
+            <div class="duration">{{ job.duration }}</div>
+            <div class="location">{{ job.location }}</div>
         </div> 
         <div class="resume-col-2">
             {{ job.content }}

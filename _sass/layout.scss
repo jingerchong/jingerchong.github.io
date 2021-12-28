@@ -33,7 +33,7 @@ h2 {
 
 h2:after {
     position: absolute;
-    content: '';
+    content: "";
     display: block;
     height: 3px;
     width: 100px;
@@ -107,12 +107,21 @@ h2:after {
     }
 }
 
-/*
-h3
-h4
-.duration
-.location
-*/
+.duration:before, .location:before {
+    content: "";
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    margin-right: 5px;
+}
+
+.duration:before {
+    background: url("/assets/calendar-alt-regular.svg") no-repeat;
+}
+
+.location:before {
+    background: url("/assets/map-marker-alt-solid.svg") no-repeat;
+}
 
 .skill-list ul {
     columns: 4;

@@ -1,6 +1,7 @@
 ---
 title:  Assistant Shop Manager
 subtitle: MIT Edgerton Center Student Project Lab
+link: https://edgerton.mit.edu/
 duration:   Aug 2021 - Present
 location:   Cambridge, USA
 order: 2
