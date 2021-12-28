@@ -10,7 +10,7 @@ layout: default
   {%- if schools.size > 0 -%}
 
     <h2>Education</h2>
-
+    <div class="resume-section"> 
     {%- for school in schools -%}
       <div class="resume"> 
         <div class="resume-col-1">
@@ -24,6 +24,7 @@ layout: default
         </div>
       </div>
     {%- endfor -%}
+    </div>
     
   {%- endif -%}
 
@@ -33,7 +34,7 @@ layout: default
   {%- if jobs.size > 0 -%}
 
     <h2>Experience</h2>
-
+    <div class="resume-section"> 
     {%- for job in jobs -%}
       <div class="resume"> 
         <div class="resume-col-1">
@@ -47,6 +48,7 @@ layout: default
         </div>
       </div>
     {%- endfor -%}
+    </div>
 
   {%- endif -%}
     
@@ -56,7 +58,6 @@ layout: default
   {%- if skills.size > 0 -%}
 
     <h2>Skills</h2>
-
     {%- for skill in skills -%}
       <h4>{{ skill.category }}</h4>
       <div class="skill-list">{{ skill.content }}</div>

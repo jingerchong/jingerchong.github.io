@@ -85,6 +85,10 @@ h2:after {
     }
 }
 
+.resume {
+    padding-bottom: 2em;
+}
+
 .resume:after {
     content: "";
     display: table;
@@ -102,8 +106,17 @@ h2:after {
 }
 
 @media screen and (max-width: 600px) {
+    .resume {
+        padding-bottom: 1em;
+    }
     .resume-col-1, .resume-col-2 {
-      width: 100%;
+        width: 100%;
+    }
+    .resume-col-1 {
+        padding-bottom: 1em;
+    }
+    .resume-section {
+        padding-bottom: 1em;
     }
 }
 
