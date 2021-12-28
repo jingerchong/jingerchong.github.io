@@ -4,6 +4,7 @@ subtitle: St. Jude Catholic School
 duration:   Jul 2017 - May 2019
 location:   Manila, Philippines
 order: 2
+show: true
 ---
 
 - Higher Level: Math, Physics, Chemistry

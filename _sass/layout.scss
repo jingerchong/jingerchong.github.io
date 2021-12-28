@@ -84,3 +84,49 @@ h2:after {
         margin-bottom: 0.5em;
     }
 }
+
+.resume:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.resume-col-1 {
+    float: left;
+    width: 40%;
+}
+  
+.resume-col-2 {
+    float: left;
+    width: 60%;
+}
+
+@media screen and (max-width: 600px) {
+    .resume-col-1, .resume-col-2 {
+      width: 100%;
+    }
+}
+
+/*
+h3
+h4
+.duration
+.location
+*/
+
+.skill-list ul {
+    columns: 4;
+    -webkit-columns: 4;
+    -moz-columns: 4;
+    list-style-type: none;
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .skill-list ul {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+    }
+}
+

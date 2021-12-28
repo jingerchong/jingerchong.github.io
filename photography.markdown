@@ -6,9 +6,7 @@ order: 3
 ---
 
 ## Gallery
-Coming soon!
-
-&nbsp;
+Coming soon! <br><br>
 
 ## Gear
 - Nikon D750

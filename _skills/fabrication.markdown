@@ -1,6 +1,7 @@
 ---
 category:  Fabrication
 order: 1
+show: true
 ---
 
 - Solidworks

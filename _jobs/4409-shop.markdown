@@ -1,0 +1,11 @@
+---
+title:  Assistant Shop Manager
+subtitle: MIT Edgerton Center Student Project Lab
+duration:   Aug 2021 - Present
+location:   Cambridge, USA
+order: 2
+show: true
+---
+
+- train and assist community members on safe and proper use of shop tools
+- maintain inventory and organize, label, and order stock materials

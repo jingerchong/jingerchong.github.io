@@ -1,6 +1,7 @@
 ---
 category:  Programming
 order: 2
+show: true
 ---
 
 - Python
