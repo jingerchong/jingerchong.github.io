@@ -39,6 +39,12 @@ plugins:
 
 sass:
     sass_dir: _sass
+  
+collections:
+  - schools
+  - jobs
+  - skills
+  - photos
 
 # Exclude from processing.
 # The following items will not be processed, by default.

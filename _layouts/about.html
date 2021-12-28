@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div>
+
+  {% assign schools = site.schools | sort: 'order'%}
+
+  {%- if schools.size > 0 -%}
+
+    <h2>Education</h2>
+
+    {%- for school in schools -%}
+      <div class="resume"> 
+        <div class="resume-col-1">
+            <h3>{{ school.title }}</h3>
+            <h4>{{ school.subtitle }}</h4>
+            <span class="duration">{{ school.duration }}</span>
+            <span class="location">{{ school.location }}</span>
+        </div> 
+        <div class="resume-col-2">
+            {{ school.content }}
+        </div>
+      </div>
+    {%- endfor -%}
+
+  {%- endif -%}
+
+
+  {% assign jobs = site.jobs | sort: 'order'%}
+
+  {%- if jobs.size > 0 -%}
+
+    <h2>Experience</h2>
+
+    {%- for job in jobs -%}
+      <div class="resume"> 
+        <div class="resume-col-1">
+            <h3>{{ job.title }}</h3>
+            <h4>{{ job.subtitle }}</h4>
+            <span class="duration">{{ job.duration }}</span>
+            <span class="location">{{ job.location }}</span>
+        </div> 
+        <div class="resume-col-2">
+            {{ job.content }}
+        </div>
+      </div>
+    {%- endfor -%}
+
+  {%- endif -%}
+    
+  
+  {% assign skills = site.skills | sort: 'order'%}
+
+  {%- if skills.size > 0 -%}
+
+    <h2>Skills</h2>
+
+    {%- for skill in skills -%}
+      <h4>{{ skill.category }}</h4>
+
+      {{ skill.content }}
+
+    {%- endfor -%}
+
+  {%- endif -%}
+
+
+
+</div>
