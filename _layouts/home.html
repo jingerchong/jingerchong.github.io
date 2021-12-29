@@ -6,7 +6,7 @@ layout: with-banner
 
   <h2><a href="{{ site.url | relative_url }}/about/">Bio</a></h2>
   
-  <img class="headshot" src="{{ site.headshot }}" alt="Sketch of myself"> 
+  <img class="headshot" src="{{ site.headshot }}" alt="sketch"> 
 
   {{ content }}
   
@@ -25,20 +25,21 @@ layout: with-banner
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
-      <li>
+      <li class="post-tile">
+        <img class="tile" src="{{ site.images }}/{{ post.url }}/cover.webp" alt="{{ post.url }}-cover"></img>
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
         </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
         {%- if post.categories -%}
           {% for category in post.categories %}
             <span class="category-badge">{{ category }}</span>
           {% endfor %}
-        {%- endif -%}
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
         {%- endif -%}
       </li>
       {%- endfor -%}

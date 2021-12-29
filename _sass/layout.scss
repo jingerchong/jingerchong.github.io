@@ -156,6 +156,12 @@ h2:after {
     columns: 3;
     -webkit-columns: 3;
     -moz-columns: 3;
+    padding-top: 5px;
+    li {
+        border: 1px solid #D9DCD6;
+        border-radius: 5px;
+        padding: 5px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -164,6 +170,15 @@ h2:after {
         -webkit-columns: 1;
         -moz-columns: 1;
     }
+}
+
+.tile {
+    border-radius: 5px;
+
+}
+
+.post-tile {
+    display: inline-block;
 }
 
 .category-badge {

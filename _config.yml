@@ -29,6 +29,7 @@ permalink: :title/
 logo: /assets/logo.webp
 banner: /assets/banner.webp
 headshot: /assets/headshot.webp
+images: /assets/images/
 
 social_links:
   linkedin:  jingerchong
