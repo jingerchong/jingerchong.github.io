@@ -4,7 +4,7 @@ subtitle: MIT Edgerton Center Student Project Lab
 link: https://edgerton.mit.edu/
 duration:   Aug 2021 - Present
 location:   Cambridge, USA
-order: -6
+order: 6
 show: true
 ---
 

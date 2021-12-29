@@ -4,7 +4,7 @@ subtitle: MIT Edgerton Center
 link: https://edgerton.mit.edu/
 duration:   Jan 2020 | Jan 2021
 location:   Barcelona, Spain | Ferrara, Italy | Remote
-order: -4
+order: 4
 show: true
 ---
 

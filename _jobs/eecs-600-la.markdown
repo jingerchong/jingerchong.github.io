@@ -4,7 +4,7 @@ subtitle: MIT Department of EECS
 link: https://eecs.mit.edu/
 duration:   Feb 2020 – May 2020
 location:   Cambridge, USA
-order: -2
+order: 2
 show: false
 ---
 

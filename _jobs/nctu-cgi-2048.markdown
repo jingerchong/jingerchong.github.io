@@ -4,7 +4,7 @@ subtitle: NCTU Computer Games and Intelligence Lab
 link: https://cgilab.nctu.edu.tw/
 duration:   Jun 2020 - Aug 2020
 location:   Remote
-order: -3
+order: 3
 show: true
 ---
 

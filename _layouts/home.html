@@ -13,7 +13,7 @@ layout: with-banner
   <br>
 
   {% if site.paginate %}
-    {% assign posts = paginator.posts | where: 'featured', true | sort: 'date' %}
+    {% assign posts = paginator.posts | where: 'featured', true | sort: 'date' | reverse%}
   {% else %}
     {% assign posts = site.posts | where: 'featured', true | sort: 'date'%}
   {% endif %}
@@ -32,6 +32,11 @@ layout: with-banner
             {{ post.title | escape }}
           </a>
         </h3>
+        {%- if post.categories -%}
+          {% for category in post.categories %}
+            <span class="category-badge">{{ category }}</span>
+          {% endfor %}
+        {%- endif -%}
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}

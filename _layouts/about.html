@@ -5,7 +5,7 @@ layout: default
 <div>
   
 
-  {% assign schools = site.schools | where: 'show', true | sort: 'order'%}
+  {% assign schools = site.schools | where: 'show', true | sort: 'order' | reverse %}
 
   {%- if schools.size > 0 -%}
 
@@ -29,7 +29,7 @@ layout: default
   {%- endif -%}
 
 
-  {% assign jobs = site.jobs | where: 'show', true | sort: 'order'%}
+  {% assign jobs = site.jobs | where: 'show', true | sort: 'order' | reverse %}
 
   {%- if jobs.size > 0 -%}
 
@@ -53,7 +53,7 @@ layout: default
   {%- endif -%}
     
   
-  {% assign skills = site.skills | where: 'show', true | sort: 'order'%}
+  {% assign skills = site.skills | where: 'show', true | sort: 'order' %}
 
   {%- if skills.size > 0 -%}
 
