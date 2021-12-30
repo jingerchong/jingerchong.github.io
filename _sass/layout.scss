@@ -75,12 +75,13 @@ h2:after {
     float: right;
     width: 30%;
     margin-left: 2em;
+    margin-bottom: 1em;
 }
 
 @media screen and (max-width: 600px) { 
     .headshot{
         width: 40%;
-        margin-left: 0em;
+        margin-left: 1em;
         margin-bottom: 0.5em;
     }
 }
@@ -141,7 +142,7 @@ h2:after {
     -webkit-columns: 4;
     -moz-columns: 4;
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 1em 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -201,4 +202,30 @@ h2:after {
 .category-badge:hover, .category-badge:active {
     background-color: #EFCA08;
     text-decoration: none;
+}
+
+
+.post-meta {
+    color: #646E78 !important;
+    font-size: 1em !important;
+}
+
+h1 {
+    font-weight: 400 !important;
+    font-size: 2em !important;
+}
+
+.post-cover {
+    float: right;
+    width: 40%;
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 600px) { 
+    .post-cover {
+        width: 60%;
+        margin-left: 1em;
+        margin-bottom: 0.5em;
+    }
 }

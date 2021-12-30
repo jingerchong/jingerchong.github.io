@@ -8,16 +8,27 @@ layout: default
     <div class="archive-group">
       {% capture category_name %}{{ category | first }}{% endcapture %}
       <div id="#{{ category_name | slugize }}"></div>
-      <p></p>
-  
-      <h2><a href="{{ site.url | relative_url }}/projects/{{ category_name | slugize }}">{{ category_name }}</a></h2>
       <a name="{{ category_name | slugize }}"></a>
-      {% for post in site.categories[category_name] %}
-      <article class="archive-item">
-        <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-      </article>
-      {% endfor %}
-    </div>
+      <h2><a href="#{{ category_name | slugize }}">{{ category_name }}</a></h2>
+      <ul class="post-list">
+        {% assign posts = site.categories[category_name] | sort: 'date' | reverse %}
+        {% for post in posts %}
+        <li>
+          <div class="post-image">
+            <a href="{{ post.url | relative_url }}">
+              <img src="{{ site.images }}/{{ post.url }}/cover.webp" alt="{{ post.url }}-cover"></img>
+            </a>
+          </div>
+          <div class="post-description">
+            <h3> <a href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a> </h3>
+            {%- if site.show_excerpts -%}
+              <p>{{ post.excerpt | truncatewords: 12 }}</p>
+            {%- endif -%}
+          </div>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div><br><br>
   {% endfor %}
 
 </div>

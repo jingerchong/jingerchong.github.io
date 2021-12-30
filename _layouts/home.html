@@ -13,9 +13,9 @@ layout: with-banner
   <br>
 
   {% if site.paginate %}
-    {% assign posts = paginator.posts | where: 'featured', true | sort: 'date' | reverse%}
+    {% assign posts = paginator.posts | where: 'featured', true | sort: 'date' | reverse %}
   {% else %}
-    {% assign posts = site.posts | where: 'featured', true | sort: 'date'%}
+    {% assign posts = site.posts | where: 'featured', true | sort: 'date' | reverse %}
   {% endif %}
 
 
@@ -23,9 +23,7 @@ layout: with-banner
 
     <h2><a href="{{ site.url | relative_url }}/projects/">Featured</a></h2>
   
-
     <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <li>
         <div class="post-image">
@@ -36,11 +34,11 @@ layout: with-banner
         <div class="post-description">
           <h3> <a href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a> </h3>
           {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
+            <p>{{ post.excerpt | truncatewords: 12 }}</p>
           {%- endif -%}
           {%- if post.categories -%}
             {% for category in post.categories %}
-            <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugize }}">{{ category }}</a>
+            <a class="category-badge" href="{{ site.url | relative_url }}/projects/#{{ category | slugize }}">{{ category }}</a>
             {% endfor %}
           {%- endif -%}
         </div>
