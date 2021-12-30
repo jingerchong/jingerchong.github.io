@@ -25,6 +25,7 @@ description: Portfolio
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: :title/
+show_excerpts: true
 
 logo: /assets/logo.webp
 banner: /assets/banner.webp
@@ -49,6 +50,7 @@ collections:
   - jobs
   - skills
   - photos
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
