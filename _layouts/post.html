@@ -28,7 +28,7 @@ layout: default
       {%- endif -%}
       {%- if page.categories -%}
         &nbsp; {% for category in page.categories %}
-          <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugize }}/">{{ category }}</a>
+          <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugify }}/">{{ category }}</a>
         {% endfor %}
     {%- endif -%}
     </p>
@@ -39,8 +39,9 @@ layout: default
     {{ content }}
   </div>
 
-  {% assign grids = site.grids | where_exp: "grid", "grid.path contains page.slug" | sort: 'slug' %}
+  {% assign unsorted_grids = site.grids | where_exp: "grid", "grid.path contains page.slug" %}
   {%- if grids.size > 0 -%}
+    {% assign grids = unsorted_grids | sort: 'slug' %}
     <div class="grids"> 
     {%- for grid in grids -%}
       <h3>{{ grid.section }}</h3>

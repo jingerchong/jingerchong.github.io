@@ -5,9 +5,9 @@ layout: default
 <div>
   {% for category in site.categories_order %}
     <div class="archive-group">      
-      <div id="#{{ category | slugize }}"></div>
-      <a name="{{ category | slugize }}"></a>
-      <h2><a href="{{ site.url | relative_url }}/projects/{{ category | slugize }}/">{{ category }}</a></h2>
+      <div id="#{{ category | slugify }}"></div>
+      <a name="{{ category | slugify }}"></a>
+      <h2><a href="{{ site.url | relative_url }}/projects/{{ category | slugify }}/">{{ category }}</a></h2>
       <ul class="post-list">
         {% assign posts = site.categories[category] | sort: 'date' | reverse %}
         {% for post in posts %}
@@ -24,7 +24,7 @@ layout: default
             {%- endif -%}
             {%- if post.categories -%}
               {% for category in post.categories %}
-              <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugize }}/">{{ category }}</a>
+              <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugify }}/">{{ category }}</a>
               {% endfor %}
             {%- endif -%}
           </div>

@@ -3,10 +3,11 @@ layout: default
 ---
 
 <div>
-    <div class="archive-group">      
-    <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+    <div class="archive-group">  
+    {% assign title = page.slug | capitalize %} 
+    <h2><a href="{{ page.url }}">{{ title }}</a></h2>
     <ul class="post-list">
-        {% for post in page.posts %}
+        {% for post in site.categories[title] %}
         <li>
         <div class="post-image">
             <a href="{{ post.url | relative_url }}">
@@ -20,7 +21,7 @@ layout: default
             {%- endif -%}
             {%- if post.categories -%}
                 {% for category in post.categories %}
-                <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugize }}/">{{ category }}</a>
+                <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugify }}/">{{ category }}</a>
                 {% endfor %}
             {%- endif -%}
         </div>

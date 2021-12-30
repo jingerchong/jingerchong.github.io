@@ -48,7 +48,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-archives
 
 sass:
     sass_dir: _sass
@@ -60,17 +59,21 @@ navbar_order:
   - photography.markdown
 
 collections:
-  - schools
-  - jobs
-  - skills
-  - photos
-  - grids
-
-jekyll-archives:
-  enabled: [categories]
-  layout: category
-  permalinks:
-    category: '/projects/:name/'
+  schools:
+  jobs:
+  skills:
+  photos:
+  grids:
+  archives:
+    output: true
+    permalink: /projects/:slug
+    
+defaults:
+  - scope:
+      path: ""
+      type: "archives"
+    values:
+      layout: "category"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
