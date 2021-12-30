@@ -28,9 +28,9 @@ permalink: :title/
 show_excerpts: true
 
 categories_order:
- - build
- - code
- - teach
+ - Build
+ - Code
+ - Teach
 
 logo: /assets/logo.webp
 banner: /assets/banner.webp

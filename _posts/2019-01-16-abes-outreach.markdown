@@ -2,7 +2,7 @@
 layout: post
 title:  ABES Outreach
 date:   2019-01-16 09:00:00 -0500
-categories: [teach,volunteer]
+categories: [Teach,Volunteer]
 featured: true
 ---
 

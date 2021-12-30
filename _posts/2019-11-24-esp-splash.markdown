@@ -2,7 +2,7 @@
 layout: post
 title:  ESP Splash
 date:   2019-11-24 09:00:00 -0500
-categories: [build, teach, volunteer]
+categories: [Build, Teach, Volunteer]
 featured: false
 ---
 

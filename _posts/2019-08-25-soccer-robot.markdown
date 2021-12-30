@@ -2,7 +2,7 @@
 layout: post
 title:  Soccer Robot
 date:   2019-08-25 09:00:00 -0500
-categories: [build,fun]
+categories: [Build,Fun]
 featured: false
 ---
 
