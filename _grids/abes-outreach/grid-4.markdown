@@ -1,0 +1,3 @@
+---
+section: Sumobot challenge
+---
