@@ -7,3 +7,5 @@ featured: true
 ---
 
 A brand new product idea for 2.009!
+
+Download our [product sheet]({{ site.url | relative_url }}/downloads/revise-product-sheet.pdf/)!
