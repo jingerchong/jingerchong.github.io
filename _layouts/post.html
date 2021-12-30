@@ -41,7 +41,6 @@ layout: default
   {% assign grids = site.grids | where_exp: "grid", "grid.path contains page.slug" | sort: 'slug' %}
   {%- if grids.size > 0 -%}
     <div class="grids"> 
-    {{}}
     {%- for grid in grids -%}
       <h3>{{ grid.section }}</h3>
       {%- if grid.content -%}
@@ -60,7 +59,6 @@ layout: default
     {%- endfor -%}
     </div>
   {%- endif -%}
-
   <a href="#header">Back to top</a>
 
 </article>
