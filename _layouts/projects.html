@@ -3,10 +3,8 @@ layout: default
 ---
 
 <div>
-
-  {% for category in site.categories %}
-    <div class="archive-group">
-      {% capture category_name %}{{ category | first }}{% endcapture %}
+  {% for category_name in site.categories-order %}
+    <div class="archive-group">      
       <div id="#{{ category_name | slugize }}"></div>
       <a name="{{ category_name | slugize }}"></a>
       <h2><a href="#{{ category_name | slugize }}">{{ category_name }}</a></h2>
@@ -28,7 +26,6 @@ layout: default
         </li>
         {%- endfor -%}
       </ul>
-    </div><br><br>
+    </div><br>
   {% endfor %}
-
 </div>

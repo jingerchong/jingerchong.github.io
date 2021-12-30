@@ -1,0 +1,13 @@
+---
+layout: post
+title:  RL in 2048
+date:   2020-08-31 09:00:00 -0500
+categories: [code,research]
+featured: true
+---
+
+A research project on using TD learning to play and win the game 2048
+
+I’m currently working on a JavaScript GUI to show how the code works!
+
+Full C++ script on Github

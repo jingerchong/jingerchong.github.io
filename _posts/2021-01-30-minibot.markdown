@@ -1,0 +1,9 @@
+---
+layout: post
+title:  Minibot
+date:   2021-01-30 09:00:00 -0500
+categories: [build,code,class]
+featured: true
+---
+
+A small robot for seminar class 16.632 Intro to Autonomous Machines to learn about sensors and Arduino.

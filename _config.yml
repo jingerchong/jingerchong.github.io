@@ -19,13 +19,18 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Jinger Chong
-email: me@jingerchong.com
+email: jinger@mit.edu
 description: Portfolio
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: :title/
 show_excerpts: true
+
+categories-order:
+ - build
+ - code
+ - teach
 
 logo: /assets/logo.webp
 banner: /assets/banner.webp
