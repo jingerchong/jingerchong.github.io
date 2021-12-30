@@ -30,7 +30,7 @@ show_excerpts: true
 logo: /assets/logo.webp
 banner: /assets/banner.webp
 headshot: /assets/headshot.webp
-images: /assets/images/
+images: /assets/images
 
 social_links:
   linkedin:  jingerchong
@@ -50,6 +50,7 @@ collections:
   - jobs
   - skills
   - photos
+  - grids
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -19,26 +19,49 @@ layout: default
         </time>
       {%- endif -%}
       {%- if page.author -%}
-        • {% for author in page.author %}
+        &nbsp; {% for author in page.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}
+      {%- if page.categories -%}
+        &nbsp; {% for category in page.categories %}
+          <a class="category-badge" href="{{ site.url | relative_url }}/projects/#{{ category | slugize }}">{{ category }}</a>
+        {% endfor %}
+    {%- endif -%}
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <img class="post-cover" src="{{ site.images }}/{{ page.url }}/cover.webp" alt="{{ page.url }}-cover"> 
+    <img class="post-cover" src="{{ site.images }}{{ page.url }}cover.webp" alt="{{ page.title }} cover"> </img>
     {{ content }}
   </div>
 
+  {% assign grids = site.grids | 'path' contains page.slug | sort: 'slug' %}
+  {%- if grids.size > 0 -%}
+    <div class="grids"> 
+    {%- for grid in grids -%}
+      <h3>{{ grid.section }}</h3>
+      {%- if grid.content -%}
+        <div class="grid-content">{{ grid.content }}</div>
+      {%- endif -%}
+      <div class="grid">
+        <ul> 
+          {% capture grid-path %}{{ site.images }}{{ page.url }}{{ grid.slug }}{% endcapture %}
+          {% for image in site.static_files %}
+            {% if image.path contains grid-path %}
+              <li><img src="{{ image.path }}" alt="{{ page.title }} {{ grid.slug }}"></img></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {%- endfor -%}
+    </div>
+  {%- endif -%}
+
   <footer>
-    {%- if page.categories -%}
-      {% for category in page.categories %}
-      <a class="category-badge" href="{{ site.url | relative_url }}/projects/#{{ category | slugize }}">{{ category }}</a>
-      {% endfor %}
-    {%- endif -%}
+    
   </footer>
 
 </article>
