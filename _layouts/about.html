@@ -4,7 +4,7 @@ layout: default
 
 <div>
   
-
+  
   {% assign schools = site.schools | where: 'show', true | sort: 'order' | reverse %}
 
   {%- if schools.size > 0 -%}
