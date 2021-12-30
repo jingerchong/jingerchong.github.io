@@ -3,13 +3,13 @@ layout: default
 ---
 
 <div>
-  {% for category_name in site.categories-order %}
+  {% for category in site.categories_order %}
     <div class="archive-group">      
-      <div id="#{{ category_name | slugize }}"></div>
-      <a name="{{ category_name | slugize }}"></a>
-      <h2><a href="#{{ category_name | slugize }}">{{ category_name }}</a></h2>
+      <div id="#{{ category | slugize }}"></div>
+      <a name="{{ category | slugize }}"></a>
+      <h2><a href="{{ site.url | relative_url }}/projects/{{ category | slugize }}">{{ category }}</a></h2>
       <ul class="post-list">
-        {% assign posts = site.categories[category_name] | sort: 'date' | reverse %}
+        {% assign posts = site.categories[category] | sort: 'date' | reverse %}
         {% for post in posts %}
         <li>
           <div class="post-image">
@@ -21,6 +21,11 @@ layout: default
             <h3> <a href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a> </h3>
             {%- if site.show_excerpts -%}
               <p>{{ post.excerpt | truncatewords: 12 }}</p>
+            {%- endif -%}
+            {%- if post.categories -%}
+              {% for category in post.categories %}
+              <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugize }}">{{ category }}</a>
+              {% endfor %}
             {%- endif -%}
           </div>
         </li>

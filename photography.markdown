@@ -2,7 +2,6 @@
 layout: photography
 title: Photography
 permalink: /photography/
-order: 3
 ---
 
 - Nikon D750

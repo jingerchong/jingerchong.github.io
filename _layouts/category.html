@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div>
+    <div class="archive-group">      
+    <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+    <ul class="post-list">
+        {% for post in page.posts %}
+        <li>
+        <div class="post-image">
+            <a href="{{ post.url | relative_url }}">
+            <img src="{{ site.images }}/{{ post.url }}/cover.webp" alt="{{ post.title }} cover"></img>
+            </a>
+        </div>
+        <div class="post-description">
+            <h3> <a href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a> </h3>
+            {%- if site.show_excerpts -%}
+            <p>{{ post.excerpt | truncatewords: 12 }}</p>
+            {%- endif -%}
+            {%- if post.categories -%}
+                {% for category in post.categories %}
+                <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugize }}">{{ category }}</a>
+                {% endfor %}
+            {%- endif -%}
+        </div>
+        </li>
+        {%- endfor -%}
+    </ul>
+    </div>
+</div>

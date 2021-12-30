@@ -27,7 +27,7 @@ url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g
 permalink: :title/
 show_excerpts: true
 
-categories-order:
+categories_order:
  - build
  - code
  - teach
@@ -47,16 +47,30 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-archives
 
 sass:
     sass_dir: _sass
   
+navbar_order:
+  - index.markdown
+  - about.markdown
+  - projects.markdown
+  - photography.markdown
+
 collections:
   - schools
   - jobs
   - skills
   - photos
   - grids
+
+jekyll-archives:
+  enabled: [categories]
+  layout: category
+  permalinks:
+    category: '/projects/:name/'
 
 # Exclude from processing.
 # The following items will not be processed, by default.
