@@ -181,7 +181,6 @@ h2:after {
 }
 
 .post-image {
-    background-color: black;
     border-radius: 5px 5px 0px 0px; 
 }
 
@@ -190,29 +189,10 @@ h2:after {
 }
 
 .category-badge {
-    background-color: #D9DCD6;
-    color: black !important;
     border: none;
     border-radius: 5px;
     padding: 1px 5px;
     margin-right: 5px;
-    font-size: 0.83em;
-}
-
-.category-badge:hover, .category-badge:active {
-    background-color: #EFCA08;
-    text-decoration: none;
-}
-
-
-.post-meta {
-    color: #646E78 !important;
-    font-size: 1em !important;
-}
-
-h1 {
-    font-weight: 400 !important;
-    font-size: 2em !important;
 }
 
 .post-cover {

@@ -54,3 +54,20 @@ h3, h4 {
 .duration, .location {
     font-size: 0.83em;
 }
+
+.category-badge {
+    font-size: 0.83em;
+}
+
+.category-badge:hover, .category-badge:active {
+    text-decoration: none;
+}
+
+.post-meta {
+    font-size: 1em !important;
+}
+
+h1 {
+    font-weight: 400 !important;
+    font-size: 2em !important;
+}

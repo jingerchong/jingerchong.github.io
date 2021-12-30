@@ -10,5 +10,5 @@ show: true
 
 - Higher Level: Math, Physics, Chemistry
 - Standard Level: English Lang & Litt, Business Management, French AB
-- Extended Essay: "Position analysis on the output motion of Jansen’s linkage"
+- Extended Essay: [Position analysis on the output motion of Jansen’s linkage]({{ site.url }}/jansens-linkage/)
 - Score: 43/45

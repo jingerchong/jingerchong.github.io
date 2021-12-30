@@ -29,7 +29,7 @@ h2:after {
     background: #08415C;
 }
 
-.site-header, .site-footer {
+.site-footer {
     background-color: #08415C;
     color: #D9DCD6 !important;
     a:active, a:hover {
@@ -37,6 +37,23 @@ h2:after {
     } a {
         color: #D9DCD6 !important;
     }
+}
+
+.site-header {
+    background-color: #08415C;
+    color: #D9DCD6 ;
+}
+
+.page-link {
+    color: #D9DCD6 !important;
+}
+
+.page-link:hover, .page-link:active {
+    color:#EFCA08 !important;
+}
+
+.current-page {
+    color:#EFCA08 !important;
 }
 
 .site-footer {
@@ -68,4 +85,21 @@ h2:after {
 .banner-text-2 {
     color: #EFCA08;
     background-color: #08415C;
+}
+
+.post-image {
+    background-color: black;
+}
+
+.category-badge {
+    background-color: #D9DCD6;
+    color: black !important;
+}
+
+.category-badge:hover, .category-badge:active {
+    background-color: #EFCA08;
+}
+
+.post-meta {
+    color: #646E78 !important;
 }
