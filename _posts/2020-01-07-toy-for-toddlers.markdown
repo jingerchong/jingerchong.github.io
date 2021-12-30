@@ -6,4 +6,4 @@ category: [build, research]
 featured: true
 ---
 
-Designing a research experiment instrument for the Early Childhood Cognition Lab 
+Designing a research experiment instrument for the [Early Childhood Cognition Lab](https://eccl.mit.edu/) as part of MIT’s [Undergraduate Research Opportunity Program](https://urop.mit.edu/)

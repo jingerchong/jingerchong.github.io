@@ -8,4 +8,4 @@ order: 2
 show: false
 ---
 
-- assisted students taking Intro to Computer Science & Programming in Python with debugging their problem sets
+- assisted students taking [Intro to Computer Science & Programming in Python](https://sicp-s1.mit.edu/) with debugging their problem sets

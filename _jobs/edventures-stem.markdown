@@ -8,7 +8,7 @@ order: 4
 show: true
 ---
 
-- responsible for scheduling, managing, and overall logistics of programs
+- responsible for scheduling, managing, and overall logistics of [programs]({{ site.url | relative_url }}/edventures/)
 - facilitated underwater ROV workshop and interactive physics classes
 - advised student-led engineering club on project design and execution
 - redesigned controller to improve ergonomics and simplify fabrication process

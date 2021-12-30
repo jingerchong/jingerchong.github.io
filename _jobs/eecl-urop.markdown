@@ -8,5 +8,5 @@ order: 1
 show: false
 ---
 
-- engineered a modular toy for research on the behavior of toddlers in free play
+- engineered a [modular toy]({{ site.url | relative_url }}/toy-for-toddlers/) for research on the behavior of toddlers in free play
 - designed an attachment system to ease the process of swapping modules

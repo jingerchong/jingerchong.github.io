@@ -8,6 +8,6 @@ order: 7
 show: true
 ---
 
-- assembled RF controllers for student-built mini robot cars
+- assembled [RF controllers]({{ site.url | relative_url }}/rf-controllers/) for student-built mini robot cars
 - soldered electronic components on custom PCBs and laser cut acrylic cases
 - guide students through labs on using sensors, IMUs, encoders with Arduino
