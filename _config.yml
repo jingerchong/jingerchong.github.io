@@ -53,7 +53,6 @@ sass:
     sass_dir: _sass
   
 navbar_order:
-  - index.markdown
   - about.markdown
   - projects.markdown
   - photography.markdown

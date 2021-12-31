@@ -9,5 +9,5 @@ show: true
 ---
 
 - created [C++ script]({{ site.url | relative_url }}/rl-in-2048/) that can play the game 2048 using TD Learning
-- reached 2048-tile after 2000 rounds and 93\% win rate after 20000 rounds
+- reached 2048-tile after 2000 rounds and 93% win rate after 20000 rounds
 - investigated the effects of training environment on score and learning speed

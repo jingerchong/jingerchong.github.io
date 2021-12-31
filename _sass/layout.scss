@@ -23,7 +23,7 @@
     margin-top: 5.8165px; // Hacky fix for vertical alignment
 }
 
-@media screen and (max-width: 600px) { .site-nav {
+@media screen and (max-width: 800px) { .site-nav {
     margin-top: 5.76665px; // Hacky fix for vertical alignment
 }}
 
@@ -78,7 +78,7 @@ h2:after {
     margin-bottom: 1em;
 }
 
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 800px) { 
     .headshot{
         width: 40%;
         margin-left: 1em;
@@ -106,7 +106,7 @@ h2:after {
     width: 52.5%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
     .resume {
         padding-bottom: 1em;
     }
@@ -145,7 +145,15 @@ h2:after {
     margin: 0 0 1em 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
+    .skill-list ul {
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+    }
+}
+
+@media screen and (max-width: 480px) {
     .skill-list ul {
         columns: 2;
         -webkit-columns: 2;
@@ -173,9 +181,15 @@ h2:after {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .post-list {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-list {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -196,15 +210,23 @@ h2:after {
 
 .post-cover {
     float: right;
-    width: 35%;
+    width: 30%;
     margin-left: 2em;
     margin-bottom: 1em;
     border-radius: 5px;
 }
 
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 800px) {
     .post-cover {
-        width: 60%;
+        width: 40%;
+        margin-left: 1em;
+        margin-bottom: 0.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-cover {
+        width: 50%;
         margin-left: 1em;
         margin-bottom: 0.5em;
     }
@@ -223,7 +245,7 @@ h2:after {
     }}
 }
 
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 480px) { 
     .grid ul {
         grid-template-columns: repeat(2, 1fr);
     }
