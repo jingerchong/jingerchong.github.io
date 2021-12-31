@@ -1,15 +1,24 @@
 ---
 layout: post
-title:  Revise
+title:  ReVise
 date:   2021-12-20 09:00:00 -0500
 categories: [Build,Class]
 featured: true
 ---
 
-A brand new product idea for 2.009!
+ReVise is an integrated vise solution designed to hold tightly onto irregular workpieces without damaging them. The metal vise houses a self-regulated pneumatic system attached to two removable pouches. Through *granular jamming*, the pouches can conform to any geometry and hold their shape. As a result, the clamping force is distributed over a larger contact area, improving grip while minimizing risk.  
 
-Download our [product sheet]({{ site.url | relative_url }}/downloads/revise-product-sheet.pdf/)
+This was the product our 20-member team proudly showcased last December 6, 2021 in Kresge Auditorium for the capstone project class *2.009 Product Engineering Processes*. During the presentation, we successfully clamped a raw egg without cracking its shell! To get to that point, we went through a lengthy yet awesome journey best summed up by Prof. David Wallace as *"Ideate. Model. Test. Repeat"*.
 
-Or watch our final presentation in Kresge Auditorium!
+I have not finished sorting out all the documentation, so for now, here are some quick links and photos!
+- [initial prototype CAD](https://a360.co/3BDgh3M)
+- [mockup prototype CAD](https://a360.co/32ydJIS)
+- [final prototype fabrication CAD](https://a360.co/3I9A3rY)
+- [final prototype rendering CAD](https://a360.co/3I9A3rY)
+- [product brochure]({{ site.url | relative_url }}/downloads/revise-product-sheet.pdf/)
+- [course website](https://web.mit.edu/2.009/www/index.html)
+- [team page](https://web.mit.edu/2.009/www/teams/home.html?t=Pink)
+- [final presentation webcast](https://player.vimeo.com/video/653895567), also available below:
 
 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/653895567#t=2h18m38s?h=fca9dee2ba&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
