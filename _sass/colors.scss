@@ -1,105 +1,108 @@
 $background-color: white; 
 $text-color: black; 
+$light-color: #D9DCD6;
 $grey-color: #646E78;
+$accent-color: #EFCA08;
+$theme-color: #08415C;
 
 ::-moz-selection { 
-    color: black;
-    background: #EFCA08;
+    color: $text-color;
+    background: $accent-color;
 }
   
 ::selection {
-    color: black;
-    background: #EFCA08;
+    color: $text-color;
+    background: $accent-color;
 }
 
 a {
-    color: #08415C !important;
+    color: $theme-color !important;
 }
 
 pre, code {
     border: none !important;
-    background-color: #D9DCD6 !important;
+    background-color: $light-color !important;
 }
 
 h2 a {
-    color: black !important;
+    color: $text-color !important;
 }
 
 h2:after {
-    background: #08415C;
+    background: $theme-color;
 }
 
 .site-footer {
-    background-color: #08415C;
-    color: #D9DCD6 !important;
+    background-color: $theme-color;
+    color: $light-color !important;
     a:active, a:hover {
-        color:#EFCA08 !important;
+        color:$accent-color !important;
     } a {
-        color: #D9DCD6 !important;
+        color: $light-color !important;
     }
 }
 
 .site-header {
-    background-color: #08415C;
-    color: #D9DCD6 ;
+    background-color: $theme-color;
+    color: $light-color ;
 }
 
 .page-link {
-    color: #D9DCD6 !important;
+    color: $light-color !important;
 }
 
 .page-link:hover, .page-link:active {
-    color:#EFCA08 !important;
+    color:$accent-color !important;
 }
 
 .current-page {
-    color:#EFCA08 !important;
+    color:$accent-color !important;
 }
 
 .site-footer {
     h2:after {
-        background: #EFCA08;
+        background: $accent-color;
     }
 }
 
 .svg-icon {
-    fill: #D9DCD6 !important;
+    fill: $light-color !important;
     :active, :hover {
-        fill: #EFCA08;
+        fill: $accent-color;
     } 
 }
 
 @media screen and (max-width: 600px) { .site-nav {
-    background-color: #08415C !important;
+    background-color: $theme-color !important;
     .menu-icon > svg {
-        fill: #D9DCD6 !important;
+        fill: $light-color !important;
     }
-    border-color: #D9DCD6 !important;
+    border-color: $light-color !important;
 }}
 
 .banner-text-1 {
-    color: #D9DCD6;
-    background-color: #08415C;
+    color: $light-color;
+    background-color: $theme-color;
 }
 
 .banner-text-2 {
-    color: #EFCA08;
-    background-color: #08415C;
+    color: $accent-color;
+    background-color: $theme-color;
 }
 
 .post-image {
-    background-color: black;
+    background-color: $text-color;
 }
 
 .category-badge {
-    background-color: #D9DCD6;
-    color: black !important;
+    background-color: $light-color;
+    color: $text-color !important;
 }
 
 .category-badge:hover, .category-badge:active {
-    background-color: #EFCA08;
+    background-color: $accent-color;
 }
 
 .post-meta {
-    color: #646E78 !important;
+    color: $grey-color !important;
 }
