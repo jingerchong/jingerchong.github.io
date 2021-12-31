@@ -8,4 +8,8 @@ featured: true
 
 A brand new product idea for 2.009!
 
-Download our [product sheet]({{ site.url | relative_url }}/downloads/revise-product-sheet.pdf/)!
+Download our [product sheet]({{ site.url | relative_url }}/downloads/revise-product-sheet.pdf/)
+
+Or watch our final presentation in Kresge Auditorium!
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/653895567#t=2h18m38s?h=fca9dee2ba&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
