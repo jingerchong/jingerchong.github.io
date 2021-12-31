@@ -66,7 +66,7 @@ collections:
   grids:
   archives:
     output: true
-    permalink: /projects/:slug
+    permalink: /projects/:slug/
     
 defaults:
   - scope:
