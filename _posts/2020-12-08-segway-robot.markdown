@@ -6,4 +6,4 @@ categories: [Build, Class]
 featured: false
 ---
 
-A lab exercise for 2.004 Dynamics and Control II to apply PID and state-space controllers
+A lab exercise for *2.004 Dynamics and Control II* to apply PID and state-space controllers. 

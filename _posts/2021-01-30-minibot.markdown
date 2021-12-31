@@ -6,4 +6,4 @@ categories: [Build,Code,Class]
 featured: true
 ---
 
-A small robot for seminar class 16.632 Intro to Autonomous Machines to learn about sensors and Arduino.
+For seminar class *16.632 Intro to Autonomous Machines*, we programmed a small robot car to learn about sensors and Arduino.

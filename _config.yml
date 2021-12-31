@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Jinger Chong
-email: jinger@mit.edu
+email: me@jingerchong.com
 description: Portfolio
 
 baseurl: "" # the subpath of your site, e.g. /blog
