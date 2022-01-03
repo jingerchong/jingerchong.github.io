@@ -70,6 +70,21 @@ collections:
 defaults:
   - scope:
       path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "schools"
+    values:
+      layout: "resume"
+  - scope:
+      path: ""
+      type: "jobs"
+    values:
+      layout: "resume"
+  - scope:
+      path: ""
       type: "archives"
     values:
       layout: "category"

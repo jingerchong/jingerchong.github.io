@@ -12,17 +12,7 @@ layout: default
     <h2>Education</h2>
     <div class="resume-section"> 
     {%- for school in schools -%}
-      <div class="resume"> 
-        <div class="resume-col-1">
-            <h3>{{ school.title }}</h3>
-            <a href="{{ school.link }}"><h4>{{ school.subtitle }}</h4></a>
-            <div class="duration">{{ school.duration }}</div>
-            <div class="location">{{ school.location }}</div>
-        </div> 
-        <div class="resume-col-2">
-            {{ school.content }}
-        </div>
-      </div>
+      {{ school.output }}
     {%- endfor -%}
     </div>
     
@@ -36,17 +26,7 @@ layout: default
     <h2>Experience</h2>
     <div class="resume-section"> 
     {%- for job in jobs -%}
-      <div class="resume"> 
-        <div class="resume-col-1">
-            <h3>{{ job.title }}</h3>
-            <a href="{{ job.link }}"><h4>{{ job.subtitle }}</h4></a>
-            <div class="duration">{{ job.duration }}</div>
-            <div class="location">{{ job.location }}</div>
-        </div> 
-        <div class="resume-col-2">
-            {{ job.content }}
-        </div>
-      </div>
+      {{ job.output }}
     {%- endfor -%}
     </div>
 
@@ -60,7 +40,7 @@ layout: default
     <h2>Skills</h2>
     {%- for skill in skills -%}
       <h4>{{ skill.category }}</h4>
-      <div class="skill-list">{{ skill.content }}</div>
+      <div class="skill-list">{{ skill.output }}</div>
     {%- endfor -%}
   {%- endif -%}
 

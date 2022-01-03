@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  Flashlight
 date:   2021-01-06 09:00:00 -0500
 categories: [Build, Class]

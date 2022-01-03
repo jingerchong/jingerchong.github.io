@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  Rubber Band Turret
 date:   2019-12-30 09:00:00 -0500
 categories: [Build, Class]

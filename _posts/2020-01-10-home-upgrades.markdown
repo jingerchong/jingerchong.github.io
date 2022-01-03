@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  Home Upgrades
 date:   2020-01-10 09:00:00 -0500
 categories: [Build,Fun]

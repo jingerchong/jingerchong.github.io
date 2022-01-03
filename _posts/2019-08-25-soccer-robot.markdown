@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  Soccer Robot
 date:   2019-08-25 09:00:00 -0500
 categories: [Build,Fun]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  ReVise
 date:   2021-12-20 09:00:00 -0500
 categories: [Build,Class]
@@ -14,7 +13,7 @@ I have not finished sorting out all the documentation, so for now, here are some
 - [initial prototype CAD](https://a360.co/3BDgh3M)
 - [mockup prototype CAD](https://a360.co/32ydJIS)
 - [final prototype fabrication CAD](https://a360.co/3I9A3rY)
-- [final prototype rendering CAD](https://a360.co/3I9A3rY)
+- [final prototype rendering CAD](https://a360.co/3qD6mrA)
 - [product brochure]({{ site.url | relative_url }}/downloads/revise-product-sheet.pdf/)
 - [course website](https://web.mit.edu/2.009/www/index.html)
 - [team page](https://web.mit.edu/2.009/www/teams/home.html?t=Pink)
