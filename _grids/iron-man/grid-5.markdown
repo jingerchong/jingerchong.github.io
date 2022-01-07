@@ -2,4 +2,4 @@
 section: Finishing touches
 ---
 
-base top part was routed then sanded, grooves to fit the acrylic top half, then 20mm holes on base to screw on neodymium magnets, holes drilled for latches, finished with coats of linseed oil followed by polishing with beeswax+linseed oil paste. Acrylic panels aligned and glued, then latches screwed on
+I routed and sanded the top of the base block to make grooves where the acrylic can sit. I then drilled holes to mount the 20mm neodymium magnets and the latches that held everything together. I finished the base block with coats of linseed oil and polished it with beeswax and linseed oil paste. Lastly, I aligned, glued, and attached the acrylic panels.

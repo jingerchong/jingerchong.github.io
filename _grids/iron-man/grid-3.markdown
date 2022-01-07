@@ -2,4 +2,4 @@
 section: Iron Man marking
 ---
 
-Printing a marking template on sticker paper, tried carving on scrap plywood, tried embossed, engraved, tinted, finally settled on embossed no tint. Traced some guides using carbon paper, and went at it with the dremel, then sanded everything down with small diamond files.
+For the marking in front of the base block, I printed a template and traced it on scrap plywood using carbon paper. Since it was my first time carving, I experimented with embossing, engraving, and staining before I decided on plain and embossed. I then etched the entire marking and cleaned it up with small diamond files.
