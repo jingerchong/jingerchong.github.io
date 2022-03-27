@@ -11,4 +11,4 @@ show: true
 - concentration in Control, Instrumentation, Robotics
 - [NEET](https://neet.mit.edu/) Autonomous Machines Thread certificate program
 - minor in Computer Science, minor in Chinese
-- GPA: 4.9/5.0
+- GPA: 4.8/5.0

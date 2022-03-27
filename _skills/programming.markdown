@@ -6,13 +6,15 @@ show: true
 
 - Python
 - C++
+- ROS
 - Java
 - MATLAB
+- Git
 - HTML/CSS
-- LATEX
 - AngularJS
-- JPA
 - Spring Boot
 - Google Apps Script
 - PostgreSQL
+- JPA
 - JUnit
+- LATEX
