@@ -1,0 +1,16 @@
+---
+title:  Alfredo
+date:   2022-03-20 09:00:00 -0500
+categories: [Code,Class]
+featured: true
+---
+
+For the class Robotics: Science and Systems, we programmed our robot car named Alfredo to perform certain tasks.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HGhFOR1zcz0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uoZ6DRbXyKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4E7E7nPVFV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OMkYFuFPJ6c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

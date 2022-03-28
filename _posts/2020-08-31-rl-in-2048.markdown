@@ -2,7 +2,7 @@
 title:  RL in 2048
 date:   2020-08-31 09:00:00 -0500
 categories: [Code,Research]
-featured: true
+featured: false
 ---
 
 A research project on using TD learning to play and win the game 2048
