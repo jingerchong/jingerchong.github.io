@@ -5,7 +5,7 @@ link: https://edgerton.mit.edu/
 duration:   Jan 2020 | Jan 2021
 location:   Barcelona, Spain | Ferrara, Italy | Remote
 order: 4
-show: true
+show: false
 ---
 
 - responsible for scheduling, managing, and overall logistics of [programs]({{ site.url | relative_url }}/edventures/)

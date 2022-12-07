@@ -8,12 +8,12 @@ show: true
 - Fusion 360 CAD/CAM
 - Onshape
 - Arduino
-- soldering
-- breadboarding
-- electronics
-- 3D printing
-- laser cutting
-- machining
-- rapid prototyping
-- sheet metal
+- Soldering
+- Breadboarding
+- Electronics
+- 3D Printing
+- Laser Cutting
+- Machining
+- Rapid Prototyping
+- Sheet Metal
 

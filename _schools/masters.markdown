@@ -8,4 +8,5 @@ order: 3
 show: true
 ---
 
+- GPA: N/A
 - Admitted to start Fall 2023
