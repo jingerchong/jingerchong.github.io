@@ -5,7 +5,7 @@ link: https://sjcs.edu.ph/
 duration:   Jul 2017 - May 2019
 location:   Manila, Philippines
 order: 1
-show: true
+show: false
 ---
 
 - Higher Level: Math, Physics, Chemistry
