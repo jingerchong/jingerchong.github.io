@@ -8,6 +8,6 @@ order: 3
 show: true
 ---
 
-- created [C++ script]({{ site.url | relative_url }}/rl-in-2048/) that can play the game 2048 using TD Learning
-- reached 2048-tile after 2000 rounds and 93% win rate after 20000 rounds
-- investigated the effects of training environment on score and learning speed
+- Developed [C++ script]({{ site.url | relative_url }}/rl-in-2048/) to play the game 2048 using temporal difference reinforcement learning
+- Obtained the winning 2048-tile after 2,000 training rounds and 93% win rate after 20,000 training rounds
+- Investigated the effects of varying the probability of spawning a 4-tile in the environment on score and learning speed

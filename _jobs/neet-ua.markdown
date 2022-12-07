@@ -8,6 +8,5 @@ order: 7
 show: true
 ---
 
-- assembled [RF controllers]({{ site.url | relative_url }}/rf-controllers/) for student-built mini robot cars
-- soldered electronic components on custom PCBs and laser cut acrylic cases
-- guided students through labs on using sensors, IMUs, encoders with Arduino
+- Soldered and assembled 30 [RF controllers]({{ site.url | relative_url }}/rf-controllers/) and 50 custom Arduino Mega sensor shields for student-built robot cars
+- Guided 40+ students on using switches, infrared sensors, ultrasonic sensors, color sensors, and IMUs with Arduino

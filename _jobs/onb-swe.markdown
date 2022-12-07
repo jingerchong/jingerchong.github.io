@@ -8,5 +8,5 @@ order: 5
 show: true
 ---
 
-- made REST API endpoint to accept JSON requests from partner web app
-- designed front-end for creating, editing, and assigning unique targets to units
+- Implemented REST API endpoint in Edusuite to accept authorized student number update requests from Admissions
+- Designed AngularJS front-end web page in Edusuite for creating, editing, and assigning unique targets to units
