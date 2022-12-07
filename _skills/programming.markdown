@@ -9,12 +9,11 @@ show: true
 - ROS
 - Java
 - MATLAB
+- OpenSCAD
 - Git
 - HTML/CSS
-- AngularJS
-- Spring Boot
+- Julia
 - Google Apps Script
 - PostgreSQL
-- JPA
-- JUnit
 - LATEX
+

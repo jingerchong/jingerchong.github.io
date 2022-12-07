@@ -5,12 +5,15 @@ show: true
 ---
 
 - Solidworks
-- Fusion 360
+- Fusion 360 CAD/CAM
 - Onshape
 - Arduino
+- soldering
+- breadboarding
 - electronics
 - 3D printing
 - laser cutting
-- basic machining
+- machining
 - rapid prototyping
-- soldering
+- sheet metal
+
