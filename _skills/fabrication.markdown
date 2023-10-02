@@ -1,6 +1,6 @@
 ---
 category:  Fabrication
-order: 1
+order: 3
 show: true
 ---
 
@@ -9,10 +9,10 @@ show: true
 - Onshape
 - Arduino
 - Soldering
-- Breadboarding
 - Electronics
 - 3D Printing
 - Laser Cutting
+- CNC Routing
 - Machining
 - Rapid Prototyping
 - Sheet Metal

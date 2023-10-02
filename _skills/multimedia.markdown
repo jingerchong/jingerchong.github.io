@@ -1,7 +1,7 @@
 ---
 category:  Multimedia
 order: 3
-show: true
+show: false
 ---
 
 - Photoshop

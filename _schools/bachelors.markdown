@@ -8,6 +8,8 @@ order: 2
 show: true
 ---
 
-- GPA: 4.8/5.0
-- Minor in Computer Science, Minor in Chinese, [NEET](https://neet.mit.edu/) Autonomous Machines Thread certificate program
-- **Relevant Coursework**: Robotics: Science and Systems, Intro to Robotics, Dynamics & Control I and II, Computational Design & Fabrication, Design & Manufacturing I, Fundamentals of Programming, Electronics for Mechanical Systems
+- GPA: 4.9/5.0
+- Concentration in Control, Instrumentation, Robotics
+- Minor in Computer Science, Minor in Chinese
+- [NEET](https://neet.mit.edu/) Autonomous Machines Certificate
+- Tau Beta Pi Honor Society, Pi Tau Sigma Honor Society
