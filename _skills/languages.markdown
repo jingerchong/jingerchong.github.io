@@ -4,7 +4,14 @@ order: 1
 show: true
 ---
 
-- English
-- Chinese
-- Filipino
-- Hokkien
+- Python
+- C++
+- Java
+- MATLAB
+- HTML
+- CSS
+- Julia
+- Google Apps Script
+- SQL
+- OpenSCAD
+- LaTeX
