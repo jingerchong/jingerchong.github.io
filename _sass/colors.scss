@@ -69,7 +69,15 @@ h2:after {
     fill: $light-color !important;
     :active, :hover {
         fill: $accent-color;
-    } 
+    }
+}
+
+.identity-row .svg-icon {
+    fill: $theme-color !important;
+}
+
+.identity-row a:hover .svg-icon, .identity-row a:active .svg-icon {
+    fill: $accent-color !important;
 }
 
 @media screen and (max-width: 600px) { .site-nav {
@@ -87,6 +95,11 @@ h2:after {
 
 .banner-text-2 {
     color: $accent-color;
+    background-color: $theme-color;
+}
+
+.banner-text-3 {
+    color: $light-color;
     background-color: $theme-color;
 }
 

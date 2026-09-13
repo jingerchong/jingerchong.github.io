@@ -1,7 +1,10 @@
 ---
 title:  Home Upgrades
 date:   2020-01-10 09:00:00 -0500
-categories: [Build,Fun]
+area:   Archive
+summary: >
+  A collection of small projects solving day-to-day problems around
+  the house.
 featured: false
 ---
 

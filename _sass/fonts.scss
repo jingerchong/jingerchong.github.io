@@ -1,4 +1,4 @@
-$base-font-weight: 300 !default;
+$base-font-weight: 400 !default;
 
 .site-header a {
     text-transform: uppercase;
@@ -34,21 +34,31 @@ h3, h4 {
 }
 
 .banner-text-1 {
-    font-size: 6em;
+    font-size: 3.5em;
+    font-weight: 300;
 }
 
 .banner-text-2 {
-    font-size: 6em;
+    font-size: 3.5em;
     font-weight: 700;
 }
 
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 600px) {
     .banner-text-1 {
-        font-size: 4.5em;
+        font-size: 2.5em;
     }
     .banner-text-2 {
-        font-size: 4.5em;
+        font-size: 2.5em;
     }
+    .banner-text-3 {
+        font-size: 0.9em;
+    }
+}
+
+.banner-text-3 {
+    font-size: 1.2em;
+    font-family: monospace;
+    letter-spacing: 0.02em;
 }
 
 .duration, .location {
@@ -57,7 +67,10 @@ h3, h4 {
 
 .category-badge {
     font-size: 0.83em;
-    text-transform: lowercase;
+}
+
+.record-status, .record-links, .duration, .location {
+    font-family: monospace;
 }
 
 .category-badge:hover, .category-badge:active {

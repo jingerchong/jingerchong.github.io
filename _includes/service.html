@@ -1,0 +1,13 @@
+<div class="service-list">
+  {% assign services = site.data.service | sort: "datetime" | reverse %}
+  {% for item in services %}
+    <article class="service-entry">
+      <div class="service-title-row">
+        <h3>
+          {% if item.writeup %}<a href="{{ item.writeup | relative_url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+        </h3>
+        <time{% if item.datetime %} datetime="{{ item.datetime }}"{% endif %}>{{ item.date }}</time>
+      </div>
+    </article>
+  {% endfor %}
+</div>

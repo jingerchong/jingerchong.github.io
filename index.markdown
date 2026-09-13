@@ -5,8 +5,8 @@ layout: home
 title: Home
 ---
 
-To answer the burning question, my name is pronounced like *ginger*.
-      
-I'm an SM-PhD student in Mechanical Engineering at [MIT](https://web.mit.edu) with a strong passion for **Robotics and Perception**. I like building things, and then making them to do stuff for me. Oh, and I like Japanese food.
-      
-I'm always on the lookout for any opportunity to learn new skills and technologies. Feel free to [reach out](#footer)!
+I'm a Ph.D. candidate in Mechanical Engineering at MIT, building probabilistic models that help robots reason about uncertainty in what people will do next, so they can collaborate safely.
+
+Outside the lab, I'm a serial hobbyist. I shoot astro, bird, portrait, and event photography, which is probably how my obsession with perception systems started long before grad school. I run, lift, climb, and am training for my first triathlon. I also play guitar and drums and sing (not simultaneously, though I'm working on it).
+
+<strong>Now:</strong> Seeking Summer 2027 robotics research internship in perception, human motion prediction, or uncertainty-aware autonomy/HRI. <a class="cv-link-inline" href="{{ site.cv_url | relative_url }}">[CV]</a>

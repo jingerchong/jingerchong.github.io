@@ -8,5 +8,5 @@ order: 7
 show: true
 ---
 
-- Soldered and assembled 30 [RF controllers]({{ site.url | relative_url }}/rf-controllers/) and 50 custom Arduino Mega sensor shields for student-built robot cars
+- Soldered and assembled 30 RF controllers and 50 custom Arduino Mega sensor shields for student-built robot cars
 - Guided 40+ students on using switches, infrared sensors, ultrasonic sensors, color sensors, and IMUs with Arduino

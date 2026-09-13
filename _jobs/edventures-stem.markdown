@@ -8,7 +8,7 @@ order: 4
 show: false
 ---
 
-- responsible for scheduling, managing, and overall logistics of [programs]({{ site.url | relative_url }}/edventures/)
+- responsible for scheduling, managing, and overall logistics of STEM programs
 - facilitated underwater ROV workshop and interactive physics classes
 - advised student-led engineering club on project design and execution
 - redesigned controller to improve ergonomics and simplify fabrication process

@@ -26,16 +26,18 @@ layout: default
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}
-      {%- if page.categories -%}
-        &nbsp; {% for category in page.categories %}
-          <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugify }}/">{{ category }}</a>
-        {% endfor %}
+      {%- if page.area -%}
+        &nbsp; <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ page.area | slugify }}/">{{ page.area }}</a>
     {%- endif -%}
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <img class="post-cover" src="{{ site.images }}{{ page.url }}cover.webp" alt="{{ page.title }} cover"> </img>
+    {%- assign cover_path = site.images | append: page.url | append: "cover.webp" -%}
+    {%- assign cover_file = site.static_files | where: "path", cover_path | first -%}
+    {%- if cover_file -%}
+    <img class="post-cover" src="{{ cover_path }}" alt="{{ page.title }} cover">
+    {%- endif -%}
     {{ content }}
   </div>
 

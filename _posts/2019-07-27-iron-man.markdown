@@ -1,8 +1,10 @@
 ---
 title:  Iron Man
 date:   2019-07-27 09:00:00 -0500
-categories: [Build, Fun]
-featured: true
+area:   Archive
+summary: >
+  A Metal Earth model kit and a hand-built wooden display case.
+featured: false
 ---
 
 After piecing together my first two Metal Earth models, I decided to challenge myself by jumping straight to what their [website](https://www.metalearth.com/iron-man/) tagged "extremely difficult." I finished this Iron Man model in about two days. It sat proudly on my desk for a while, but it inevitably started collecting dust.

@@ -1,0 +1,1 @@
+<li class="compact-item">{% if include.item.url %}<a href="{{ include.item.url | relative_url }}">{% endif %}{{ include.item.title | escape }}{% if include.item.url %}</a>{% endif %}{% if include.item.term %}<span>{{ include.item.term }}</span>{% endif %}</li>

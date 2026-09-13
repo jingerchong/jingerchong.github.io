@@ -1,0 +1,8 @@
+---
+title: Temporal-Difference Learning for 2048
+slug: rl-in-2048
+tier: more
+tags: [Learning, Robotics]
+term: 2020
+blurb: A temporal-difference learning agent developed during an NCTU CGI Lab internship.
+---

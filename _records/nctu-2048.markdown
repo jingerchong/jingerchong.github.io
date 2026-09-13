@@ -1,0 +1,14 @@
+---
+title:  Temporal-Difference Learning for 2048
+type:   research
+org:    NCTU Computer Graphics and Intelligence Lab
+org_link: https://cgilab.nctu.edu.tw/
+role:   Research Intern
+period: Jun 2020 - Aug 2020
+area:   Research
+order:  55
+show:   true
+page:   /rl-in-2048/
+---
+
+Trained a temporal-difference learning agent to play 2048, reaching a 93% win rate after 20,000 training rounds.

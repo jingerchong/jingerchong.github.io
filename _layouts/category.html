@@ -3,29 +3,12 @@ layout: default
 ---
 
 <div>
-    <div class="archive-group">  
-    {% assign title = page.slug | capitalize %} 
-    <h2><a href="{{ page.url }}">{{ title }}</a></h2>
+    <div class="archive-group">
+    <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
     <ul class="post-list">
-        {% for post in site.categories[title] %}
-        <li>
-        <div class="post-image">
-            <a href="{{ post.url | relative_url }}">
-            <img src="{{ site.images }}{{ post.url }}cover.webp" alt="{{ post.title }} cover"></img>
-            </a>
-        </div>
-        <div class="post-description">
-            <h3> <a href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a> </h3>
-            {%- if site.show_excerpts -%}
-            <p>{{ post.excerpt | truncatewords: 12 }}</p>
-            {%- endif -%}
-            {%- if post.categories -%}
-                {% for category in post.categories %}
-                <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugify }}/">{{ category }}</a>
-                {% endfor %}
-            {%- endif -%}
-        </div>
-        </li>
+        {% assign posts = site.posts | where: 'area', page.title | sort: 'date' | reverse %}
+        {% for post in posts %}
+          {% include post-card.html post=post %}
         {%- endfor -%}
     </ul>
     </div>

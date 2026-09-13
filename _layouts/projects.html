@@ -2,35 +2,4 @@
 layout: default
 ---
 
-<div>
-  {% for category in site.categories_order %}
-    <div class="archive-group">      
-      <div id="#{{ category | slugify }}"></div>
-      <a name="{{ category | slugify }}"></a>
-      <h2><a href="{{ site.url | relative_url }}/projects/{{ category | slugify }}/">{{ category }}</a></h2>
-      <ul class="post-list">
-        {% assign posts = site.categories[category] | sort: 'date' | reverse %}
-        {% for post in posts %}
-        <li>
-          <div class="post-image">
-            <a href="{{ post.url | relative_url }}">
-              <img src="{{ site.images }}{{ post.url }}cover.webp" alt="{{ post.title }} cover"></img>
-            </a>
-          </div>
-          <div class="post-description">
-            <h3> <a href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a> </h3>
-            {%- if site.show_excerpts -%}
-              <p>{{ post.excerpt | truncatewords: 12 }}</p>
-            {%- endif -%}
-            {%- if post.categories -%}
-              {% for category in post.categories %}
-              <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugify }}/">{{ category }}</a>
-              {% endfor %}
-            {%- endif -%}
-          </div>
-        </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-  {% endfor %}
-</div>
+<div class="projects-page"><h1>Selected projects</h1><div class="card-grid">{% assign selected = site.projects | where: 'tier', 'selected' | sort: 'title' %}{% for item in selected %}{% include card.html item=item %}{% endfor %}</div><h2>More work</h2><ul class="compact-list">{% assign more = site.projects | where: 'tier', 'more' | sort: 'title' %}{% for item in more %}{% include card-compact.html item=item %}{% endfor %}</ul></div>

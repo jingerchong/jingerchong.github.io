@@ -19,8 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Jinger Chong
-email: me@jingerchong.com
+email: jinger@mit.edu
 description: Portfolio
+cv_url: /downloads/jinger-chong-cv.pdf
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g. http://example.com
@@ -28,9 +29,11 @@ permalink: :title/
 show_excerpts: true
 
 categories_order:
- - Build
- - Code
- - Teach
+ - Research
+ - Perception & Autonomy
+ - Systems & Hardware
+ - Teaching
+ - Archive
 
 logo: /assets/logo.webp
 banner: /assets/banner.webp
@@ -40,7 +43,6 @@ images: /assets/images
 social_links:
   linkedin:  jingerchong
   github:  jingerchong
-  instagram: jinger.chong
 
 # Build settings
 theme: minima
@@ -51,23 +53,59 @@ plugins:
 
 sass:
     sass_dir: _sass
-  
+
 navbar_order:
-  - about.markdown
+  - research.markdown
+  - industry.markdown
   - projects.markdown
-  - photography.markdown
+  - about.markdown
 
 collections:
+  research:
+    output: false
+  experience:
+    output: false
+  projects:
+    output: true
+    permalink: /projects/:slug/
   schools:
   jobs:
   skills:
-  photos:
+  records:
+    output: false
   grids:
   archives:
     output: true
     permalink: /projects/:slug/
-    
+
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - CODEX.md
+  - CONFLICTS.md
+  - TODO.md
+  - Gemfile.bak
+  - Gemfile.lock.bak
+  - Jinger Chong_Resume.pdf
+  - headshot.jpg
+  - .claude/
+
 defaults:
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: "research-item"
+  - scope:
+      path: ""
+      type: "experience"
+    values:
+      layout: "experience-item"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
   - scope:
       path: ""
       type: "posts"
@@ -88,6 +126,11 @@ defaults:
       type: "archives"
     values:
       layout: "category"
+  - scope:
+      path: ""
+      type: "records"
+    values:
+      layout: "record"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

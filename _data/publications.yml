@@ -1,0 +1,18 @@
+- title: Towards Scalable Probabilistic Human Motion Prediction with Gaussian Processes for Safe Human-Robot Collaboration
+  authors: J. Chong, X. Zhang, K. Youcef-Toumi
+  venue: ICRA
+  year: 2027
+  status: Under review
+  links: {url: https://arxiv.org/abs/2603.07096}
+- title: "How Does Perception Affect Safety: New Metrics and Strategy"
+  authors: X. Zhang, J. Chong, K. Youcef-Toumi
+  venue: ICRA
+  year: 2024
+  status: Published
+  links: {url: https://ieeexplore.ieee.org/document/10610657}
+- title: Multi-Function Hinge
+  authors: J. Chong, D. Yaremenko, B. Tomky, D. Caplow-Munro
+  venue: US 2026/0143604 A1
+  year: 2026
+  status: Pending
+  links: {url: https://patents.google.com/patent/US20260143604/}

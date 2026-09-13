@@ -1,0 +1,19 @@
+<div class="resume record{% if page.confidential %} confidential{% endif %}">
+    <div class="resume-col-1">
+        <h3>{% if page.page and page.confidential != true %}<a href="{{ page.page | relative_url }}">{{ page.title }}</a>{% else %}{{ page.title }}{% endif %}</h3>
+        {% if page.org_link and page.confidential != true %}<a href="{{ page.org_link }}"><h4>{{ page.org }}</h4></a>{% else %}<h4>{{ page.org }}</h4>{% endif %}
+        <div class="duration">{{ page.period }}</div>
+        {% if page.role %}<div class="location">{{ page.role }}</div>{% endif %}
+        {% if page.status %}<div class="record-status">{{ page.status }}</div>{% endif %}
+    </div>
+    <div class="resume-col-2">
+        {{ page.content }}
+        {% if page.links and page.confidential != true %}
+        <ul class="record-links">
+          {% for link in page.links %}
+            <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>

@@ -1,68 +1,11 @@
 ---
 layout: with-banner
 ---
-
 <div class="home">
-
-  <h2><a href="{{ site.url | relative_url }}/about/">Bio</a></h2>
-  
-  <img class="headshot" src="{{ site.headshot }}" alt="sketch"> 
-
+  <img class="headshot" src="{{ site.headshot }}" alt="{{ site.title }}">
   {{ content }}
-  
-  <br>
-
-  {% if site.paginate %}
-    {% assign posts = paginator.posts | where: 'featured', true | sort: 'date' | reverse %}
-  {% else %}
-    {% assign posts = site.posts | where: 'featured', true | sort: 'date' | reverse %}
-  {% endif %}
-
-
-  {%- if posts.size > 0 -%}
-
-    <h2><a href="{{ site.url | relative_url }}/projects/">Featured</a></h2>
-  
-    <ul class="post-list">
-      {%- for post in posts -%}
-      <li>
-        <div class="post-image">
-          <a href="{{ post.url | relative_url }}">
-            <img src="{{ site.images }}{{ post.url }}cover.webp" alt="{{ post.title }} cover"></img>
-          </a>
-        </div>
-        <div class="post-description">
-          <h3> <a href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a> </h3>
-          {%- if site.show_excerpts -%}
-            <p>{{ post.excerpt | truncatewords: 12 }}</p>
-          {%- endif -%}
-          {%- if post.categories -%}
-            {% for category in post.categories %}
-            <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ category | slugify }}/">{{ category }}</a>
-            {% endfor %}
-          {%- endif -%}
-        </div>
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
-  {%- endif -%}
-
+  <h2>Highlights</h2>
+  <div class="card-grid">{% assign selected = site.projects | where: 'tier', 'selected' | sort: 'title' %}{% for item in selected limit:3 %}{% include card.html item=item %}{% endfor %}</div>
+  <h2>Publications</h2>
+  <ul class="publication-list">{% for pub in site.data.publications %}{% include pub-item.html pub=pub %}{% endfor %}</ul>
 </div>

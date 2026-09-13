@@ -1,0 +1,21 @@
+{%- assign card_url = post.url | default: post.page -%}
+{%- assign cover_path = site.images | append: card_url | append: "cover.webp" -%}
+{%- assign cover_file = site.static_files | where: "path", cover_path | first -%}
+<li>
+  <div class="post-image">
+    {%- if card_url -%}<a href="{{ card_url | relative_url }}">{%- endif -%}
+      {%- if cover_file -%}
+      <img src="{{ cover_path }}" alt="{{ post.title }} cover">
+      {%- endif -%}
+    {%- if card_url -%}</a>{%- endif -%}
+  </div>
+  <div class="post-description">
+    <h3> {%- if card_url -%}<a href="{{ card_url | relative_url }}">{%- endif -%} {{ post.title | escape }} {%- if card_url -%}</a>{%- endif -%} </h3>
+    {%- if site.show_excerpts -%}
+      <p>{{ post.summary | default: post.excerpt | strip_html | truncatewords: 24 }}</p>
+    {%- endif -%}
+    {%- if post.area -%}
+      <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ post.area | slugify }}/">{{ post.area }}</a>
+    {%- endif -%}
+  </div>
+</li>
