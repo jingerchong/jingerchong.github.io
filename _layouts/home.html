@@ -6,6 +6,6 @@ layout: with-banner
   {{ content }}
   <h2>Highlights</h2>
   <div class="card-grid">{% assign selected = site.projects | where: 'tier', 'selected' | sort: 'title' %}{% for item in selected limit:3 %}{% include card.html item=item %}{% endfor %}</div>
-  <h2>Publications</h2>
+  <h2>Publications & Patents</h2>
   <ul class="publication-list">{% for pub in site.data.publications %}{% include pub-item.html pub=pub %}{% endfor %}</ul>
 </div>

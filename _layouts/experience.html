@@ -1,4 +1,14 @@
 ---
 layout: default
 ---
-<div class="experience-page"><h1>{{ page.title }}</h1><div class="timeline">{% assign items = site.experience | sort: 'start' | reverse %}{% for item in items %}{% include timeline-item.html item=item %}{% endfor %}</div><h2>Earlier</h2><ul><li>NCTU Computer Games and Intelligence Lab · Research Intern, Jun–Aug 2020</li><li>MIT NEET · Undergraduate Assistant, Jan–Mar 2020 and Aug–Dec 2021</li></ul></div>
+<div class="experience-page">
+  <h2>EXPERIENCE</h2>
+  <div class="industry-list">
+    {% assign items = site.experience | sort: 'start' | reverse %}
+    {% for item in items %}
+      {% if item.org == 'GE Vernova Advanced Research Center' or item.org == 'Microsoft' or item.org == 'Rotor Technologies' %}
+        {% include industry-item.html item=item position=item %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

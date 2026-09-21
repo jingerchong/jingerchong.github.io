@@ -246,7 +246,7 @@ Rotor Technologies, Undergraduate Engineering Intern	Jun 2022 – Aug 2022
 •	Expanded subscale helicopter testing infrastructure for perception, flight controls, and data logging from 1 to 3 units 
 •	Integrated onboard power and data systems and bridged EKF and airspeed data from PX4 to proprietary flight software 
 PUBLICATIONS & PATENTS
-J. Chong, X. Zhang, K. Youcef-Toumi, “Towards Scalable Probabilistic Human Motion Prediction with Gaussian Processes for Safe Human-Robot Collaboration,” ICRA, 2027, under review.
+J. Chong, X. Zhang, K. Youcef-Toumi, “Structured Multitask Gaussian Processes for Probabilistic Full-Body Human Motion Prediction,” ICRA, 2027, under review.
 X. Zhang, J. Chong, K. Youcef-Toumi, “How Does Perception Affect Safety: New Metrics and Strategy,” ICRA, 2024.
 J. Chong, et al., “Multi-Function Hinge,” U.S. Patent Application Publication No. US 2026/0143604 A1, 2026, pending.
 PROJECTS

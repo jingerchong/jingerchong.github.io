@@ -9,4 +9,4 @@ I'm a Ph.D. candidate in Mechanical Engineering at MIT, building probabilistic m
 
 Outside the lab, I'm a serial hobbyist. I shoot astro, bird, portrait, and event photography, which is probably how my obsession with perception systems started long before grad school. I run, lift, climb, and am training for my first triathlon. I also play guitar and drums and sing (not simultaneously, though I'm working on it).
 
-<strong>Now:</strong> Seeking Summer 2027 robotics research internship in perception, human motion prediction, or uncertainty-aware autonomy/HRI. <a class="cv-link-inline" href="{{ site.cv_url | relative_url }}">[CV]</a>
+<strong>Now:</strong> Seeking Summer 2027 robotics research internship in perception, human motion prediction, or uncertainty-aware autonomy/HRI. <a class="cv-link-inline" href="{{ site.cv_url | relative_url }}" target="_blank" rel="noopener noreferrer">[CV]</a>

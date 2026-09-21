@@ -1,58 +1,45 @@
-- title: Teaching Assistant, MIT 2.12 Introduction to Robotics
+ # Service entries use role, organization; combine non-contiguous dates when
+ # they describe the same role and organization.
+- role: Teaching Assistant
+  organization: Introduction to Robotics (2.120)
   date: Jan 2024 – May 2024
   datetime: 2024-01
 
-- title: Team Mentor, MIT Toy Product Design
+- role: Lab Instructor
+  organization: Toy Product Design (2.00B)
   date: Jan 2023 – May 2023
   datetime: 2023-01
 
-- title: Team Mentor, MIT Toy Product Design
-  date: Feb 2022 – May 2022
-  datetime: 2022-02
+- role: Undergraduate Assistant
+  organization: Toy Product Design (2.00B)
+  date: Jan 2022 – May 2022
+  datetime: 2022-01
 
-- title: Assistant Shop Manager, MIT Edgerton Center Student Project Lab
+- role: Undergraduate Assistant
+  organization: Introduction to Autonomous Machines (16.632)
   date: Aug 2021 – Dec 2021
   datetime: 2021-08
 
-- title: Shop Mentor, MIT Edgerton Center Student Project Lab 4-409
-  date: Aug 2021 – Dec 2021 (tentative)
-  datetime: 2021-08
-
-- title: Undergraduate Assistant, MIT New Engineering Education Transformation
-  date: Jan 2020 – Mar 2020 · Aug 2021 – Dec 2021
-  datetime: 2020-01
-
-- title: Undergraduate Assistant, RF Controllers
+- role: Undergraduate Assistant
+  organization: Introduction to Autonomous Machines (16.632)
   date: Jan 2020 – Mar 2020
   datetime: 2020-01
   writeup: /projects/rf-controllers/
 
-- title: STEM Mentor, MIT Edgerton Center
+- role: Mentor
+  organization: MIT Edgerton Center K-12 Maker Education
   date: Jan 2020 · Jan 2021
   datetime: 2020-01
+  writeup: https://edgerton.mit.edu/
 
-- title: Volunteer, Edventures STEM Program
-  date: Jan 2020 · Jan 2021 (tentative)
-  datetime: 2020-01
-
-- title: Volunteer, Banana Lounge
-  date: Date TBD (tentative)
-
-- title: Lab Assistant, MIT Department of EECS
-  date: Feb 2020 – May 2020
-  datetime: 2020-02
-
-- title: K-12 Robotics Outreach
-  date: Jan 2019
-  datetime: 2019-01
-  writeup: /2019/01/16/k-12-robotics-outreach/
-
-- title: ESP Splash
+- role: Teacher
+  organization: MIT ESP Splash
   date: Nov 2019
   datetime: 2019-11
-  writeup: /2019/11/24/esp-splash/
+  writeup: /projects/esp-splash/
 
-- title: Robotics Outreach, SJCS Robocup
-  date: Apr 2018
-  datetime: 2018-04
-  writeup: /projects/sjcs-robocup/
+- role: Organizer
+  organization: Andres Bonifacio Elementary School Robotics Outreach
+  date: Jan 2019
+  datetime: 2019-01
+  writeup: /projects/abes-outreach/

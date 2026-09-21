@@ -4,9 +4,12 @@ slug: pool-playing-robot
 tier: selected
 award: Outstanding Project
 term: Sep 2023 – Dec 2023
-tags: [Robotics, Controls, Learning]
+year: 2023
+order: 1
+tags: [Autonomy & Control, Learning & Simulation]
 stack: [Drake, Python]
 blurb: A physics-based single-shot simulation with heuristic planning, IK, and inverse-dynamics control.
+summary: A physics-based single-shot simulation with heuristic planning, IK, and inverse-dynamics control.
 problem: Model a pool-playing robot well enough to plan and execute shots in randomized simulation.
 approach: Modeled cue dynamics, ball motion, and collisions, then combined a heuristic task planner with inverse kinematics and inverse-dynamics control.
 results: Sank target balls consistently in randomized simulations.

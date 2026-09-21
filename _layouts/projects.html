@@ -2,4 +2,22 @@
 layout: default
 ---
 
-<div class="projects-page"><h1>Selected projects</h1><div class="card-grid">{% assign selected = site.projects | where: 'tier', 'selected' | sort: 'title' %}{% for item in selected %}{% include card.html item=item %}{% endfor %}</div><h2>More work</h2><ul class="compact-list">{% assign more = site.projects | where: 'tier', 'more' | sort: 'title' %}{% for item in more %}{% include card-compact.html item=item %}{% endfor %}</ul></div>
+<div class="projects-page project-browser" data-project-browser>
+  <h2>PROJECTS</h2>
+
+  {% assign projects = site.projects | sort: 'order' %}
+  {% assign project_tags = '' | split: '' %}
+  {% for item in projects %}{% assign project_tags = project_tags | concat: item.tags %}{% endfor %}
+  {% assign project_tags = project_tags | uniq | sort %}
+
+  <div class="project-filters" role="toolbar" aria-label="Filter projects by tag">
+    <button class="project-filter" type="button" data-filter="all" aria-pressed="true">All</button>
+    {% for tag in project_tags %}<button class="project-filter" type="button" data-filter="{{ tag | slugify }}" aria-pressed="false">{{ tag }}</button>{% endfor %}
+  </div>
+  <p class="project-filter-status" data-project-filter-status aria-live="polite">Showing {{ projects.size }} projects.</p>
+
+  <div class="project-grid" data-project-grid>
+    {% for item in projects %}{% include project-grid-card.html item=item %}{% endfor %}
+  </div>
+</div>
+<script src="{{ '/assets/js/project-filters.js' | relative_url }}" defer></script>

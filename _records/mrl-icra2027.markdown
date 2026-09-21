@@ -1,5 +1,5 @@
 ---
-title:  Towards Scalable Probabilistic Human Motion Prediction with Gaussian Processes for Safe Human-Robot Collaboration
+title:  Structured Multitask Gaussian Processes for Probabilistic Full-Body Human Motion Prediction
 type:   publication
 org:    ICRA 2027
 role:   First author, with T. Zhang and K. Youcef-Toumi

@@ -4,7 +4,8 @@
     <article class="service-entry">
       <div class="service-title-row">
         <h3>
-          {% if item.writeup %}<a href="{{ item.writeup | relative_url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+          {% capture service_label %}<span class="service-role">{{ item.role }}, </span><span class="service-organization">{{ item.organization }}</span>{% endcapture %}
+          {% if item.writeup %}<a href="{{ item.writeup | relative_url }}"{% if item.writeup contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ service_label }}</a>{% else %}{{ service_label }}{% endif %}
         </h3>
         <time{% if item.datetime %} datetime="{{ item.datetime }}"{% endif %}>{{ item.date }}</time>
       </div>

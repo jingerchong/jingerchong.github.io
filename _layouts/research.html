@@ -1,4 +1,7 @@
 ---
 layout: default
 ---
-<div class="research-page"><h1>{{ page.title }}</h1><h2>Research threads</h2><div class="card-grid">{% assign threads = site.research | sort: 'order' %}{% for item in threads %}<article id="{{ item.title | slugify }}" class="content-card"><div class="card-media"><img loading="lazy" src="/assets/placeholder.svg" alt="Media placeholder"></div><div class="card-body"><h3>{{ item.title }}</h3><p>{{ item.blurb }}</p><p class="meta">{{ item.venue }} · {{ item.status }}</p>{% for todo in item.todo %}{% include todo.html level=todo.level text=todo.text %}{% endfor %}</div></article>{% endfor %}</div><h2>Publications</h2><ul class="publication-list">{% for pub in site.data.publications %}{% include pub-item.html pub=pub %}{% endfor %}</ul><h2>Patents</h2><ul class="publication-list"><li id="multi-function-hinge">J. Chong, D. Yaremenko, B. Tomky, D. Caplow-Munro, “Multi-Function Hinge,” U.S. Patent Application Publication No. US 2026/0143604 A1, pending.</li></ul></div>
+<div class="research-page">
+  <h2>RESEARCH</h2>
+  <p>Page is under work. Please check back!</p>
+</div>

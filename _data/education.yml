@@ -1,18 +1,18 @@
 institution: Massachusetts Institute of Technology
 location: Cambridge, MA
 entries:
-  - degree: Ph.D. Candidate in Mechanical Engineering
+  - degree: PhD Candidate in Mechanical Engineering
     date: Expected Graduation May 2028
     datetime: 2028-05
     details:
       - "GPA: 5.0/5.0 · Advisor: Kamal Youcef-Toumi"
       - "Courses: Underactuated Robotics, Robotic Manipulation, Visual Navigation for Autonomous Vehicles, Computer Vision, Algorithmic Human-Robot Interaction, Principles of Autonomy and Decision Making"
-  - degree: M.S. in Mechanical Engineering
+  - degree: MS in Mechanical Engineering
     date: Sep 2023 – May 2025
     datetime: 2023-09
     details:
       - "GPA: 5.0/5.0"
-  - degree: B.S. in Mechanical Engineering
+  - degree: BS in Mechanical Engineering
     date: Sep 2019 – May 2023
     datetime: 2019-09
     details:

@@ -9,7 +9,7 @@
         <h3>{{ entry.degree }}</h3>
         <time datetime="{{ entry.datetime }}">{{ entry.date }}</time>
       </div>
-      {% for detail in entry.details %}<p class="education-secondary">{{ detail }}</p>{% endfor %}
+      {% for detail in entry.details %}<p class="education-secondary">{{ detail | replace: 'Kamal Youcef-Toumi', '<a href="https://meche.mit.edu/people/faculty/YOUCEF@MIT.EDU" target="_blank" rel="noopener noreferrer">Kamal Youcef-Toumi</a>' }}</p>{% endfor %}
     </article>
   {% endfor %}
 </div>
