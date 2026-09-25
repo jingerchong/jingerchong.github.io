@@ -12,11 +12,13 @@ header/footer bands, yellow text selection, uppercase letter-spaced headings, an
 
 ## Stack and local build
 
-- Jekyll 3.9 through `github-pages ~> 219`
+- Jekyll 3.10 through `github-pages ~> 232.0`
 - Minima `~> 2.5`
 - Plugins: `jekyll-feed`, `jekyll-sitemap`, `jekyll-seo-tag`
 - Ruby dependencies are declared in `Gemfile` and locked in `Gemfile.lock`.
-- Normal local commands:
+- Use Ruby 3.3 with the Windows development tools installed. The GitHub Pages
+  dependency set requires Ruby below 4. The README gives verified PowerShell
+  commands for this machine. Normal local commands are:
 
   ```sh
   bundle install
@@ -25,10 +27,8 @@ header/footer bands, yellow text selection, uppercase letter-spaced headings, an
   ```
 
 - `_config.yml` is not hot-reloaded; restart `jekyll serve` after changing it.
-- The current development machine uses Ruby 4, while Jekyll 3/Liquid 4 still call removed
-  taint APIs. On that machine, verification requires a temporary compatibility preload such as
-  `RUBYOPT=-r/private/tmp/jekyll-ruby4-compat.rb` before the Bundler command. GitHub Pages uses
-  a compatible runtime, so do not add that shim to the site.
+- On Windows, use `bundle exec -- C:\Ruby33-x64\bin\jekyll.bat build` (or `serve`)
+  if Bundler cannot locate the bare `jekyll` command.
 - Build output is `_site/` and is ignored. Never edit generated files.
 
 ## Content model
@@ -88,7 +88,7 @@ header/footer bands, yellow text selection, uppercase letter-spaced headings, an
   confirmation.
 - Do not invent uncertain résumé metrics, graduation dates, authors, course names, patent
   numbers, or publication status. Track them in `TODO.md` until verified.
-- After changes, run `bundle exec jekyll build` (with the Ruby 4 preload if needed), then check:
+- After changes, run `bundle exec jekyll build` with Ruby 3.3, then check:
   required routes, local image references, empty `href` values, placeholders, stale links, and
   `git diff --check` where line-ending noise does not obscure existing files.
 - Required route smoke checks include `/`, `/about/`, `/research/`, `/projects/`,
