@@ -37,6 +37,7 @@ images: /assets/images
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-seo-tag
 
