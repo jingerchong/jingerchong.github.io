@@ -1,3 +1,5 @@
+# About → Skills. Add a row in the order it should appear.
+# - {category: Example category, items: [Skill one, Skill two]}
 - {category: Languages, items: [Python, C++, MATLAB, Julia]}
 - {category: Tools, items: [PyTorch, GPyTorch, OpenCV, COLMAP, hloc, ROS, Drake, Eigen, NumPy, SciPy, scikit-learn, Matplotlib, Libpcap, FFmpeg, Git, Arduino]}
 - {category: Hardware, items: [SolidWorks, Fusion 360, 3D Printing, Laser Cutting, CNC, Machining, Soldering, Electronics]}

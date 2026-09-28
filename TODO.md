@@ -1,240 +1,224 @@
 # TODO — human input and verification
 
-Development-only TODOs are rendered at [/todo/](/todo/). Production hides inline TODO badges.
+This is the single place to track site content and launch work.
 
-## Projects page restructure (approved by Jinger, 2026-09-27; updated after review)
+## Done
 
-Decisions were final for the implementation. Ask Jinger before changing the agreed structure.
-Rule: **every item appears in exactly one list** (Projects grid, Archive, or
-About → Service). A Service entry may link to a writeup page; that is not a repeat.
+- Projects page restructure (featured / normal / archive tiers, Archive list, Service links),
+  the first codebase cleanup pass, and the content architecture refactor are finished.
+  Earlier briefs and the cleanup inventory remain in git history (`git log -p -- TODO.md CLEANUP.md`).
 
-### Target state
+## On hold: Edventures (Edgerton Center STEM Mentor)
 
-| List | Items |
-|---|---|
-| Projects grid (4) | Pool-Playing Robot · Autonomous Racecar Stack (`alfredo`) · Water Bottle Flipping Quadrotor · Granular-Jamming Vise (`revise`) |
-| Archive (6) | Minibot · TD Learning for 2048 · Modular Play Instrument · Rubber Band Turret · Soccer Robot · Jansen's Linkage (no link) |
-| About → Service | existing entries (incl. RF Controllers via 16.632, ABES, ESP Splash, Edgerton Mentor) + SJCS Robocup linked to its restored writeup |
-| Removed | Home Upgrades · Iron Man · Flashlight · Segway Robot |
-| On hold | Edventures page: draft only, not listed anywhere (see step 6) |
+Wait until Jinger provides articles/media links and the story. Then draft
+`_projects/edventures.md` with `published: false` and review it with her. Once it's approved,
+point the Edgerton entry in `_data/service.yml` to it. Decide after the draft whether it gets a
+Projects card (if the story is about her design work: the ROV workshop, the controller redesign)
+or stays Service-only (if it's mostly mentoring/logistics). Source notes so far, copied here
+because `_jobs/` is being deleted: scheduled and managed STEM programs; ran an underwater ROV
+workshop and interactive physics classes; advised a student-led engineering club on project
+design; redesigned a controller to improve ergonomics and simplify fabrication. Jan 2020 and
+Jan 2021; Barcelona, Ferrara, remote.
 
-### Steps
+## Content architecture refactor (completed, 2026-09-28)
 
-1. **Replace the tiers with three values** in `_projects/*.markdown` front matter:
-   - `tier: featured`: shown on the homepage **and** as a card in the Projects grid.
-   - `tier: normal`: card in the Projects grid only.
-   - `tier: archive`: no card anywhere. Listed in Archive, unless the project
-     also has `in_service: true`, in which case it's listed only via its About → Service entry
-     (no repeats).
-   - Remove the old `selected` / `more` values completely; nothing should reference them.
-   - `_layouts/projects.html`: grid combines `featured` and `normal` entries,
-     then sorts by `order` (the locked Liquid version rejects `or` in `where_exp`).
-   - `_layouts/home.html`: change `where: 'tier', 'selected' | sort: 'title'` to
-     `where: 'tier', 'featured' | sort: 'order'` (keep `limit:3`).
-1b. **Remove tags, filters, and the tag line on cards.**
-   - Delete the `tags:` key from **every** `_projects/*.markdown` file (Jinger: the tags
-     aren't accurate). Leave `stack:` as is.
-   - `_layouts/projects.html`: delete the `.project-filters` toolbar, the
-     `project_tags` Liquid loop, the "Showing N projects" status line, the
-     `project-filters.js` script tag, and the `data-project-browser` / `data-project-grid` hooks.
-   - `_includes/project-grid-card.html`: remove the tag line (`.project-card-tags`) and the
-     `data-project-card` / `data-tags` attributes. Show the short description as
-     `summary | default: blurb` so every card has one (`revise` has only a `blurb`).
-   - Delete `assets/js/project-filters.js` and the unused `.project-filter*` /
-     `.project-card-tags` rules in `_sass/layout.scss` (recoverable from git).
-   - Grep the repo (excluding `_site`) for `tags`, `project-filter`, `selected`, `more`
-     (tier context) to confirm nothing still depends on them.
-2. **Retier existing projects**
+**Status: implemented and verified.** Decisions 1–4 are Jinger's. Decisions 5–6 used the
+recommended option. The 37 baseline HTML routes still render or redirect, except for the
+intentionally removed `/todo/`; `/experience/` now redirects and SJCS Robocup has a project
+page. All 11 writeups retain their image order. The six content recipes were tested with
+temporary entries and the site built successfully. GitHub Pages still generates an empty
+`feed.xml` through its bundled `jekyll-feed` plugin, though this site no longer declares the
+plugin or advertises a feed link.
 
-   | tier | projects |
-   |---|---|
-   | featured (order 1–3) | `pool-playing-robot` (1), `alfredo` (2), `water-bottle-quadrotor` (3) |
-   | normal | `revise` (order 4) |
-   | archive | `minibot`, `rl-in-2048`, `toy-for-toddlers`, `rubber-band-turret`, `soccer-robot`, `jansens-linkage` |
-   | archive + `in_service: true` | `rf-controllers`, `abes-outreach`, `esp-splash` |
+### What's wrong now
 
-3. **Add an "Archive" section** below the grid in `_layouts/projects.html`, built from
-   `tier == 'archive'` projects **without** `in_service: true`.
-   - Reuse the Service markup and classes from `_includes/service.html`
-     (`.service-list`, `.service-entry`, `.service-title-row`, `.service-role`,
-     `.service-organization`, `time`). Add no new CSS unless it's needed.
-   - Each row reads `Title, *context*`, with the year right-aligned in grey. The
-     whole title-and-context line links to `writeup_url` (fall back to `item.url`), and is plain text when the
-     project has no writeup (`jansens-linkage`). Always expanded, not collapsible.
-   - Add a `context:` field to each archive project, and sort newest first by an
-     explicit `archive_order` (lower = higher):
+1. **Every project is split across two files.** `_projects/<slug>` has the card data and
+   builds a thin `/projects/<slug>/` page, while `_posts/<date>-<slug>` holds the real writeup
+   at `/<slug>/`. For 9 of the 13 projects, the card skips its own project page and links to
+   the post (`writeup_url`), so each one has two live URLs and one of them is a placeholder
+   page. Title, summary, date and course are typed twice (and `blurb` is usually the same as
+   `summary`). SJCS Robocup exists only as a post.
+2. **Service-only projects are stubs.** `rf-controllers`, `esp-splash` and `abes-outreach`
+   (`in_service: true`) don't show up in any list, but each still builds an empty
+   `/projects/<slug>/` page. Their real links are in `_data/service.yml`.
+3. **Galleries take three places to set up.** `_grids/` has 22 files that mostly hold only a
+   section heading. Adding a gallery means editing the post, adding
+   `_grids/<slug>/grid-N.markdown`, and adding `assets/images/<slug>/grid-N/`. The template
+   matches them by a partial path match, which can pick up the wrong folder. Galleries always
+   show after the writeup, so text can't sit next to its photos. Images aren't zero-padded or
+   consistently named (`rf-1-10` sorts before `rf-1-2`; `2048 (2).webp`, `turret (12).webp`).
+4. **`_archives/` category pages are orphaned.** There are 5 pages at `/projects/<area>/`.
+   Nothing links to them. They use the same `/projects/` URLs as the project pages (so a
+   project slug like `research` would clash), and they miss 4 posts that use
+   `category`/`categories` instead of `area`. The Projects page's Archive list replaced them.
+5. **`_jobs/` (15 files) and `_records/` (10 files) aren't used at all.** No template reads
+   `site.jobs` or `site.records`, and neither collection builds pages. The only unique content
+   is the Edventures notes (copied above) and `_records/rotor-lidar-compression`, which says
+   "up to 50:1" while Industry says 100:1 (see Verify).
+6. **`_research/` (3 files) is only read by `/todo/`.** `/research/` is plain text in
+   `research.markdown`.
+7. **`_experience/` is a list stored as a collection.** `mit-mrl` and `intro-robotics` are
+   hidden (`show_industry: false`); Jinger wants them removed, and the Intro Robotics TA role
+   is already in Service. The other 4 fill a single list, which is what `_data/` is for.
+   The `headline`, `featured` and `confidential` fields are never displayed.
+8. **Smaller duplicates and dead config:**
+   - The CV link lives in four places: `cv_url`, the CV entry in `_data/links.yml`, the
+     homepage text, and a `/cv/` page that isn't in the nav.
+   - `social_links` in `_config.yml` isn't used; `_data/links.yml` is the live list.
+   - `_sass/colors.scss` Sass variables repeat the CSS variables in `_sass/_tokens.scss`.
+   - There are two project card includes: `card.html` (homepage) and `project-grid-card.html`
+     (Projects page).
+   - TODOs are tracked in three places: `TODO.md`, front-matter `todo:` lists shown on
+     `/todo/`, and a hard-coded "What I'd do differently" TODO in `_layouts/project.html`.
+     Some items appear in more than one of them (e.g. GE Vernova wording).
+   - `redirect_from: /experience/` in `industry.markdown` does nothing, because
+     `jekyll-redirect-from` isn't installed.
+   - `jekyll-feed` only covers `_posts`, so the feed will be empty once the posts are merged.
+   - Leftovers in `_config.yml`: boilerplate comments, `permalink: :title/`,
+     `show_excerpts`, `categories_order`, `images`, the `jobs`/`records`/`grids`/`archives`
+     collections, and `exclude` entries for files that no longer exist.
+   - Image paths are inconsistent: covers are at `assets/images/<slug>/cover.webp`, but
+     project TODOs ask for `assets/media/<slug>.webp`.
+   - `about`, `experience`, `projects` and `research` layouts are each used by exactly one
+     page, so each page is split between an empty root `.markdown` file and a layout.
 
-     | archive_order | slug | context | year shown |
-     |---|---|---|---|
-     | 1 | minibot | 16.632 Intro to Autonomous Machines | 2021 |
-     | 2 | rl-in-2048 | NCTU Computer Graphics and Intelligence Lab | 2020 |
-     | 3 | toy-for-toddlers | Early Childhood Cognition Lab | 2019–2020 |
-     | 4 | rubber-band-turret | Freshman engineering seminar | 2019 |
-     | 5 | soccer-robot | Discover Mechanical Engineering pre-orientation | 2019 |
-     | 6 | jansens-linkage | IB Extended Essay | 2018–2019 |
+### Rule for the new structure
 
-   - `jansens-linkage`: set `year: 2018–2019`, `term: 2018–2019`, blurb "IB Extended
-     Essay on the kinematics of Jansen's linkage." (confirm wording with Jinger),
-     remove its `todo:` entry, and add `sitemap: false`. Its `/projects/jansens-linkage/`
-     page still builds, but nothing links to it and it isn't indexed.
-4. **Remove projects**: `home-upgrades`, `iron-man`, `flashlight`, `segway-robot`.
-   Delete for each: `_projects/<slug>.markdown`, the matching `_posts/*-<slug>.markdown`,
-   `_grids/<slug>/`, and `assets/images/<slug>/`. First grep the repo (excluding
-   `_site`) for each slug and remove any remaining references; none were found on
-   2026-09-27. Everything stays recoverable from git history. Do **not** add redirects
-   for these four; Jinger wants their old URLs to 404.
-5. **Service updates** (`_data/service.yml`)
-   - SJCS Robocup is listed in Service and links to its restored root-level
-     writeup from `main`. Its existing `_grids/sjcs-robocup/` and
-     `assets/images/sjcs-robocup/` supply the gallery.
-   - Fix the writeup links: RF Controllers, ESP Splash, and ABES currently link to
-     `/projects/<slug>/`, which is the scaffold page with TODO placeholders. Point each
-     to its real post writeup instead: `/rf-controllers/`, `/esp-splash/`, `/abes-outreach/`
-     (the `writeup_url` values).
-6. **Edventures (Edgerton Center STEM Mentor): hold**. Do not add a card or a live page yet.
-   Jinger will provide articles/media links and the story. Then draft
-   `_projects/edventures.markdown` with `published: false` and review it with her.
-   Once approved, point the Edgerton Service entry's `writeup` at it. Whether it
-   becomes a grid card is decided after the draft (a card if the story centers on
-   her design work, such as the ROV workshop or controller redesign; Service-only
-   if it's mostly mentoring/logistics). Source material so far: `_jobs/edventures-stem.markdown`.
-7. **Verify**
-   - `bundle exec jekyll build` completes with no errors (see `AGENTS.md` for the
-     Ruby 3.3 commands).
-   - `/projects/`: 4 cards, each with a short description and no tags; no filter bar,
-     no count line, no console errors; Archive lists 6 rows in the order above; Jansen
-     row has no link; all other rows open a real writeup.
-   - Homepage shows Pool Robot, Racecar, Quadrotor, in that order.
-   - No project page, card, or historic writeup displays category badges.
-   - `/about/` Service: RF/Splash/ABES/SJCS Robocup links resolve to posts.
-   - Removed slugs appear nowhere in `_site/`.
-   - Check at phone width (~375px): Archive rows stack like Service.
-   - The `_archives/` category pages (`/projects/archive/`, etc.) still list the old
-     `_posts`. Don't redesign them in this task; note any now-empty or broken ones
-     under Blockers so they're handled with the redirect work.
+- **Has its own page** → one file in a collection, with the metadata and the full text in the
+  same file.
+- **Is a row in a list** → one entry in a `_data/*.yml` file.
+- **Is a nav page** → one root file that contains its own markup.
+- Each fact is typed once. Filenames set slugs, and folder conventions set image paths, so
+  those don't need front-matter fields.
 
-### Later (not in this task)
+### Target layout
 
-- Jinger plans to add stronger projects to the grid soon. A 4-card grid leaves one
-  orphan card in the 3-column layout, which is acceptable for now.
-- Edventures writeup (step 6).
+```
+index.html        Home: bio, Highlights (featured projects), publications, news
+research.md       Research (prose)
+industry.html     Industry     ← _data/industry.yml
+projects.html     Projects grid + Archive   ← _projects/
+about.html        About        ← _data/education.yml, skills.yml, service.yml
+404.html
+_projects/<slug>.md      one file per project: card fields + full writeup
+_data/            publications, industry, education, skills, service, links, news (.yml)
+_layouts/         project.html, plus with-banner.html if the home banner still needs it
+_includes/        project-card, gallery, pub-item, industry-item, service, education,
+                  head, header, footer, social, banner
+_sass/            _tokens.scss (only color source), fonts.scss, layout.scss
+assets/images/<slug>/cover.webp  and  assets/images/<slug>/<gallery>/01.webp, 02.webp, …
+downloads/        public PDFs
+examples/project.md   copy-me template (each _data file keeps its own example in a comment)
+```
 
-## Codebase cleanup + easy content updates (agent prompt, 2026-09-27)
+To be removed: `_posts/`, `_grids/`, `_archives/`, `_jobs/`, `_records/`, `_research/`,
+`_experience/`, `_layouts/{post,category,about,experience,projects,research,home}.html`,
+`_includes/{card,post-card,project-grid-card}.html`, `_sass/colors.scss`, `cv.markdown`,
+`todo.markdown`, `_layouts/todo.html` and `_includes/todo.html`. `CLEANUP.md`
+goes too, once this is done.
 
-Run this **after** the Projects page restructure above is finished and committed, so
-the two changes don't get mixed together. Start from a clean `git status`, or ask
-Jinger what to do with any uncommitted changes.
+### One project schema
 
-### Prompt
+```yaml
+---
+title: Granular-Jamming Vise
+tier: normal            # featured (home + grid) | normal (grid) | archive (Archive list) | unlisted (page only, e.g. linked from Service)
+order: 4                # position within its own list; lower comes first
+year: 2021              # text is fine: "2018–2019"
+context: 2.009 Product Engineering Processes   # course, lab, or program
+summary: A pneumatically actuated vise that uses granular jamming to grip irregular workpieces.
+stack: [SolidWorks, Arduino]    # optional
+award: Outstanding Project      # optional
+links: {video: …, code: …, paper: …}   # optional; missing keys show nothing, never "#"
+redirect_from: [/revise/]       # only if the project had an older URL
+---
+Writeup in Markdown. Galleries go wherever they belong in the text:
+{% include gallery.html dir="initial-cad" title="Initial CAD photos and animations" %}
+```
 
-> You are cleaning up the Jekyll source for jingerchong.com. Read `AGENTS.md`,
-> `README.md`, `_config.yml`, and this file first. There are two goals:
->
-> 1. **Keep only what the current website needs.** Remove leftover files, layouts,
->    includes, collections, data, styles, scripts, and assets that no live page uses.
-> 2. **Make adding new content simple.** Jinger should be able to add a project,
->    publication, experience entry, service entry, or news item by copying one
->    example file (or one YAML entry), filling in the fields, and building. She should
->    not need to edit templates for routine content.
->
-> **Phase 1: Inventory (no deletions).**
-> - Build the site (Ruby 3.3 commands in `AGENTS.md`) and record the list of generated
->   routes in `_site/` as the baseline.
-> - For every tracked source file outside `.git/` and `_site/`, decide whether it is
->   used, working from the live routes back to their sources: the page's front matter,
->   then its layout chain, then the includes it uses, then the `site.data` /
->   collection / asset references. Grep for each file's name, slug, and path. Also
->   check `_config.yml` (collections, defaults, `navbar_order`, `exclude`) and Sass
->   `@import`s.
-> - Sort every file into one of three groups:
->   - **KEEP**: a live page uses it, or it's required for the site to work (`CNAME`,
->     favicons/manifest, `robots.txt`, `404.html`, `Gemfile*`, public CV PDF,
->     `AGENTS.md`, `README.md`, `TODO.md`).
->   - **DELETE**: definitely not used (no references, not a live route, not listed as
->     pending work in this file). Say why for each one.
->   - **CONFIRM**: anything uncertain. Include anything that holds content Jinger
->     wrote (even if it isn't shown), anything this file mentions as future work, and
->     anything that affects a public URL.
-> - Write the inventory to `CLEANUP.md` as tables (path · group · reason · referenced
->   by). **Stop and ask Jinger to review the CONFIRM list before deleting anything
->   from it.**
->
-> Known things to look at (starting points, not decisions):
-> - `Gemfile.bak`, `Gemfile.lock.bak`: probably delete.
-> - `_jobs/`, `_records/`, `_research/`: marked legacy/draft in `AGENTS.md`. They may
->   hold text that isn't anywhere else (e.g. `_jobs/edventures-stem.markdown` is the
->   Edventures source material). CONFIRM, and say for each file whether its content
->   already exists in a live source.
-> - `_data/socials.yml` vs `_data/links.yml`, and `_schools`/`_skills` still declared
->   in `_config.yml` with no directories.
-> - Layouts/includes that may be unused: `record.html`, `resume.html`,
->   `research-item.html`, `experience-item.html`, `card.html`, `card-compact.html`,
->   `timeline-item.html`, `post-card.html`. Check each one; don't guess.
-> - `about.markdown`, `cv.markdown`, `todo.markdown`, `research.markdown`: check what
->   each one renders and whether it's in the nav.
-> - Unreferenced images/SVGs in `assets/` (e.g. `arrow-right-solid.svg`,
->   `calendar-alt-regular.svg`), and image folders with no matching post or project.
-> - `_posts/`, `_grids/`, `_archives/`: these back historic root URLs. Don't delete
->   them in this task. Put any cleanup ideas under CONFIRM, and link them to the
->   redirect item under Blockers.
-> - Sass rules that no template uses anymore.
->
-> **Phase 2: Delete (after Jinger replies).** Delete the DELETE group, plus any
-> CONFIRM items she approved. Make small commits grouped by area so each one is easy
-> to revert. Don't rewrite history; everything should stay recoverable from git.
->
-> **Phase 3: Simplify content authoring.**
-> - Use **one source per content type**. Where two files or data sources describe the
->   same thing, merge them into the live one and remove the other (with Jinger's
->   approval if it's in CONFIRM).
-> - Templates should read their data. Remove hard-coded filters by name (e.g. the
->   organization-name filter in `_layouts/experience.html`) and use a front-matter
->   flag or order field instead, so a new entry shows up without editing templates.
-> - For each content type, add a commented example file or YAML entry that doesn't
->   get published (e.g. `published: false` or a file excluded in `_config.yml`), with
->   every supported field, which fields are required or optional, and what each one
->   controls on the page.
-> - Use sensible defaults in `_config.yml` `defaults:` so new files need as little
->   front matter as possible.
-> - Media: one folder convention per content type (e.g.
->   `assets/images/<slug>/cover.webp`, `.../gallery/NN.webp`). Missing media should be
->   skipped cleanly, not shown as a broken image.
->
-> **Phase 4: Update `AGENTS.md`.** Rewrite the codebase map so it lists only what's
-> left after cleanup. Add a new section, **"How to add content"**, with a short recipe
-> for each content type: which file to copy, where to put it, required fields, where
-> the images go, how to control order and placement (featured/normal/archive,
-> homepage), how to preview locally, and what to check before pushing. Write it so
-> Jinger can follow it herself and an agent can follow it without reading the
-> templates. Also remove the notes about legacy/draft collections that no longer
-> exist. Keep `README.md` short, and add a link from it to the new section.
->
-> **Verify.**
-> - The build passes with no new warnings.
-> - Compare the new list of `_site/` routes to the Phase 1 baseline. Nothing should be
->   missing unless Jinger approved it, and list any differences.
-> - Smoke-check the routes in `AGENTS.md` → Change workflow at desktop and ~375px
->   widths: no console errors, no missing local assets.
-> - Test the "How to add content" recipes: add a throwaway project, publication, and
->   experience entry by following them exactly, check that they show up in the right
->   places, then delete them.
-> - `git diff --check`, then update this file: check off this section and move
->   anything left unresolved under Blockers or Verify.
+- The slug comes from the filename, and the cover is `assets/images/<slug>/cover.webp` if
+  that file exists. Remove `slug`, `writeup_url`, `blurb`, `term`, `archive_order`,
+  `has_writeup`, `in_service`, `cover` and `problem`/`approach`/`results`.
+- `pool-playing-robot` and `water-bottle-quadrotor` keep their text: their
+  problem/approach/results become `## Problem` / `## Approach` / `## Results` in the body.
+- An Archive row links to its page only if the page has body text. A project with no text
+  (Jansen's Linkage) shows as plain text, and its page keeps `sitemap: false`.
+- `project.html` shows: title, then context · year · award, the cover, the summary, the body,
+  stack chips and links. No hard-coded TODO headings.
+- `gallery.html` lists the images in `assets/images/<page slug>/<dir>/` in filename order.
 
-**Cleanup status (2026-09-27): complete.** Inventory and resolution are in
-`CLEANUP.md`. The build retains all 37 baseline HTML routes. Temporary project,
-publication, and experience additions were verified and removed. Unique legacy
-writing in `_jobs/`, `_records/`, and `_research/`, plus owner media, was kept
-for a future editorial review. Desktop and 375px smoke checks passed for the
-affected pages; checked routes had no browser console errors or missing local
-references. The existing Faraday retry notice remains.
+### Decisions
+
+1. **Project URLs (Jinger): `/projects/<slug>/` for every project.** Old `/<slug>/` post URLs
+   redirect with `jekyll-redirect-from`. The same plugin redirects the 5 category URLs to
+   `/projects/` and `/experience/` to `/industry/`.
+2. **TODO tracking (Jinger): `TODO.md` only.** Remove the front-matter `todo:` fields (move any
+   item that isn't already in this file), the inline badges (`_includes/todo.html`), the
+   `/todo/` page (`todo.markdown`, `_layouts/todo.html`), and the TODO fields in `examples/`
+   and the `_data` comments.
+3. **`/cv/` page (Jinger): delete it and redirect `/cv/` to the PDF.** `cv_url` is the only
+   place the path is stored; `_data/links.yml` and the homepage read it rather than repeating it.
+4. **MIT MRL bullets (Jinger): delete them with `_experience/mit-mrl`.** They stay in git
+   history. Don't move them anywhere else.
+5. **RSS feed (default): remove `jekyll-feed`** and the `feed_meta` tag in `_includes/head.html`.
+6. **Galleries (default):** when moving each gallery, rename its folder from `grid-N` to a
+   short descriptive name and zero-pad the images (`01.webp`, `02.webp`, …). Keep the order
+   the live page shows today.
+
+### Steps (commit after each; the build must pass after every step)
+
+0. **Baseline.** Build (Ruby 3.3 commands are in `AGENTS.md`). Save the list of `_site/`
+   routes and, for every writeup, its image count and gallery order. Take screenshots of each
+   nav page at desktop width and at ~375px.
+1. **Delete unused files (no URL changes).** Delete `_jobs/`, `_records/`, `_research/`
+   (move its 3 figure TODOs into `TODO.md` → Content), and `_experience/mit-mrl` and
+   `_experience/intro-robotics`. Remove the `_config.yml` leftovers and
+   `social_links`. Fold `colors.scss` into `_tokens.scss` without changing any rendered color.
+2. **Add redirects.** Add `jekyll-redirect-from` to the Gemfile and `plugins`. Check that
+   `/experience/` now redirects.
+3. **Merge posts into projects, one slug per commit.** Move the post body into the project
+   file. Replace its `_grids/` files with `gallery.html` includes and put the heading/text in
+   the body. Apply the new schema and add `redirect_from`. Then delete the post and its grids.
+   Create `_projects/sjcs-robocup.md` (`unlisted`). Point the `_data/service.yml` writeup
+   links to the new URLs. Afterwards, compare each page's image count and order with step 0.
+4. **Templates.** Write the new `project.html`, merge the two cards into `project-card.html`
+   (keep the homepage and Projects-page looks with a modifier class if they differ), and
+   rebuild the Projects page (grid = featured + normal; Archive = archive, by `order`) and
+   the homepage Highlights (featured, by `order`, limit 3).
+5. **Industry.** Move the 4 remaining roles to `_data/industry.yml` in display order (no
+   `order` or `show_industry` fields). Delete `_experience/` and its `_config.yml` entries.
+6. **Remove the old category pages.** Delete `_archives/`, `post.html`, `category.html` and
+   `post-card.html`, and redirect the 5 category URLs to `/projects/`. Apply decisions 3 and 5.
+7. **One file per nav page.** Move each single-use layout into its root page (`about.html`,
+   `industry.html`, `projects.html`, `index.html`). Apply decision 2.
+8. **Docs.** Rewrite the `AGENTS.md` codebase map to match the target layout. Rewrite
+   "How to add content" with a short recipe for each of: a project, a gallery inside a
+   project, a publication, an industry role, a Service entry, and a news item. Each recipe
+   says which file to edit or copy, the required fields, where images go, and how to control
+   placement and order. Update `examples/project.md` and the example comment at the top of
+   each `_data` file. Delete `CLEANUP.md`, and link the recipes from `README.md`.
+
+### Verify
+
+- Every route from step 0 either still renders or redirects to the right new page. Check this
+  with a script, and list any exceptions.
+- Every writeup has the same images, in the intended order.
+- `/projects/` shows the same 4 cards and 6 Archive rows. The homepage shows the same 3
+  Highlights. Every About → Service link opens a real writeup.
+- Nav pages match the step 0 screenshots, except for intended changes, at desktop width and
+  at 375px. No console errors.
+- Searching the repo (excluding `_site`) finds no `site.posts`, `site.grids`,
+  `site.experience`, `site.jobs`, `site.records`, `site.research`, `writeup_url`, `blurb`,
+  `in_service`, `has_writeup` or `archive_order`.
+- The build shows no new warnings. Run `git diff --check`.
+- Follow each "How to add content" recipe once with a throwaway entry, confirm it appears in
+  the right place, then delete it.
 
 ## Blockers
 
 - [ ] Add and verify CI: production build, HTML/link checking, blocker-TODO failure, and failure
       when a production-nav page references `assets/placeholder.svg`.
-- [ ] Add `jekyll-redirect-from` redirects for every legacy project/tag URL once the final
-      collection URLs are approved; the legacy root pages currently remain as compatibility pages.
+- [x] Redirect legacy project, category, and `/experience/` URLs to their new pages.
 
 ## Content
 
@@ -243,6 +227,15 @@ references. The existing Faraday retry notice remains.
 - [ ] Tighten the three featured-project card headlines.
 - [ ] Add sourced figures/media at the paths specified by the TODO badges for the research threads
       and featured projects.
+- [ ] Add a 4-second predicted-pose loop for human motion prediction, at
+      `assets/images/human-motion-prediction/cover.webp` (16:9 target).
+- [ ] Add a sourced figure for perception-aware safety metrics, at
+      `assets/images/perception-safety/cover.webp` (16:9 target).
+- [ ] Add a verified video URL for the Alfredo project before showing a video link.
+- [ ] Add a project figure or 4-second simulation loop for the pool-playing robot at
+      `assets/images/pool-playing-robot/cover.webp` (16:9 target).
+- [ ] Add a 4-second flip loop or diagram for the water-bottle quadrotor at
+      `assets/images/water-bottle-quadrotor/cover.webp` (16:9 target).
 - [ ] Add the ICRA 2024 PDF path, DOI, and code link.
 - [ ] Add talks and service entries if applicable.
 - [ ] Restore the full Jansen’s Linkage writeup/media if that page should be public.
@@ -254,7 +247,7 @@ references. The existing Faraday retry notice remains.
 
 - [ ] Confirm ICRA 2027 anonymity and preprint policy before publishing a manuscript or preprint.
 - [ ] Confirm GE Vernova’s public wording, metrics, and invention-disclosure language.
-- [ ] Confirm the 100:1 Rotor LiDAR compression ratio and final public wording.
+- [ ] Confirm the 100:1 Rotor LiDAR compression ratio and final public wording (an old `_records` note said "up to 50:1").
 - [ ] Verify all external publication, patent, organization, and social URLs before launch.
 - [ ] Run a browser-level accessibility and responsive review; confirm reduced-motion behavior for
       any future autoplay media.

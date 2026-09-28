@@ -3,7 +3,7 @@
 #   organization: Example group      # Required
 #   date: Jan 2026 – May 2026        # Required, displayed text
 #   datetime: 2026-01                # Required for sorting, YYYY-MM
-#   writeup: /example-writeup/       # Optional; makes the full label a link
+#   writeup: /projects/example/      # Optional; use only a real page or verified URL
 # Combine non-contiguous dates when they describe the same role and organization.
 - role: Teaching Assistant
   organization: Introduction to Robotics (2.120)

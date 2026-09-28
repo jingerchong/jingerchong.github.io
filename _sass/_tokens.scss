@@ -7,7 +7,6 @@
   --color-theme: #08415C;
 }
 
-$light-color: var(--color-light); // Sass alias used by the historical post grid.
 
 ::-moz-selection {
     color: var(--color-text);
@@ -105,10 +104,6 @@ h2:after {
 .banner-text-3 {
     color: var(--color-light);
     background-color: var(--color-theme);
-}
-
-.post-image {
-    background-color: var(--color-text);
 }
 
 .post-meta {

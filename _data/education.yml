@@ -1,3 +1,11 @@
+# About → Education. Keep one institution and add degree rows under entries.
+# institution: Full institution name       # Required
+# location: City, State                    # Required
+# entries:                                 # Required, displayed in file order
+#   - degree: Degree name                  # Required
+#     date: Sep 2026 – May 2028            # Required, visible date
+#     datetime: 2026-09                    # Required, machine-readable date
+#     details: [Verified public detail]    # Optional; each detail gets its own line
 institution: Massachusetts Institute of Technology
 location: Cambridge, MA
 entries:

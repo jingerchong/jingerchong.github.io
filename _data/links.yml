@@ -1,3 +1,6 @@
+# Footer links appear in file order. Use a verified public URL.
+# - {label: Example, url: https://example.com, icon: file}
+# The CV row has no URL here; it uses cv_url from _config.yml.
 - label: Google Scholar
   url: "https://scholar.google.com/citations?user=7LDpc4UAAAAJ&hl=en"
   icon: scholar

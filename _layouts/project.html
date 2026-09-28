@@ -7,16 +7,9 @@ layout: default
   {% assign cover_path = '/assets/images/' | append: page.slug | append: '/cover.webp' %}
   {% assign cover_file = site.static_files | where: 'path', cover_path | first %}
   {% if cover_file %}<img class="post-cover" src="{{ cover_path | relative_url }}" alt="{{ page.title | escape }} cover">{% endif %}
-  {% assign summary = page.summary | default: page.blurb %}
-  {% if summary %}<p class="tldr">{{ summary }}</p>{% endif %}
+  {% if page.summary %}<p class="tldr">{{ page.summary }}</p>{% endif %}
   {% assign body_text = content | strip %}
-  {% if body_text != empty %}
-    <div class="project-writeup">{{ content }}</div>
-  {% else %}
-    {% if page.problem %}<h2>Problem</h2>{{ page.problem | markdownify }}{% endif %}
-    {% if page.approach %}<h2>Approach</h2>{{ page.approach | markdownify }}{% endif %}
-    {% if page.results %}<h2>Results</h2>{{ page.results | markdownify }}{% endif %}
-  {% endif %}
+  {% if body_text != empty %}<div class="project-writeup">{{ content }}</div>{% endif %}
   {% if page.stack and page.stack.size > 0 %}<h2>Stack</h2><p class="chips">{% for item in page.stack %}<span class="chip">{{ item }}</span>{% endfor %}</p>{% endif %}
   {% if page.links %}<p class="project-links">{% for link in page.links %}{% if link[1] and link[1] != '#' %}<a href="{{ link[1] | relative_url }}">{{ link[0] | capitalize }}</a>{% unless forloop.last %} · {% endunless %}{% endif %}{% endfor %}</p>{% endif %}
 </article>
