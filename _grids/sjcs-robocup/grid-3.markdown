@@ -1,3 +1,0 @@
----
-section: Map challenge
----
