@@ -1,13 +1,18 @@
 ---
 title: Temporal-Difference Learning for 2048
-slug: rl-in-2048
-writeup_url: /rl-in-2048/
 tier: archive
-archive_order: 2
-context: NCTU Computer Graphics and Intelligence Lab
-term: 2020
+order: 2
 year: 2020
-order: 260
-cover: /assets/images/rl-in-2048/cover.webp
-blurb: A temporal-difference learning agent developed during an NCTU CGI Lab internship.
+context: NCTU Computer Graphics and Intelligence Lab
+summary: A temporal-difference learning agent developed during an NCTU CGI Lab internship.
+redirect_from:
+- /rl-in-2048/
 ---
+
+During a research internship at National Chiao Tung University's Computer Graphics and Intelligence Lab, I trained a temporal-difference learning agent to play 2048. The agent learns a value function over board states and selects moves greedily with respect to that estimate, reaching a 93% win rate.
+
+Full C++ implementation on [Github](https://github.com/jingerchong/).
+
+### Some results
+
+{% include gallery.html dir="some-results" title="Some results" %}

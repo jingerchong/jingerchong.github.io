@@ -1,3 +1,0 @@
----
-section: Some results
----
