@@ -1,13 +1,22 @@
 ---
 title: Soccer Robot
-slug: soccer-robot
-writeup_url: /soccer-robot/
 tier: archive
-archive_order: 5
-context: Discover Mechanical Engineering pre-orientation
-term: 2019
+order: 5
 year: 2019
-order: 360
-cover: /assets/images/soccer-robot/cover.webp
-blurb: An early non-Lego robot build during MIT pre-orientation.
+context: Discover Mechanical Engineering pre-orientation
+summary: An early non-Lego robot build during MIT pre-orientation.
+redirect_from:
+- /soccer-robot/
 ---
+
+Through MIT's Discover Mechanical Engineering First-Year Pre-Orientation Program, I built my first non-Lego robot.
+
+In high school, my robotics program was limited to Lego Mindstorms. This event introduced me to several new tools and machines, including a band saw, a drill press, a sheet metal bender, a caliper, and a hand tap.
+
+We were each instructed to build a base soccer robot, then given room to add other features. I added wheel guards and side scoops to guide the ball toward the robot's paddle. On the last day, we ran a tournament in teams of four, and my team placed 2nd.
+
+### Building the robot
+
+Worked in the famous MIT Pappalardo Lab, used sheet metal to build a chassis, added wheel guards and guides for the ball. Had a tournament on the last day!
+
+{% include gallery.html dir="building-the-robot" title="Building the robot" %}
