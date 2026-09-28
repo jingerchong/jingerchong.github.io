@@ -1,0 +1,19 @@
+---
+layout: with-banner
+title: Home
+---
+<div class="home">
+  <img class="headshot" src="{{ site.headshot | relative_url }}" alt="{{ site.title }}">
+  <p>I'm a Ph.D. candidate in Mechanical Engineering at MIT, building probabilistic models that help robots reason about uncertainty in what people will do next, so they can collaborate safely.</p>
+  <p>Outside the lab, I'm a serial hobbyist. I shoot astro, bird, portrait, and event photography, which is probably how my obsession with perception systems started long before grad school. I run, lift, climb, and am training for my first triathlon. I also play guitar and drums and sing (not simultaneously, though I'm working on it).</p>
+  <p><strong>Now:</strong> Seeking Summer 2027 robotics research internship in perception, human motion prediction, or uncertainty-aware autonomy/HRI. <a class="cv-link-inline" href="{{ site.cv_url | relative_url }}" target="_blank" rel="noopener noreferrer">[CV]</a></p>
+  <h2>Highlights</h2>
+  <div class="card-grid">{% assign featured = site.projects | where: 'tier', 'featured' | sort: 'order' %}{% for item in featured limit:3 %}{% include project-card.html item=item variant='highlight' %}{% endfor %}</div>
+  <h2>Publications & Patents</h2>
+  <ul class="publication-list">{% for pub in site.data.publications %}{% include pub-item.html pub=pub %}{% endfor %}</ul>
+  {% if site.data.news and site.data.news.size > 0 %}
+  <h2>News</h2>
+  {% assign news_items = site.data.news | sort: 'date' | reverse %}
+  <ul class="news-list">{% for item in news_items %}<li><time datetime="{{ item.date }}">{{ item.date | date: '%b %Y' }}</time> · {% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}</li>{% endfor %}</ul>
+  {% endif %}
+</div>

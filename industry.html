@@ -1,11 +1,13 @@
 ---
 layout: default
+title: Industry
+permalink: /industry/
+redirect_from: /experience/
 ---
 <div class="experience-page">
   <h2>EXPERIENCE</h2>
   <div class="industry-list">
-    {% assign items = site.data.industry %}
-    {% for item in items %}
+    {% for item in site.data.industry %}
       {% include industry-item.html item=item position=item %}
     {% endfor %}
   </div>

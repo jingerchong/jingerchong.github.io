@@ -1,1 +1,0 @@
-{% if include.media %}{% assign media_file = site.static_files | where: 'path', include.media | first %}{% endif %}{% if media_file %}<figure class="media"><img loading="lazy" src="{{ include.media | relative_url }}" alt="{{ include.alt | escape }}"></figure>{% elsif include.todo %}{% include todo.html level="content" text=include.todo %}{% endif %}

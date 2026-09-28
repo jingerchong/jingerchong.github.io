@@ -1,5 +1,0 @@
----
-layout: default
----
-<meta name="robots" content="noindex">
-<div class="todo-dashboard"><h1>Launch checklist</h1><p>Development-only TODOs are listed here. Production hides inline TODO badges.</p>{% assign levels = "blocker|content|verify|optional" | split: "|" %}{% for level in levels %}<h2>{{ level | capitalize }}</h2><ul>{% for item in site.research %}{% for todo in item.todo %}{% if todo.level == level %}<li>{{ item.title }} — {{ todo.text }}</li>{% endif %}{% endfor %}{% endfor %}{% for item in site.experience %}{% for todo in item.todo %}{% if todo.level == level %}<li>{{ item.org }} — {{ todo.text }}</li>{% endif %}{% endfor %}{% endfor %}{% for item in site.projects %}{% for todo in item.todo %}{% if todo.level == level %}<li>{{ item.title }} — {{ todo.text }}</li>{% endif %}{% endfor %}{% endfor %}{% for pub in site.data.publications %}{% for todo in pub.todo %}{% if todo.level == level %}<li>{{ pub.title }} — {{ todo.text }}</li>{% endif %}{% endfor %}{% endfor %}{% for item in site.pages %}{% for todo in item.todo %}{% if todo.level == level %}<li>{{ item.title }} — {{ todo.text }}</li>{% endif %}{% endfor %}{% endfor %}</ul>{% endfor %}</div>

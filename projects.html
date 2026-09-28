@@ -1,0 +1,30 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<div class="projects-page">
+  <h2>PROJECTS</h2>
+  {% assign featured_projects = site.projects | where: 'tier', 'featured' %}
+  {% assign normal_projects = site.projects | where: 'tier', 'normal' %}
+  {% assign projects = featured_projects | concat: normal_projects | sort: 'order' %}
+  <div class="project-grid">
+    {% for item in projects %}{% include project-card.html item=item %}{% endfor %}
+  </div>
+  <h2>ARCHIVE</h2>
+  {% assign earlier_work = site.projects | where: 'tier', 'archive' | sort: 'order' %}
+  <div class="service-list">
+    {% for item in earlier_work %}
+      <article class="service-entry">
+        <div class="service-title-row">
+          <h3>
+            {% capture archive_label %}<span class="service-role">{{ item.title }}, </span><span class="service-organization">{{ item.context }}</span>{% endcapture %}
+            {% assign archive_body = item.content | strip %}
+            {% if archive_body == empty %}{{ archive_label }}{% else %}<a href="{{ item.url | relative_url }}">{{ archive_label }}</a>{% endif %}
+          </h3>
+          <time datetime="{{ item.year | append: '' | slice: 0, 4 }}">{{ item.year }}</time>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</div>

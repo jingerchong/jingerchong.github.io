@@ -41,10 +41,10 @@ sass:
     sass_dir: _sass
 
 navbar_order:
-  - research.markdown
-  - industry.markdown
-  - projects.markdown
-  - about.markdown
+  - research.md
+  - industry.html
+  - projects.html
+  - about.html
 
 collections:
   projects:
