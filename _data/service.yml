@@ -35,22 +35,22 @@
   organization: Introduction to Autonomous Machines (16.632)
   date: Jan 2020 – Mar 2020
   datetime: 2020-01
-  writeup: /rf-controllers/
+  writeup: /projects/rf-controllers/
 
 - role: Teacher
   organization: ESP Splash
   date: Nov 2019
   datetime: 2019-11
-  writeup: /esp-splash/
+  writeup: /projects/esp-splash/
 
 - role: Organizer
   organization: Andres Bonifacio Elementary School Robotics Outreach
   date: Jan 2019
   datetime: 2019-01
-  writeup: /abes-outreach/
+  writeup: /projects/abes-outreach/
 
 - role: Organizer
   organization: SJCS Robocup
   date: Apr 2018
   datetime: 2018-04
-  writeup: /sjcs-robocup/
+  writeup: /projects/sjcs-robocup/
