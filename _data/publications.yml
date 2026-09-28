@@ -1,3 +1,12 @@
+# Add one entry per publication or patent. Display order follows file order.
+# - title: Example title              # Required
+#   authors: J. Chong, A. Collaborator # Required; J. Chong is emphasized automatically
+#   venue: Example venue              # Required
+#   year: 2026                        # Required
+#   status: Published                 # Optional, displayed after the year
+#   links: {url: https://example.com} # Optional; use a verified public URL
+#   todo:                             # Optional, shown on /todo/
+#     - {level: verify, text: Confirm citation., owner: jinger}
 - title: Structured Multitask Gaussian Processes for Probabilistic Full-Body Human Motion Prediction
   authors: J. Chong, X. Zhang, K. Youcef-Toumi
   venue: ICRA

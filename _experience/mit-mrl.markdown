@@ -1,5 +1,6 @@
 ---
 org: MIT Mechatronics Research Lab
+show_industry: false
 role: Research Assistant
 start: Sep 2022
 end: Present

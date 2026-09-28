@@ -3,6 +3,7 @@
 Source for Jinger Chong's portfolio, built with Jekyll and GitHub Pages.
 
 Agent guidance and the current codebase map are in [AGENTS.md](AGENTS.md).
+For routine updates, see [How to add content](AGENTS.md#how-to-add-content).
 
 ## Run locally on Windows
 

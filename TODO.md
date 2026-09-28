@@ -119,6 +119,116 @@ About → Service). A Service entry may link to a writeup page; that is not a re
   orphan card in the 3-column layout, which is acceptable for now.
 - Edventures writeup (step 6).
 
+## Codebase cleanup + easy content updates (agent prompt, 2026-09-27)
+
+Run this **after** the Projects page restructure above is finished and committed, so
+the two changes don't get mixed together. Start from a clean `git status`, or ask
+Jinger what to do with any uncommitted changes.
+
+### Prompt
+
+> You are cleaning up the Jekyll source for jingerchong.com. Read `AGENTS.md`,
+> `README.md`, `_config.yml`, and this file first. There are two goals:
+>
+> 1. **Keep only what the current website needs.** Remove leftover files, layouts,
+>    includes, collections, data, styles, scripts, and assets that no live page uses.
+> 2. **Make adding new content simple.** Jinger should be able to add a project,
+>    publication, experience entry, service entry, or news item by copying one
+>    example file (or one YAML entry), filling in the fields, and building. She should
+>    not need to edit templates for routine content.
+>
+> **Phase 1: Inventory (no deletions).**
+> - Build the site (Ruby 3.3 commands in `AGENTS.md`) and record the list of generated
+>   routes in `_site/` as the baseline.
+> - For every tracked source file outside `.git/` and `_site/`, decide whether it is
+>   used, working from the live routes back to their sources: the page's front matter,
+>   then its layout chain, then the includes it uses, then the `site.data` /
+>   collection / asset references. Grep for each file's name, slug, and path. Also
+>   check `_config.yml` (collections, defaults, `navbar_order`, `exclude`) and Sass
+>   `@import`s.
+> - Sort every file into one of three groups:
+>   - **KEEP**: a live page uses it, or it's required for the site to work (`CNAME`,
+>     favicons/manifest, `robots.txt`, `404.html`, `Gemfile*`, public CV PDF,
+>     `AGENTS.md`, `README.md`, `TODO.md`).
+>   - **DELETE**: definitely not used (no references, not a live route, not listed as
+>     pending work in this file). Say why for each one.
+>   - **CONFIRM**: anything uncertain. Include anything that holds content Jinger
+>     wrote (even if it isn't shown), anything this file mentions as future work, and
+>     anything that affects a public URL.
+> - Write the inventory to `CLEANUP.md` as tables (path · group · reason · referenced
+>   by). **Stop and ask Jinger to review the CONFIRM list before deleting anything
+>   from it.**
+>
+> Known things to look at (starting points, not decisions):
+> - `Gemfile.bak`, `Gemfile.lock.bak`: probably delete.
+> - `_jobs/`, `_records/`, `_research/`: marked legacy/draft in `AGENTS.md`. They may
+>   hold text that isn't anywhere else (e.g. `_jobs/edventures-stem.markdown` is the
+>   Edventures source material). CONFIRM, and say for each file whether its content
+>   already exists in a live source.
+> - `_data/socials.yml` vs `_data/links.yml`, and `_schools`/`_skills` still declared
+>   in `_config.yml` with no directories.
+> - Layouts/includes that may be unused: `record.html`, `resume.html`,
+>   `research-item.html`, `experience-item.html`, `card.html`, `card-compact.html`,
+>   `timeline-item.html`, `post-card.html`. Check each one; don't guess.
+> - `about.markdown`, `cv.markdown`, `todo.markdown`, `research.markdown`: check what
+>   each one renders and whether it's in the nav.
+> - Unreferenced images/SVGs in `assets/` (e.g. `arrow-right-solid.svg`,
+>   `calendar-alt-regular.svg`), and image folders with no matching post or project.
+> - `_posts/`, `_grids/`, `_archives/`: these back historic root URLs. Don't delete
+>   them in this task. Put any cleanup ideas under CONFIRM, and link them to the
+>   redirect item under Blockers.
+> - Sass rules that no template uses anymore.
+>
+> **Phase 2: Delete (after Jinger replies).** Delete the DELETE group, plus any
+> CONFIRM items she approved. Make small commits grouped by area so each one is easy
+> to revert. Don't rewrite history; everything should stay recoverable from git.
+>
+> **Phase 3: Simplify content authoring.**
+> - Use **one source per content type**. Where two files or data sources describe the
+>   same thing, merge them into the live one and remove the other (with Jinger's
+>   approval if it's in CONFIRM).
+> - Templates should read their data. Remove hard-coded filters by name (e.g. the
+>   organization-name filter in `_layouts/experience.html`) and use a front-matter
+>   flag or order field instead, so a new entry shows up without editing templates.
+> - For each content type, add a commented example file or YAML entry that doesn't
+>   get published (e.g. `published: false` or a file excluded in `_config.yml`), with
+>   every supported field, which fields are required or optional, and what each one
+>   controls on the page.
+> - Use sensible defaults in `_config.yml` `defaults:` so new files need as little
+>   front matter as possible.
+> - Media: one folder convention per content type (e.g.
+>   `assets/images/<slug>/cover.webp`, `.../gallery/NN.webp`). Missing media should be
+>   skipped cleanly, not shown as a broken image.
+>
+> **Phase 4: Update `AGENTS.md`.** Rewrite the codebase map so it lists only what's
+> left after cleanup. Add a new section, **"How to add content"**, with a short recipe
+> for each content type: which file to copy, where to put it, required fields, where
+> the images go, how to control order and placement (featured/normal/archive,
+> homepage), how to preview locally, and what to check before pushing. Write it so
+> Jinger can follow it herself and an agent can follow it without reading the
+> templates. Also remove the notes about legacy/draft collections that no longer
+> exist. Keep `README.md` short, and add a link from it to the new section.
+>
+> **Verify.**
+> - The build passes with no new warnings.
+> - Compare the new list of `_site/` routes to the Phase 1 baseline. Nothing should be
+>   missing unless Jinger approved it, and list any differences.
+> - Smoke-check the routes in `AGENTS.md` → Change workflow at desktop and ~375px
+>   widths: no console errors, no missing local assets.
+> - Test the "How to add content" recipes: add a throwaway project, publication, and
+>   experience entry by following them exactly, check that they show up in the right
+>   places, then delete them.
+> - `git diff --check`, then update this file: check off this section and move
+>   anything left unresolved under Blockers or Verify.
+
+**Cleanup status (2026-09-27): complete.** Inventory and resolution are in
+`CLEANUP.md`. The build retains all 37 baseline HTML routes. Temporary project,
+publication, and experience additions were verified and removed. Unique legacy
+writing in `_jobs/`, `_records/`, and `_research/`, plus owner media, was kept
+for a future editorial review. Desktop and 375px smoke checks passed for the
+affected pages; checked routes had no browser console errors or missing local
+references. The existing Faraday retry notice remains.
+
 ## Blockers
 
 - [ ] Add and verify CI: production build, HTML/link checking, blocker-TODO failure, and failure

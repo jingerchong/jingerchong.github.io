@@ -1,8 +1,9 @@
 <article class="project-card">
   <a class="project-card-link" href="{{ include.item.writeup_url | default: include.item.url | relative_url }}" aria-label="View {{ include.item.title | escape }}">
-    <div class="project-card-image">
-      {% if include.item.cover %}<img loading="lazy" src="{{ include.item.cover | relative_url }}" alt="{{ include.item.title | escape }} thumbnail">{% else %}<img loading="lazy" src="{{ '/assets/placeholder.svg' | relative_url }}" alt="{{ include.item.title | escape }} thumbnail placeholder">{% endif %}
-    </div>
+    {% if include.item.cover %}{% assign cover_file = site.static_files | where: 'path', include.item.cover | first %}
+    {% if cover_file %}<div class="project-card-image">
+      <img loading="lazy" src="{{ include.item.cover | relative_url }}" alt="{{ include.item.title | escape }} thumbnail">
+    </div>{% endif %}{% endif %}
     <div class="project-card-body">
       <h3 class="project-card-title">{{ include.item.title }}</h3>
       <p class="project-card-summary">{{ include.item.summary | default: include.item.blurb }}</p>

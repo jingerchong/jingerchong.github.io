@@ -1,5 +1,7 @@
 ---
 org: Rotor Technologies
+show_industry: true
+order: 3
 role: Graduate Engineering Intern
 start: Jun 2023
 end: Sep 2023

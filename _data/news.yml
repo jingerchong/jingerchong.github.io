@@ -1,0 +1,5 @@
+# Homepage news. Add entries like the example below; newest date appears first.
+# - date: 2026-09-27       # Required, YYYY-MM-DD
+#   text: Example headline  # Required, short plain text
+#   url: /projects/example/ # Optional; omit for a plain-text item
+[]

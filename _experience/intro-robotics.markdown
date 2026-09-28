@@ -1,5 +1,6 @@
 ---
 org: MIT Introduction to Robotics
+show_industry: false
 role: Teaching Assistant
 start: Jan 2024
 end: May 2024

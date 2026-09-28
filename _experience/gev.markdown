@@ -1,5 +1,7 @@
 ---
 org: GE Vernova Advanced Research Center
+show_industry: true
+order: 1
 role: Computer Vision Research Intern
 start: Jun 2026
 end: Aug 2026

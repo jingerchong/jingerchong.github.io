@@ -1,5 +1,7 @@
 ---
 org: Microsoft
+show_industry: true
+order: 2
 role: Mechanical Engineering Intern
 start: Jun 2024
 end: Aug 2024

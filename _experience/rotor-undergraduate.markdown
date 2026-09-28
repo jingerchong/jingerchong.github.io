@@ -1,5 +1,7 @@
 ---
 org: Rotor Technologies
+show_industry: true
+order: 4
 role: Undergraduate Engineering Intern
 start: Jun 2022
 end: Aug 2022

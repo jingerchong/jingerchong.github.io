@@ -19,7 +19,7 @@ Quick links and photos below.
 - [mockup prototype CAD](https://a360.co/32ydJIS)
 - [final prototype fabrication CAD](https://a360.co/3I9A3rY)
 - [final prototype rendering CAD](https://a360.co/3qD6mrA)
-- [product brochure]({{ site.url | relative_url }}/downloads/revise-product-sheet.pdf/)
+- [product brochure]({{ '/downloads/revise-product-sheet.pdf' | relative_url }})
 - [course website](https://web.mit.edu/2.009/www/index.html)
 - [team page](https://web.mit.edu/2.009/www/teams/home.html?t=Pink)
 - [final presentation webcast](https://player.vimeo.com/video/653895567), also available below:

@@ -8,4 +8,9 @@ layout: with-banner
   <div class="card-grid">{% assign featured = site.projects | where: 'tier', 'featured' | sort: 'order' %}{% for item in featured limit:3 %}{% include card.html item=item %}{% endfor %}</div>
   <h2>Publications & Patents</h2>
   <ul class="publication-list">{% for pub in site.data.publications %}{% include pub-item.html pub=pub %}{% endfor %}</ul>
+  {% if site.data.news and site.data.news.size > 0 %}
+  <h2>News</h2>
+  {% assign news_items = site.data.news | sort: 'date' | reverse %}
+  <ul class="news-list">{% for item in news_items %}<li><time datetime="{{ item.date }}">{{ item.date | date: '%b %Y' }}</time> · {% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}</li>{% endfor %}</ul>
+  {% endif %}
 </div>
