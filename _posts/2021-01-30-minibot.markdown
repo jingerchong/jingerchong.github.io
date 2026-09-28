@@ -1,8 +1,0 @@
----
-title:  Minibot
-date:   2021-01-30 09:00:00 -0500
-categories: [Build,Code,Class]
-featured: true
----
-
-For seminar class *16.632 Intro to Autonomous Machines*, we programmed a small robot car to learn about sensors and Arduino.
