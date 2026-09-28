@@ -1,12 +1,11 @@
-<article class="project-card" data-project-card data-tags="{{ include.item.tags | join: '|' | escape }}">
+<article class="project-card">
   <a class="project-card-link" href="{{ include.item.writeup_url | default: include.item.url | relative_url }}" aria-label="View {{ include.item.title | escape }}">
     <div class="project-card-image">
       {% if include.item.cover %}<img loading="lazy" src="{{ include.item.cover | relative_url }}" alt="{{ include.item.title | escape }} thumbnail">{% else %}<img loading="lazy" src="{{ '/assets/placeholder.svg' | relative_url }}" alt="{{ include.item.title | escape }} thumbnail placeholder">{% endif %}
     </div>
     <div class="project-card-body">
       <h3 class="project-card-title">{{ include.item.title }}</h3>
-      {% if include.item.summary %}<p class="project-card-summary">{{ include.item.summary }}</p>{% endif %}
-      <p class="project-card-tags">{{ include.item.tags | join: ' · ' }}</p>
+      <p class="project-card-summary">{{ include.item.summary | default: include.item.blurb }}</p>
     </div>
   </a>
 </article>

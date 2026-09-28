@@ -5,7 +5,7 @@ layout: with-banner
   <img class="headshot" src="{{ site.headshot }}" alt="{{ site.title }}">
   {{ content }}
   <h2>Highlights</h2>
-  <div class="card-grid">{% assign selected = site.projects | where: 'tier', 'selected' | sort: 'title' %}{% for item in selected limit:3 %}{% include card.html item=item %}{% endfor %}</div>
+  <div class="card-grid">{% assign featured = site.projects | where: 'tier', 'featured' | sort: 'order' %}{% for item in featured limit:3 %}{% include card.html item=item %}{% endfor %}</div>
   <h2>Publications & Patents</h2>
   <ul class="publication-list">{% for pub in site.data.publications %}{% include pub-item.html pub=pub %}{% endfor %}</ul>
 </div>

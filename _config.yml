@@ -80,8 +80,6 @@ collections:
 
 exclude:
   - AGENTS.md
-  - CLAUDE.md
-  - CODEX.md
   - CONFLICTS.md
   - TODO.md
   - Gemfile.bak

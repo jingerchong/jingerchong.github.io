@@ -14,8 +14,5 @@
     {%- if site.show_excerpts -%}
       <p>{{ post.summary | default: post.excerpt | strip_html | truncatewords: 24 }}</p>
     {%- endif -%}
-    {%- if post.area -%}
-      <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ post.area | slugify }}/">{{ post.area }}</a>
-    {%- endif -%}
   </div>
 </li>

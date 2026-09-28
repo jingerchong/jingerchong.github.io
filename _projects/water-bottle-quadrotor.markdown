@@ -1,11 +1,10 @@
 ---
 title: Water Bottle Flipping Quadrotor
 slug: water-bottle-quadrotor
-tier: selected
+tier: featured
 term: Feb 2023 – May 2023
 year: 2023
 order: 3
-tags: [Autonomy & Control]
 stack: [Drake, Python]
 blurb: Hybrid trajectory optimization for robust bottle flipping across four fill levels.
 summary: Hybrid trajectory optimization for robust bottle flipping across four fill levels.

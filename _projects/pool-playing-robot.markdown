@@ -1,12 +1,11 @@
 ---
 title: Autonomous Pool-Playing Robot
 slug: pool-playing-robot
-tier: selected
+tier: featured
 award: Outstanding Project
 term: Sep 2023 – Dec 2023
 year: 2023
 order: 1
-tags: [Autonomy & Control, Learning & Simulation]
 stack: [Drake, Python]
 blurb: A physics-based single-shot simulation with heuristic planning, IK, and inverse-dynamics control.
 summary: A physics-based single-shot simulation with heuristic planning, IK, and inverse-dynamics control.

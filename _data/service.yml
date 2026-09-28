@@ -20,26 +20,32 @@
   date: Aug 2021 – Dec 2021
   datetime: 2021-08
 
+- role: Mentor
+  organization: Edgerton Center K-12 Maker Education
+  date: Jan 2020 · Jan 2021
+  datetime: 2021-01
+  writeup: https://edgerton.mit.edu/
+
 - role: Undergraduate Assistant
   organization: Introduction to Autonomous Machines (16.632)
   date: Jan 2020 – Mar 2020
   datetime: 2020-01
-  writeup: /projects/rf-controllers/
-
-- role: Mentor
-  organization: MIT Edgerton Center K-12 Maker Education
-  date: Jan 2020 · Jan 2021
-  datetime: 2020-01
-  writeup: https://edgerton.mit.edu/
+  writeup: /rf-controllers/
 
 - role: Teacher
-  organization: MIT ESP Splash
+  organization: ESP Splash
   date: Nov 2019
   datetime: 2019-11
-  writeup: /projects/esp-splash/
+  writeup: /esp-splash/
 
 - role: Organizer
   organization: Andres Bonifacio Elementary School Robotics Outreach
   date: Jan 2019
   datetime: 2019-01
-  writeup: /projects/abes-outreach/
+  writeup: /abes-outreach/
+
+- role: Organizer
+  organization: SJCS Robocup
+  date: Apr 2018
+  datetime: 2018-04
+  writeup: /sjcs-robocup/

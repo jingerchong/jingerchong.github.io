@@ -2,22 +2,32 @@
 layout: default
 ---
 
-<div class="projects-page project-browser" data-project-browser>
+<div class="projects-page">
   <h2>PROJECTS</h2>
 
-  {% assign projects = site.projects | sort: 'order' %}
-  {% assign project_tags = '' | split: '' %}
-  {% for item in projects %}{% assign project_tags = project_tags | concat: item.tags %}{% endfor %}
-  {% assign project_tags = project_tags | uniq | sort %}
-
-  <div class="project-filters" role="toolbar" aria-label="Filter projects by tag">
-    <button class="project-filter" type="button" data-filter="all" aria-pressed="true">All</button>
-    {% for tag in project_tags %}<button class="project-filter" type="button" data-filter="{{ tag | slugify }}" aria-pressed="false">{{ tag }}</button>{% endfor %}
-  </div>
-  <p class="project-filter-status" data-project-filter-status aria-live="polite">Showing {{ projects.size }} projects.</p>
-
-  <div class="project-grid" data-project-grid>
+  {% assign featured_projects = site.projects | where: 'tier', 'featured' %}
+  {% assign normal_projects = site.projects | where: 'tier', 'normal' %}
+  {% assign projects = featured_projects | concat: normal_projects | sort: 'order' %}
+  <div class="project-grid">
     {% for item in projects %}{% include project-grid-card.html item=item %}{% endfor %}
   </div>
+
+  <h2>ARCHIVE</h2>
+  {% assign earlier_work = site.projects | where: 'tier', 'archive' | sort: 'archive_order' %}
+  <div class="service-list">
+    {% for item in earlier_work %}
+      {% unless item.in_service %}
+        <article class="service-entry">
+          <div class="service-title-row">
+            <h3>
+              {% assign writeup = item.writeup_url | default: item.url %}
+              {% capture archive_label %}<span class="service-role">{{ item.title }}, </span><span class="service-organization">{{ item.context }}</span>{% endcapture %}
+              {% if item.has_writeup == false %}{{ archive_label }}{% else %}<a href="{{ writeup | relative_url }}">{{ archive_label }}</a>{% endif %}
+            </h3>
+            <time datetime="{{ item.year | append: '' | slice: 0, 4 }}">{{ item.year }}</time>
+          </div>
+        </article>
+      {% endunless %}
+    {% endfor %}
+  </div>
 </div>
-<script src="{{ '/assets/js/project-filters.js' | relative_url }}" defer></script>

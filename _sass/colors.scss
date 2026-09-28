@@ -107,15 +107,6 @@ h2:after {
     background-color: $text-color;
 }
 
-.category-badge {
-    background-color: $light-color;
-    color: $text-color !important;
-}
-
-.category-badge:hover, .category-badge:active {
-    background-color: $accent-color;
-}
-
 .post-meta {
     color: $grey-color !important;
 }

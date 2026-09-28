@@ -26,9 +26,6 @@ layout: default
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}
-      {%- if page.area -%}
-        &nbsp; <a class="category-badge" href="{{ site.url | relative_url }}/projects/{{ page.area | slugify }}/">{{ page.area }}</a>
-    {%- endif -%}
     </p>
   </header>
 

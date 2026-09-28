@@ -2,6 +2,8 @@
 
 Source for Jinger Chong's portfolio, built with Jekyll and GitHub Pages.
 
+Agent guidance and the current codebase map are in [AGENTS.md](AGENTS.md).
+
 ## Run locally on Windows
 
 Use Ruby+Devkit 3.3 with the MSYS2/MINGW development toolchain. The current

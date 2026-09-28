@@ -2,11 +2,10 @@
 title: Autonomous Racecar Stack
 slug: alfredo
 writeup_url: /alfredo/
-tier: selected
+tier: featured
 term: "6.141 Robotics: Science and Systems"
 year: 2022
 order: 2
-tags: [Autonomy & Control]
 stack: [ROS, C++]
 cover: /assets/images/alfredo/cover.webp
 blurb: Localization, path planning, and vision-based control on a 1/10-scale racecar.
