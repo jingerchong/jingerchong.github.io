@@ -4,7 +4,7 @@ layout: default
 <div class="experience-page">
   <h2>EXPERIENCE</h2>
   <div class="industry-list">
-    {% assign items = site.experience | where: 'show_industry', true | sort: 'order' %}
+    {% assign items = site.data.industry %}
     {% for item in items %}
       {% include industry-item.html item=item position=item %}
     {% endfor %}

@@ -51,8 +51,6 @@ navbar_order:
   - about.markdown
 
 collections:
-  experience:
-    output: false
   projects:
     output: true
     permalink: /projects/:slug/
