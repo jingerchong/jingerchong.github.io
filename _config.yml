@@ -28,21 +28,10 @@ url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g
 permalink: :title/
 show_excerpts: true
 
-categories_order:
- - Research
- - Perception & Autonomy
- - Systems & Hardware
- - Teaching
- - Archive
-
 logo: /assets/logo.webp
 banner: /assets/banner.webp
 headshot: /assets/headshot.webp
 images: /assets/images
-
-social_links:
-  linkedin:  jingerchong
-  github:  jingerchong
 
 # Build settings
 theme: minima
@@ -61,16 +50,11 @@ navbar_order:
   - about.markdown
 
 collections:
-  research:
-    output: false
   experience:
     output: false
   projects:
     output: true
     permalink: /projects/:slug/
-  jobs:
-  records:
-    output: false
   grids:
   archives:
     output: true
@@ -80,11 +64,7 @@ exclude:
   - AGENTS.md
   - CLEANUP.md
   - examples
-  - CONFLICTS.md
   - TODO.md
-  - Jinger Chong_Resume.pdf
-  - headshot.jpg
-  - .claude/
 
 defaults:
   - scope:
