@@ -1,13 +1,31 @@
 ---
 title: Modular Play Instrument for Cognition Research
-slug: toy-for-toddlers
-writeup_url: /toy-for-toddlers/
 tier: archive
-archive_order: 3
-context: Early Childhood Cognition Lab
-term: 2019–2020
+order: 3
 year: 2019–2020
-order: 230
-cover: /assets/images/toy-for-toddlers/cover.webp
-blurb: A modular research instrument for studying toddler behavior during free play.
+context: Early Childhood Cognition Lab
+summary: A modular research instrument for studying toddler behavior during free play.
+redirect_from:
+- /toy-for-toddlers/
 ---
+
+Designing a research experiment instrument for the [Early Childhood Cognition Lab](https://eccl.mit.edu/) as part of MIT’s [Undergraduate Research Opportunity Program](https://urop.mit.edu/)
+
+### Attachment system
+
+- Trying Solidworks threads
+- More test prints
+
+{% include gallery.html dir="attachment-system" title="Attachment system" %}
+
+### Main box
+
+- First two panels
+- Glued module attachments
+- Glued panels together
+- Let glue dry overnight
+- Glued final panel
+- Spray painted white
+- Glued remaining modules
+
+{% include gallery.html dir="main-box" title="Main box" %}
