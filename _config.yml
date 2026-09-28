@@ -18,12 +18,6 @@ plugins:
 sass:
   sass_dir: _sass
 
-navbar_order:
-  - research.md
-  - industry.html
-  - projects.html
-  - about.html
-
 collections:
   projects:
     output: true

@@ -1,5 +1,5 @@
 {%- assign icons = site.data.icons -%}
-<ul class="social-media-list">
+<div class="social-media-list">
   {%- for link in site.data.links -%}
   {% assign link_url = link.url %}{% if link.label == 'CV' %}{% assign link_url = site.cv_url %}{% endif %}
   <a rel="me{% if link_url contains '://' or link.label == 'CV' %} noopener noreferrer{% endif %}" href="{{ link_url }}"{% if link_url contains '://' or link.label == 'CV' %} target="_blank"{% endif %} title="{{ link.label | escape }}" aria-label="{{ link.label | escape }}">
@@ -15,4 +15,4 @@
     {%- endcase -%}
   </a>
   {%- endfor -%}
-</ul>
+</div>

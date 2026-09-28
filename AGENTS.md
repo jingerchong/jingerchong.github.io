@@ -34,8 +34,8 @@ ignored; never edit or commit it.
 | `examples/project.md` | Excluded, copyable project example. Every `_data` file has a commented row example. |
 | `TODO.md` | The only source for editorial and launch TODOs; it is excluded from the published site. |
 
-`_includes/header.html` reads `navbar_order` as **source filenames**, not URLs.
-The visible navigation is Research, Industry, Projects, and About. The former
+`_includes/header.html` lists the navigation URLs directly: Research, Industry,
+Projects, and About. The former
 root writeup URLs redirect to their project pages. The old category URLs
 redirect to `/projects/`; `/experience/` redirects to `/industry/`; `/cv/`
 redirects to the PDF configured by `cv_url`.

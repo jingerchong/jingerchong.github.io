@@ -9,7 +9,7 @@ title: Home
   <p><strong>Now:</strong> Seeking Summer 2027 robotics research internship in perception, human motion prediction, or uncertainty-aware autonomy/HRI. <a class="cv-link-inline" href="{{ site.cv_url | relative_url }}" target="_blank" rel="noopener noreferrer">[CV]</a></p>
   <h2>Highlights</h2>
   <div class="card-grid">{% assign featured = site.projects | where: 'tier', 'featured' | sort: 'order' %}{% for item in featured limit:3 %}{% include project-card.html item=item variant='highlight' %}{% endfor %}</div>
-  <h2>Publications & Patents</h2>
+  <h2>Publications</h2>
   <ul class="publication-list">{% for pub in site.data.publications %}{% include pub-item.html pub=pub %}{% endfor %}</ul>
   {% if site.data.news and site.data.news.size > 0 %}
   <h2>News</h2>

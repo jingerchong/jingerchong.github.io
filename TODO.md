@@ -20,6 +20,71 @@ workshop and interactive physics classes; advised a student-led engineering club
 design; redesigned a controller to improve ergonomics and simplify fabrication. Jan 2020 and
 Jan 2021; Barcelona, Ferrara, remote.
 
+## Next: split About → Service into Teaching and Service
+
+**Status: approved by Jinger, not started.** About currently shows one `Service` list that mixes
+course staff roles with outreach. Split it into two sections, each with its own date style.
+
+### Target content
+
+**TEACHING** (by academic term, newest first)
+
+| Role | Organization | Date | Link |
+| --- | --- | --- | --- |
+| Teaching Assistant | Introduction to Robotics (2.120) | Spring 2024 | |
+| Lab Instructor | Toy Product Design (2.00B) | Spring 2023 | |
+| Undergraduate Assistant | Toy Product Design (2.00B) | Spring 2022 | |
+| Undergraduate Assistant | Introduction to Autonomous Machines (16.632) | Fall 2021, IAP 2020 | `/projects/rf-controllers/` |
+
+**SERVICE** (by year; grouped reviewing → robotics outreach → community, newest first within each group)
+
+| Role | Organization | Date | Link |
+| --- | --- | --- | --- |
+| Reviewer | IEEE ICRA 2027 | *(none)* | |
+| Mentor | Edgerton Center K-12 Maker Education | 2020, 2021 | `https://edgerton.mit.edu/` |
+| Teacher | ESP Splash | 2019 | `/projects/esp-splash/` |
+| Organizer | Andres Bonifacio Elementary School Robotics Outreach | 2019 | `/projects/abes-outreach/` |
+| Organizer | SJCS Robocup | 2018 | `/projects/sjcs-robocup/` |
+| Volunteer | Banana Lounge | 2021 – 2022 | |
+
+### Decisions (Jinger)
+
+- Two sections, not three: a separate Academic Service section would hold one row. Split
+  reviewing into its own section once there are two or three reviewing roles.
+- Heading is **Service**, not "Service & Outreach".
+- Teaching uses academic terms (Spring / Fall / IAP); Service uses years only. Months stay on
+  Industry.
+- The two 16.632 rows merge into one row (`Fall 2021, IAP 2020`); keep the RF Controllers writeup link.
+- The ICRA 2027 reviewer row shows no date, since the venue name already dates it. Keep a
+  hidden `datetime` (`2026-09`) for sorting, and make the template omit the `<time>` element
+  when `date` is empty.
+- Keep the two 2.00B rows separate.
+- No detail lines under any row, including the 2.120 TA; every row stays a single line.
+- Leave out: peer tutoring (Tau Beta Pi / Pi Tau Sigma) and the food pantry (just started;
+  revisit later).
+
+### Steps
+
+1. **Data.** Move the four course rows into a new `_data/teaching.yml` with `role`,
+   `organization`, visible `date`, sortable `datetime` (`YYYY-MM`, latest term), and optional
+   `writeup`. Rewrite `_data/service.yml` with the six Service rows above, visible year `date`,
+   sortable `datetime`, and a `group` field (`reviewing` | `outreach` | `community`). Update the
+   commented example at the top of each file.
+2. **Templates.** Make `_includes/service.html` take the data list as a parameter (or add a
+   `teaching.html`) so both sections share the same row markup. Service renders groups in the
+   fixed order reviewing → outreach → community with no visible sub-headings, newest first
+   within each group.
+3. **About page.** Order: Education → Teaching → Service → Skills.
+4. **Docs.** Update the Service recipe in `AGENTS.md`, add a Teaching recipe, and note the
+   date conventions. Update the `about.html` row in the `AGENTS.md` codebase map.
+
+### Verify
+
+- Build with Ruby 3.3; check `/about/` at desktop and 375px. Every writeup link opens.
+- Teaching shows 4 rows by term; Service shows 6 rows in group order. No months appear in
+  either section.
+- Run `git diff --check`.
+
 ## Content architecture refactor (completed, 2026-09-28)
 
 **Status: implemented and verified.** Decisions 1–4 are Jinger's. Decisions 5–6 used the
@@ -237,7 +302,7 @@ Writeup in Markdown. Galleries go wherever they belong in the text:
 - [ ] Add a 4-second flip loop or diagram for the water-bottle quadrotor at
       `assets/images/water-bottle-quadrotor/cover.webp` (16:9 target).
 - [ ] Add the ICRA 2024 PDF path, DOI, and code link.
-- [ ] Add talks and service entries if applicable.
+- [ ] Add talks if applicable. (Teaching and Service entries: see "Next: split About → Service".)
 - [ ] Restore the full Jansen’s Linkage writeup/media if that page should be public.
 - [ ] Confirm the Jansen’s Linkage blurb wording before making that page public.
 - [ ] Expand the restored SJCS Robocup writeup with owner-provided details and review its gallery selection.
