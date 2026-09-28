@@ -68,9 +68,7 @@ collections:
   projects:
     output: true
     permalink: /projects/:slug/
-  schools:
   jobs:
-  skills:
   records:
     output: false
   grids:
@@ -80,25 +78,15 @@ collections:
 
 exclude:
   - AGENTS.md
+  - CLEANUP.md
+  - examples
   - CONFLICTS.md
   - TODO.md
-  - Gemfile.bak
-  - Gemfile.lock.bak
   - Jinger Chong_Resume.pdf
   - headshot.jpg
   - .claude/
 
 defaults:
-  - scope:
-      path: ""
-      type: "research"
-    values:
-      layout: "research-item"
-  - scope:
-      path: ""
-      type: "experience"
-    values:
-      layout: "experience-item"
   - scope:
       path: ""
       type: "projects"
@@ -111,24 +99,9 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "schools"
-    values:
-      layout: "resume"
-  - scope:
-      path: ""
-      type: "jobs"
-    values:
-      layout: "resume"
-  - scope:
-      path: ""
       type: "archives"
     values:
       layout: "category"
-  - scope:
-      path: ""
-      type: "records"
-    values:
-      layout: "record"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

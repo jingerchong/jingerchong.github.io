@@ -156,9 +156,6 @@ h2:after {
 .chip, .status-badge, .todo { display: inline-block; padding: .2em .5em; background: var(--color-accent); color: var(--color-text); font-family: monospace; }
 .todo { margin: .5em 0; border: 2px solid var(--color-theme); }
 .todo-blocker { background: #fff; color: var(--color-theme); border-color: var(--color-theme); }
-.timeline { border-left: 3px solid var(--color-theme); padding-left: 1.5em; }
-.timeline-item { position: relative; margin-bottom: 2em; }
-.timeline-dot { position: absolute; left: -1.9em; top: .35em; width: .7em; height: .7em; background: var(--color-accent); border: 2px solid var(--color-theme); border-radius: 50%; }
 @media screen and (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }
 
 .industry-list { margin: 0; }
@@ -180,72 +177,6 @@ h2:after {
         width: 43%;
         margin-left: 1em;
         margin-bottom: 0.5em;
-    }
-}
-
-.resume {
-    padding-bottom: 2em;
-}
-
-.resume:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.resume-col-1 {
-    float: left;
-    width: 42.5%;
-}
-  
-.resume-col-2 {
-    float: right;
-    width: 55%;
-}
-
-@media screen and (max-width: 480px) {
-    .resume {
-        padding-bottom: 1em;
-    }
-    .resume-col-1, .resume-col-2 {
-        width: 100%;
-    }
-    .resume-col-1 {
-        padding-bottom: 1em;
-    }
-    .resume-section {
-        padding-bottom: 1em;
-    }
-}
-
-.duration:before, .location:before {
-    content: "";
-    display: inline-block;
-    height: 1em;
-    width: 1em;
-    margin-right: 5px;
-}
-
-.duration:before {
-    background: url("/assets/calendar-alt-regular.svg") no-repeat;
-}
-
-.location:before {
-    background: url("/assets/map-marker-alt-solid.svg") no-repeat;
-}
-
-.record-status {
-    font-size: 0.83em;
-    font-style: italic;
-}
-
-.record-links {
-    list-style-type: none;
-    margin: 0.5em 0 0 0;
-    padding: 0;
-    li {
-        display: inline-block;
-        margin-right: 1em;
     }
 }
 
