@@ -29,7 +29,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 0 1rem;
+  gap: 0 1.125rem;
 }
 
 .site-header .site-nav .page-link,
@@ -53,8 +53,13 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.5rem;
+  gap: 0.625rem;
   margin: 0;
+}
+
+.site-footer .contact-email {
+  color: var(--color-light);
+  font-size: 1.17em;
 }
 
 .site-footer .social-media-list a {

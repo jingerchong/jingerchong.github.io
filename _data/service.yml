@@ -1,56 +1,49 @@
-# Add one entry per role and organization; newest datetime appears first.
+# Add one entry per service role. Groups display in this order: reviewing, outreach, community.
+# Within each group, the newest datetime appears first.
 # - role: Example role               # Required
 #   organization: Example group      # Required
-#   date: Jan 2026 – May 2026        # Required, displayed text
+#   date: 2026                      # Displayed year; omit or leave empty when the name already dates it
 #   datetime: 2026-01                # Required for sorting, YYYY-MM
+#   time_datetime: 2026             # Optional; use when the sort key's year differs from the displayed year
+#   group: outreach                  # Required: reviewing | outreach | community
 #   writeup: /projects/example/      # Optional; use only a real page or verified URL
-# Combine non-contiguous dates when they describe the same role and organization.
-- role: Teaching Assistant
-  organization: Introduction to Robotics (2.120)
-  date: Jan 2024 – May 2024
-  datetime: 2024-01
-
-- role: Lab Instructor
-  organization: Toy Product Design (2.00B)
-  date: Jan 2023 – May 2023
-  datetime: 2023-01
-
-- role: Undergraduate Assistant
-  organization: Toy Product Design (2.00B)
-  date: Jan 2022 – May 2022
-  datetime: 2022-01
-
-- role: Undergraduate Assistant
-  organization: Introduction to Autonomous Machines (16.632)
-  date: Aug 2021 – Dec 2021
-  datetime: 2021-08
+- role: Reviewer
+  organization: ICRA
+  date: 2027
+  datetime: 2026-09
+  time_datetime: 2027
+  group: reviewing
 
 - role: Mentor
   organization: Edgerton Center K-12 Maker Education
-  date: Jan 2020 · Jan 2021
+  date: 2020, 2021
   datetime: 2021-01
+  group: outreach
   writeup: https://edgerton.mit.edu/
-
-- role: Undergraduate Assistant
-  organization: Introduction to Autonomous Machines (16.632)
-  date: Jan 2020 – Mar 2020
-  datetime: 2020-01
-  writeup: /projects/rf-controllers/
 
 - role: Teacher
   organization: ESP Splash
-  date: Nov 2019
+  date: 2019
   datetime: 2019-11
+  group: outreach
   writeup: /projects/esp-splash/
 
 - role: Organizer
   organization: Andres Bonifacio Elementary School Robotics Outreach
-  date: Jan 2019
+  date: 2019
   datetime: 2019-01
+  group: outreach
   writeup: /projects/abes-outreach/
 
 - role: Organizer
   organization: SJCS Robocup
-  date: Apr 2018
+  date: 2018
   datetime: 2018-04
+  group: outreach
   writeup: /projects/sjcs-robocup/
+
+- role: Volunteer
+  organization: Banana Lounge
+  date: 2021 – 2022
+  datetime: 2022-01
+  group: community

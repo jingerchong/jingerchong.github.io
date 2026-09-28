@@ -24,12 +24,12 @@ ignored; never edit or commit it.
 
 | Source | Purpose |
 | --- | --- |
-| `index.html`, `research.md`, `industry.html`, `projects.html`, `about.html` | The five navigation pages; each contains its own markup and front matter. |
-| `_projects/*.md` and remaining `.markdown` files | One file per project at `/projects/:slug/`, with metadata and full writeup. The homepage features the first three `featured` projects. |
-| `_data/*.yml` | Ordered rows for Industry, publications, education, skills, Service, social links, and news. |
+| `index.html`, `research.md`, `industry.html`, `projects.html`, `about.html` | The five navigation pages; each contains its own markup and front matter. `about.html` renders Education, Skills, Teaching, then Service from `_data/`. |
+| `_projects/*.markdown` | Fourteen project files, one per `/projects/:slug/` page, with metadata and any available writeup. The homepage features the first three `featured` projects. New projects may use `.md`. |
+| `_data/*.yml` | Seven current data files: education, industry, links, publications, service, skills, and teaching. `news.yml` is optional and has not been created yet. |
 | `_layouts/project.html`, `_layouts/with-banner.html`, `_includes/` | Project detail layout, homepage banner shell, and shared cards, galleries, navigation, and list components. Minima supplies the default layout. |
 | `assets/images/<slug>/`, `_sass/`, `assets/main.scss` | Project covers and galleries, shared colors, typography, and responsive styles. |
-| `redirects/` | Redirects for old category URLs and `/cv/`. Project files redirect their own former root URLs. |
+| `redirects/` and `industry.html` | Redirects for old category URLs, `/cv/`, and `/experience/`. Project files redirect their own former root URLs. |
 | `downloads/` | Public PDFs, including the CV path configured once as `cv_url` in `_config.yml`. |
 | `examples/project.md` | Excluded, copyable project example. Every `_data` file has a commented row example. |
 | `TODO.md` | The only source for editorial and launch TODOs; it is excluded from the published site. |
@@ -70,14 +70,22 @@ without preserving its old URL.
   `org`, `role`, `start`, `end`, `location`, and `bullets`; `link` is optional.
   Rows display in file order. Check that every bullet is approved for public
   use. No template or image edit is needed.
+- **Teaching entry:** Copy the commented entry in `_data/teaching.yml`. Fill
+  `role`, `organization`, academic-term `date` (Spring, Fall, or IAP), and
+  sortable `datetime` (`YYYY-MM`, using the latest term for combined dates).
+  Rows appear newest first on About. Add `writeup` only for a real page or
+  verified external URL. No image is needed.
 - **Service entry:** Copy the commented entry in `_data/service.yml`. Fill
-  `role`, `organization`, visible `date`, and sortable `datetime` (`YYYY-MM`).
-  Add `writeup` only for a real page or verified external URL. Rows appear
-  newest first on About. No image is needed.
-- **News item:** Copy the commented entry in `_data/news.yml`. Fill ISO
-  `date` (`YYYY-MM-DD`) and `text`; `url` is optional. Rows appear newest
-  first on the homepage. The News section stays hidden while the list is
-  empty.
+  `role`, `organization`, year-only `date`, sortable `datetime` (`YYYY-MM`),
+  and `group` (`reviewing`, `outreach`, or `community`). Omit the visible date
+  when the organization name already dates the role. If the sort key's year
+  differs from the visible year, set `time_datetime` to that year. Groups
+  appear in that order, newest first within each group. Add `writeup` only for a real page
+  or verified external URL. No image is needed.
+- **News item:** Create `_data/news.yml` when there is a verified item. Add a
+  row with ISO `date` (`YYYY-MM-DD`) and `text`; `url` is optional. Rows appear
+  newest first on the homepage. The News section stays hidden while the file
+  is absent or the list is empty.
 
 ## Accuracy and change workflow
 

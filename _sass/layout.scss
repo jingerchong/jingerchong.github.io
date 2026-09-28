@@ -147,6 +147,8 @@ h2:after {
 @media screen and (max-width: 640px) {
     .service-title-row { display: block; }
     .service-title-row time { display: block; text-align: left; }
+    .service-entry-reviewing .service-title-row { display: flex; }
+    .service-entry-reviewing .service-title-row time { display: inline; text-align: right; }
 }
 .cv-link-inline { text-decoration: none; }
 .content-card { border: 1px solid var(--color-light); background: var(--color-background); }
