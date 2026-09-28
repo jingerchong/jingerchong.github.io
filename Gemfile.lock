@@ -282,7 +282,6 @@ DEPENDENCIES
   bigdecimal
   csv
   github-pages (~> 232.0)
-  jekyll-feed
   jekyll-redirect-from
   jekyll-seo-tag
   jekyll-sitemap

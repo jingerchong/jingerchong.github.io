@@ -25,18 +25,14 @@ cv_url: /downloads/jinger-chong-cv.pdf
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jingerchong.com" # the base hostname & protocol for your site, e.g. http://example.com
-permalink: :title/
-show_excerpts: true
 
 logo: /assets/logo.webp
 banner: /assets/banner.webp
 headshot: /assets/headshot.webp
-images: /assets/images
 
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -54,10 +50,6 @@ collections:
   projects:
     output: true
     permalink: /projects/:slug/
-  grids:
-  archives:
-    output: true
-    permalink: /projects/:slug/
 
 exclude:
   - AGENTS.md
@@ -71,16 +63,6 @@ defaults:
       type: "projects"
     values:
       layout: "project"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "archives"
-    values:
-      layout: "category"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
