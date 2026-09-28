@@ -1,19 +1,23 @@
 ---
 title: Autonomous Racecar Stack
-slug: alfredo
-writeup_url: /alfredo/
 tier: featured
-term: "6.141 Robotics: Science and Systems"
-year: 2022
 order: 2
-stack: [ROS, C++]
-cover: /assets/images/alfredo/cover.webp
-blurb: Localization, path planning, and vision-based control on a 1/10-scale racecar.
+year: 2022
+context: '6.141 Robotics: Science and Systems'
 summary: Localization, path planning, and vision-based control on a 1/10-scale racecar.
-problem: Navigate a 1/10-scale racecar autonomously across increasingly complex tasks.
-approach: Built the localization, planning, and vision-based control stack for the racecar Alfredo.
-results: Completed the course's autonomous navigation tasks.
-links: {video: "#"}
-todo:
-  - {level: verify, text: Add the verified project video URL., owner: jinger}
+stack:
+- ROS
+- C++
+redirect_from:
+- /alfredo/
 ---
+
+For 6.141 Robotics: Science and Systems, I helped program our racecar, named Alfredo, to localize, plan, and navigate autonomously across a series of increasingly complex tasks.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HGhFOR1zcz0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uoZ6DRbXyKo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4E7E7nPVFV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OMkYFuFPJ6c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

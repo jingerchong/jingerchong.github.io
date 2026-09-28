@@ -1,0 +1,9 @@
+{%- capture gallery_prefix -%}/assets/images/{{ page.slug }}/{{ include.dir }}/{%- endcapture -%}
+{%- assign gallery_images = site.static_files | where_exp: 'image', 'image.path contains gallery_prefix' | sort: 'path' -%}
+{%- if gallery_images.size > 0 -%}
+<div class="grid"><ul>
+  {%- for image in gallery_images -%}
+  <li><img loading="lazy" src="{{ image.path | relative_url }}" alt="{{ page.title | escape }}: {{ include.title | default: include.dir | escape }} {{ forloop.index }}"></li>
+  {%- endfor -%}
+</ul></div>
+{%- endif -%}
