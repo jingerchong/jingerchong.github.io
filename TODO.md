@@ -32,12 +32,6 @@ marked planned.
 | Lego-Stacking UR5 Robot Arm | `ur5-lego` | Hidden draft | Context, results, approved media |
 | Edventures / Edgerton STEM Mentor | `edventures` | Planned; on hold | Owner story and articles/media before drafting |
 
-## Must do before publishing or sharing the site with applicants
-
-- [ ] **Check the first GitHub Actions run before publishing.** The production build and local-link
-      checks pass on Windows. Run the new site-check workflow on a branch or pull request and fix
-      any platform-specific failure before updating the public site.
-
 ## Project writeups and evidence to add while sending applications
 
 The two research stories now have text-first pages based on the public papers and the existing CV.
@@ -92,6 +86,8 @@ Use only owner-approved figures, results, and public URLs for further additions.
 
 ## Editorial decisions already made
 
+- The 2026-09-29 `revamp` GitHub Actions production build and local-link check passed after
+  locking native gems for Windows and Linux and excluding `vendor/` from Jekyll output.
 - The project URLs now use `struct-gp`, `safety-metrics`, `pool-robot`, `bottle-flip`, and
   `2048-rl`; the hidden drafts use `novel-view-sythesis`, `infant-gaze`, and `ur5-lego`.
   Former project URLs have no redirects. The 2048 images moved with its slug.
