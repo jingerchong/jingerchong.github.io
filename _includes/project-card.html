@@ -1,0 +1,15 @@
+{% assign cover_path = '/assets/images/' | append: include.item.slug | append: '/cover.webp' %}
+{% assign cover_file = site.static_files | where: 'path', cover_path | first %}
+{% if include.variant == 'highlight' %}
+<article class="content-card">
+  {% if cover_file %}<div class="card-media"><img loading="lazy" src="{{ cover_path | relative_url }}" alt="{{ include.item.title | escape }}"></div>{% endif %}
+  <div class="card-body"><h3><a href="{{ include.item.url | relative_url }}">{{ include.item.title | escape }}</a></h3><p>{{ include.item.summary }}</p></div>
+</article>
+{% else %}
+<article class="project-card">
+  <a class="project-card-link" href="{{ include.item.url | relative_url }}" aria-label="View {{ include.item.title | escape }}">
+    {% if cover_file %}<div class="project-card-image"><img loading="lazy" src="{{ cover_path | relative_url }}" alt="{{ include.item.title | escape }} thumbnail"></div>{% endif %}
+    <div class="project-card-body"><h3 class="project-card-title">{{ include.item.title }}</h3><p class="project-card-summary">{{ include.item.summary }}</p></div>
+  </a>
+</article>
+{% endif %}

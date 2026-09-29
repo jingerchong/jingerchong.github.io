@@ -10,8 +10,8 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col">
-      {% if site.email -%}
-        <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      {% if site.contact_email -%}
+        <span class="contact-email">{{ site.contact_email }}</span>
       {%- endif %}
       </div>
 

@@ -1,40 +1,116 @@
-# Agent guide for this portfolio
+# Agent guide — jingerchong.com
 
-## Purpose and audience
+Read this guide with `README.md`, `_config.yml`, and `TODO.md` before editing.
+This is Jinger Chong's robotics research portfolio. Preserve its navy
+`#08415C`, yellow `#EFCA08`, robot-arm logo, banner, uppercase headings, and
+underlined section headings. `_sass/_tokens.scss` defines the colors. Keep the
+site compatible with Jekyll 3.10, Minima, and GitHub Pages; ordinary updates
+need only Liquid, Markdown, Sass, YAML, and a small amount of vanilla JavaScript.
 
-This is Jinger Chong's personal website, a public portfolio for robotics research and engineering opportunities, including summer internships. Make it easy for a recruiter or researcher to understand Jinger's current focus, strongest technical work, specific contributions, and how to get in touch. Keep the voice personal and direct. Preserve the owner's facts and writing style; do not invent credentials, results, publications, dates, affiliations, availability, or project details. The existing content is a historical snapshot, so verify time-sensitive claims with the owner or a supplied source before changing them. Do not silently turn old dates or a past "Present" role into a current claim.
+## Build and codebase map
 
-## Stack and build
+Use Ruby 3.3 on Windows; Ruby 4 does not work with the locked GitHub Pages
+dependencies. From the repository root:
 
-- Static Jekyll site hosted with GitHub Pages at `jingerchong.com` (`CNAME`). No JavaScript app or package manager is used.
-- Dependencies are pinned in `Gemfile` and `Gemfile.lock`; the site uses GitHub Pages gem 232, Jekyll 3.10, Minima 2.5.1, Liquid templates, Markdown, and Sass. Use Ruby 3.3 with the development tools installed; this dependency set does not support Ruby 4. Prefer compatible Jekyll and GitHub Pages features over adding plugins or a new frontend stack.
-- From the repository root, run `bundle install` if needed, then `bundle exec jekyll build` to validate changes. Use `bundle exec jekyll serve` for visual checks. `_config.yml` changes require restarting the server.
-- Generated `_site/`, Jekyll caches, and `vendor/` are ignored. Do not edit generated output. If Ruby/Bundler is unavailable, say that the build could not be run; still check changed front matter, Liquid references, local links, and image paths manually.
+```powershell
+$env:Path = 'C:\Ruby33-x64\bin;' + $env:Path
+bundle install
+bundle exec -- C:\Ruby33-x64\bin\jekyll.bat build
+bundle exec -- C:\Ruby33-x64\bin\jekyll.bat serve
+```
 
-## Where things live
+Restart the server after editing `_config.yml`. `_site/` is generated and
+ignored; never edit or commit it.
 
-- `_config.yml`: site identity, domain/base URL, social links, navigation order, project category order, collection definitions, and default layouts.
-- `index.markdown`, `about.markdown`, `projects.markdown`, `photography.markdown`: top-level pages. The home introduction is in `index.markdown`; the About and Projects pages are assembled mainly by their layouts.
-- `_posts/YYYY-MM-DD-slug.markdown`: individual project stories. `_layouts/home.html` selects posts with `featured: true`; `_layouts/projects.html` groups posts by `categories_order`; `_layouts/category.html` renders category archives. The post filename/slug also determines the image directory expected by templates.
-- `_archives/*.markdown`: category landing pages. A new category needs a matching archive and, if it should appear on the Projects overview, an entry in `categories_order`.
-- `_schools/`, `_jobs/`, `_skills/`: About page data, rendered by `_layouts/about.html` and `_layouts/resume.html`. Entries with `show: true` appear; `order` controls display order (schools and jobs are reversed after sorting; skills are not). Keep hidden entries unless asked to remove them.
-- `_grids/<post-slug>/grid-N.markdown`: optional named sections beneath a post. `_layouts/post.html` finds grid files whose path contains the post slug, sorts by slug, and collects matching static images from `assets/images/<post-slug>/grid-N/`.
-- `assets/images/<post-slug>/cover.webp`: cover image convention used on project cards and post pages. Other images live under the matching grid directory. `assets/` also holds branding and icons; `downloads/` holds downloadable documents.
-- `_includes/` and `_layouts/`: shared Liquid/HTML. `with-banner.html` wraps the home page, while the Minima theme supplies the default layout and head include. `assets/main.scss` imports `_sass/colors.scss`, `_sass/fonts.scss`, and `_sass/layout.scss`, then Minima.
+| Source | Purpose |
+| --- | --- |
+| `index.html`, `research.md`, `industry.html`, `projects.html`, `about.html` | The five navigation pages; each contains its own markup and front matter. `about.html` renders Education, Skills, Teaching, then Service from `_data/`. |
+| `_projects/*.markdown` | Fourteen published project files (plus hidden `published: false` drafts), one per `/projects/:slug/` page, with metadata and any available writeup. The homepage features the first three `featured` projects. New projects may use `.md`. |
+| `_data/*.yml` | Eight current data files: education, industry, links, publications, research, service, skills, and teaching. `news.yml` is optional and has not been created yet. |
+| `_layouts/project.html`, `_layouts/with-banner.html`, `_includes/` | Project detail layout, homepage banner shell, and shared cards, galleries, navigation, and list components. Minima supplies the default layout. |
+| `assets/images/<slug>/`, `_sass/`, `assets/main.scss` | Project covers and galleries, shared colors, typography, and responsive styles. |
+| `redirects/` and `industry.html` | Redirects for old category URLs, `/cv/`, and `/experience/`. Project pages have no legacy URL redirects. |
+| `downloads/` | Public PDFs, including the CV path configured once as `cv_url` in `_config.yml`. |
+| `examples/project.md` | Excluded, copyable project example. Every `_data` file has a commented row example. |
+| `TODO.md` | The only source for editorial and launch TODOs; it is excluded from the published site. |
 
-## Content and design rules
+`_includes/header.html` lists the navigation URLs directly: Research, Industry,
+Projects, and About. The former
+root writeup URLs are retired. The old category URLs
+redirect to `/projects/`; `/experience/` redirects to `/industry/`; `/cv/`
+redirects to the PDF configured by `cv_url`.
 
-- Prioritize the robotics/perception story and evidence of research or engineering impact when updating the home page, About page, featured projects, or experience. Lead project descriptions with the problem, Jinger's own role, technical approach, and a concrete result when documented. Distinguish individual work from team work.
-- Keep claims accurate and specific. Existing project posts and job entries are source material, not proof that information is still current. Ask for missing facts rather than guessing metrics, internship dates, thesis topics, or availability.
-- Preserve valid YAML front matter (`---` delimiters). For a new post, set `title`, `date`, `categories` as a list, and `featured` deliberately. Use category spelling that matches `_config.yml` and `_archives/`. Check that the slug and image paths match before featuring a post.
-- A new post normally needs `assets/images/<slug>/cover.webp`. Add `_grids/<slug>/grid-N.markdown` only when a section has useful content or images, and put its images in the matching `assets/images/<slug>/grid-N/` directory. Avoid committing huge originals when a web-sized image will do.
-- Keep internal links and asset paths working with the site's `url`/`baseurl` settings and existing Liquid filters. Check rendered links rather than assuming a Markdown source path is correct. Do not change established permalinks casually; external links and search results may depend on them.
-- Maintain readable, responsive pages and semantic HTML. Give new images descriptive alt text, ensure links and controls work by keyboard, and check desktop and narrow mobile layouts. Existing Sass breakpoints are 800px, 600px, and 480px; follow the existing palette and typography unless a redesign is requested.
-- Do not replace the portfolio with generic recruiting copy or bury contact information. The header navigation and footer contact/social links are shared across pages.
+## How to add content
 
-## Before finishing a change
+Build and preview the affected route locally at desktop and phone width before
+pushing. Open every local link and image, check wording and confidentiality,
+and use only verified public facts and URLs. Project slug changes retire the
+old URL; do not create a redirect for it.
 
-1. Review the rendered home, About, Projects, affected post/category, and mobile layout as applicable.
-2. Run `bundle exec jekyll build` when the toolchain is available and resolve build warnings or errors introduced by the change.
-3. Check new or changed links, image paths, front matter, category pages, and `featured`/`show` visibility. Confirm each public claim against supplied facts.
-4. Report what changed and what was verified, including any build or visual check that could not be completed.
+- **Project:** Copy `examples/project.md` to `_projects/<slug>.md`. Fill
+  `title`, `tier`, `order`, and `summary`; use `year` and `context` for Archive.
+  The filename sets `/projects/<slug>/`. `featured` appears on the homepage
+  (first three by order) and Projects grid; `normal` appears in the grid;
+  `archive` appears in the list headed MORE on `/projects/`; `unlisted` has a page but no card or
+  Archive row. Lower `order` values appear earlier within the relevant list.
+  Write the full article below the front matter. Optional `stack`, `award`,
+  and verified `links` appear on the detail page. Do not add redirects for
+  former project URLs. A missing cover is skipped.
+- **Gallery:** Place files under `assets/images/<slug>/<descriptive-name>/`
+  as `01.webp`, `02.webp`, and so on. Add
+  `{% raw %}{% include gallery.html dir="descriptive-name" title="Descriptive title" %}{% endraw %}`
+  at the desired point in the project's Markdown body. The include uses the
+  project filename slug, reads only that folder, and sorts by filename. The
+  optional cover lives at `assets/images/<slug>/cover.webp`.
+- **Publication or patent:** Copy the commented entry in
+  `_data/publications.yml`. Fill `title`, `authors`, `venue`, and `year`; add
+  `status` and a verified `links.url` when available. File order controls
+  homepage order. No image is needed.
+- **Industry role:** Copy the commented entry in `_data/industry.yml`. Fill
+  `org`, `role`, `start`, `end`, `location`, and `bullets`; `link` is optional.
+  Rows display in file order. Check that every bullet is approved for public
+  use. No template or image edit is needed.
+- **Research entry:** Copy the commented entry in `_data/research.yml` (same
+  fields as Industry). Set `current: true` for a role under NOW on `/research/`;
+  other rows appear under BEFORE. File order controls order within each group.
+- **Draft project:** Add `published: false` to the front matter. Jekyll skips
+  it entirely (no page, card, or sitemap entry) until the line is removed.
+- **Teaching entry:** Copy the commented entry in `_data/teaching.yml`. Fill
+  `role`, `organization`, academic-term `date` (Spring, Fall, or IAP), and
+  sortable `datetime` (`YYYY-MM`, using the latest term for combined dates).
+  Rows appear newest first on About. Add `writeup` only for a real page or
+  verified external URL. No image is needed.
+- **Service entry:** Copy the commented entry in `_data/service.yml`. Fill
+  `role`, `organization`, year-only `date`, sortable `datetime` (`YYYY-MM`),
+  and `group` (`reviewing`, `outreach`, or `community`). Omit the visible date
+  when the organization name already dates the role. If the sort key's year
+  differs from the visible year, set `time_datetime` to that year. Entries
+  appear newest first across all groups. Add `writeup` only for a real page
+  or verified external URL. No image is needed.
+- **News item:** Create `_data/news.yml` when there is a verified item. Add a
+  row with ISO `date` (`YYYY-MM-DD`) and `text`; `url` is optional. Rows appear
+  newest first on the homepage. The News section stays hidden while the file
+  is absent or the list is empty.
+
+## Accuracy and change workflow
+
+- Preserve authored content while reorganizing. Use current
+  owner-provided material and verified sources for claims; do not infer
+  dates, degrees, metrics, awards, publication status, or media. `TODO.md`
+  tracks remaining owner decisions, including GE Vernova public wording,
+  Rotor LiDAR compression, and ICRA 2027 policy.
+- Keep the private résumé, phone number, street address, proprietary work,
+  and unpublished patent material out of public output. The public CV is
+  `downloads/jinger-chong-cv.pdf`; verify redaction before replacing it.
+- Missing media should disappear cleanly. Record the asset needed in
+  `TODO.md`; do not add a broken image, dead `href="#"`, or invented media.
+- Keep semantic headings, meaningful alt text, keyboard focus, readable
+  contrast, responsive layouts, and reduced-motion behavior for future
+  autoplay media.
+- Inspect `git status` before editing and preserve unrelated changes. After
+  editing, build with Ruby 3.3; check `/`, `/research/`, `/industry/`,
+  `/projects/`, `/about/`, a project page, retired project URLs, and the
+  redirects. Check local assets and run `git diff --check`.
+
+`README.md` contains the quick local setup. This is the sole agent-specific
+guide in the repository.

@@ -1,0 +1,27 @@
+# Research experience. Set current: true for roles shown under NOW; other rows appear under BEFORE.
+# - org: Example Lab                  # Required: heading
+#   role: Research Assistant          # Required: role line
+#   start: Sep 2022                   # Required: visible start
+#   end: May 2023                     # Required: visible end
+#   location: City, State             # Required: visible location
+#   link: https://example.com         # Optional: verified lab link
+#   bullets:                          # Required: verified public contributions; HTML is supported
+#     - Describe a contribution.
+- org: MIT Mechatronics Research Lab
+  role: Research Assistant
+  start: Sep 2022
+  end: Present
+  current: true
+  location: Cambridge, MA
+  bullets:
+  - Developing <a href="/projects/struct-gp/">structured multitask Gaussian processes for probabilistic full-body human motion prediction</a>
+  - Built a test rig pairing a UR5 arm with adjustable cameras for evaluating object detection and manipulation algorithms
+  - Evaluated and visualized how image cropping affects YOLOv7 object detection on a large-scale dataset, which led to our <a href="https://ieeexplore.ieee.org/document/10610657" target="_blank" rel="noopener noreferrer">ICRA 2024 paper</a> on how perception affects safety
+- org: NCTU Computer Games and Intelligence Lab
+  role: Research Intern
+  start: Jun 2020
+  end: Aug 2020
+  location: Remote
+  bullets:
+  - Trained a <a href="/projects/2048-rl/">temporal-difference learning agent</a> in C++ to play 2048, reaching the 2048 tile after 2,000 training rounds and a <strong>93% win rate</strong> after 20,000
+  - Investigated how the probability of spawning a 4-tile affects score and learning speed

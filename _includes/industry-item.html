@@ -1,0 +1,13 @@
+<article class="industry-entry">
+  <div class="industry-company-row">
+    <h3>{% if include.item.link %}<a href="{{ include.item.link }}" target="_blank" rel="noopener noreferrer">{{ include.item.org }}</a>{% else %}{{ include.item.org }}{% endif %}</h3>
+    <span class="industry-location">{{ include.position.location }}</span>
+  </div>
+  <div class="industry-role-row">
+    <h4>{{ include.position.role }}</h4>
+    <time datetime="{{ include.position.start }}">{{ include.position.start }} – {{ include.position.end }}</time>
+  </div>
+  <ul>
+    {% for bullet in include.position.bullets %}<li>{{ bullet }}</li>{% endfor %}
+  </ul>
+</article>

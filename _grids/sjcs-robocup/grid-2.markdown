@@ -1,3 +1,0 @@
----
-section: Line follower challenge
----

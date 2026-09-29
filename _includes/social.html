@@ -1,22 +1,18 @@
-{%- assign social = site.social_links -%}
-
-<ul class="social-media-list">
-  {%- if social.linkedin -%}<a rel="me" href="https://www.linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}" title="{{ social.linkedin | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- for glb in social.gitlab -%}{%- if glb.username and glb.instance -%}<a rel="me" href="https://{{ glb.instance | cgi_escape | escape}}/{{glb.username}}" title="{{ glb.username | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#gitlab' | relative_url }}"></use></svg></a>{%- endif -%}{%- endfor -%}
-  {%- if social.dribbble -%}<a rel="me" href="https://dribbble.com/{{ social.dribbble | cgi_escape | escape }}" title="{{ social.dribbble | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#dribbble' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.facebook -%}<a rel="me" href="https://www.facebook.com/{{ social.facebook | cgi_escape | escape }}" title="{{ social.facebook | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#facebook' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.flickr -%}<a rel="me" href="https://www.flickr.com/photos/{{ social.flickr | cgi_escape | escape }}" title="{{ social.flickr | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#flickr' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.github -%}<a rel="me" href="https://github.com/{{ social.github | cgi_escape | escape }}" title="{{ social.github | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.stackoverflow -%}<a rel="me" href="https://stackoverflow.com/users/{{ social.stackoverflow | cgi_escape | escape }}" title="{{ social.stackoverflow | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#stackoverflow' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.instagram -%}<a rel="me" href="https://www.instagram.com/{{ social.instagram | cgi_escape | escape }}" title="{{ social.instagram | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#instagram' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.pinterest -%}<a rel="me" href="https://www.pinterest.com/{{ social.pinterest | cgi_escape | escape }}" title="{{ social.pinterest | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#pinterest' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- for mst in social.mastodon -%}{%- if mst.username and mst.instance -%}<a rel="me" href="https://{{ mst.instance | cgi_escape | escape}}/@{{mst.username}}" title="{{ mst.username | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#mastodon' | relative_url }}"></use></svg></a>{%- endif -%}{%- endfor -%}
-  {%- if social.twitter -%}<a rel="me" href="https://twitter.com/{{ social.twitter | cgi_escape | escape }}" title="{{ social.twitter | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.youtube -%}<a rel="me" href="https://www.youtube.com/{{ social.youtube | cgi_escape | escape }}" title="{{ social.youtube | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#youtube' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.youtube_channel -%}<a rel="me" href="https://www.youtube.com/channel/{{ social.youtube_channel | cgi_escape | escape }}" title="{{ social.youtube_channel_name | escape | default: 'YouTube' }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#youtube' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.telegram -%}<a rel="me" href="https://t.me/{{ social.telegram | cgi_escape | escape }}" title="{{ social.telegram | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#telegram' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.keybase -%}<a rel="me" href="https://keybase.io/{{ social.keybase | cgi_escape | escape }}" title="{{ social.keybase | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#keybase' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.microdotblog -%}<a rel="me" href="https://micro.blog/{{ social.microdotblog | cgi_escape | escape }}" title="{{ social.microdotblog | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#microdotblog' | relative_url }}"></use></svg></a>{%- endif -%}
-  {%- if social.devto -%}<a href="https://dev.to/{{ social.devto | cgi_escape | escape }}" title="{{ social.devto | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#devto' | relative_url }}"></use></svg></a>{%- endif -%}
-</ul>
-
+{%- assign icons = site.data.icons -%}
+<div class="social-media-list">
+  {%- for link in site.data.links -%}
+  {% assign link_url = link.url %}{% if link.label == 'CV' %}{% assign link_url = site.cv_url %}{% endif %}
+  <a rel="me{% if link_url contains '://' or link.label == 'CV' %} noopener noreferrer{% endif %}" href="{{ link_url }}"{% if link_url contains '://' or link.label == 'CV' %} target="_blank"{% endif %} title="{{ link.label | escape }}" aria-label="{{ link.label | escape }}">
+    {%- case link.icon -%}
+      {%- when "github" -%}
+      <svg class="svg-icon" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      {%- when "linkedin" -%}
+      <svg class="svg-icon" viewBox="0 0 16 16" width="16" height="16"><path d="M14.82 0H1.18C.53 0 0 .53 0 1.18v13.64C0 15.47.53 16 1.18 16h13.64c.65 0 1.18-.53 1.18-1.18V1.18C16 .53 15.47 0 14.82 0zM4.74 13.63H2.37V6h2.37v7.63zM3.56 4.98a1.37 1.37 0 1 1 0-2.75 1.37 1.37 0 0 1 0 2.75zm10.07 8.65h-2.37V9.9c0-.87-.02-1.99-1.21-1.99-1.22 0-1.4.95-1.4 1.93v3.79H6.28V6h2.28v1.04h.03c.32-.6 1.09-1.23 2.24-1.23 2.39 0 2.83 1.57 2.83 3.62v4.2z"/></svg>
+      {%- when "scholar" -%}
+      <svg class="svg-icon" viewBox="0 0 16 16" width="16" height="16"><path d="M8 0L0 5l8 5 6.55-4.09V11H16V5L8 0zM4 9.18V13l4 3 4-3V9.18L8 12 4 9.18z"/></svg>
+      {%- when "file" -%}
+      <svg class="svg-icon" viewBox="0 0 16 16" width="16" height="16"><path d="M9.5 0H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V4.5L9.5 0zM9 1.5 12.5 5H9V1.5zM8.5 12.5H4v-1h4.5v1zm3-2H4v-1h7.5v1zm0-2H4v-1h7.5v1z"/></svg>
+    {%- endcase -%}
+  </a>
+  {%- endfor -%}
+</div>

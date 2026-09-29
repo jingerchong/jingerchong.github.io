@@ -1,3 +1,0 @@
----
-section: Final CAD renderings
----

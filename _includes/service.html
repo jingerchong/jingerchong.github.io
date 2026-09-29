@@ -1,0 +1,16 @@
+<div class="service-list">
+  {% assign entries = include.items | sort: "datetime" | reverse %}
+  {% for item in entries %}
+    {% if include.group == nil or item.group == include.group %}
+    <article class="service-entry{% if item.group == 'reviewing' %} service-entry-reviewing{% endif %}">
+      <div class="service-title-row">
+        <h3>
+          {% capture service_label %}<span class="service-role">{{ item.role }}, </span><span class="service-organization">{{ item.organization }}</span>{% endcapture %}
+          {% if item.writeup %}<a href="{{ item.writeup | relative_url }}"{% if item.writeup contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ service_label }}</a>{% else %}{{ service_label }}{% endif %}
+        </h3>
+        {% if item.date and item.date != "" %}<time datetime="{{ item.time_datetime | default: item.datetime }}">{{ item.date }}</time>{% endif %}
+      </div>
+    </article>
+    {% endif %}
+  {% endfor %}
+</div>

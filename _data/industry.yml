@@ -1,0 +1,47 @@
+# Industry rows appear in file order. Copy the commented example to add a role.
+# - org: Example Organization          # Required: heading
+#   role: Example Role                 # Required: role line
+#   start: Jun 2026                    # Required: visible start
+#   end: Aug 2026                      # Required: visible end
+#   location: City, State              # Required: visible location
+#   link: https://example.com          # Optional: organization link
+#   bullets:                            # Required: verified public contributions; HTML <strong> is supported
+#     - Describe a contribution.
+- org: GE Vernova Advanced Research Center
+  role: Computer Vision Research Intern
+  start: Jun 2026
+  end: Aug 2026
+  location: Niskayuna, NY
+  link: https://www.gevernova.com/research
+  bullets:
+  - Reduced <strong>inspector review volume by ~50%</strong> by consolidating redundant detections into unique defects on wind turbine blades
+  - Developed visual localization for an inspection crawler along 50–75 m blades, chunked into overlapping windows, using COLMAP SfM with sequential ALIKED + LightGlue matching on perspective views rendered from equirectangular imagery
+  - Scaled matching <strong>up to ~1M candidate defect polygon pairs</strong> per blade with a cascaded coarse-to-fine geometric verification filter
+  - Delivered <strong>2–5 hour per blade</strong> single-node pipeline slated for deployment, with invention disclosure under internal patent review
+- org: Microsoft
+  role: Mechanical Engineering Intern
+  start: Jun 2024
+  end: Aug 2024
+  location: Redmond, WA
+  bullets:
+  - Owned end-to-end design and prototyping of <strong><a href="https://patents.google.com/patent/US20260143604/" target="_blank" rel="noopener noreferrer">patent-pending hinge mechanism</a></strong> from concept through alpha, translating benchmarks and user studies into specifications and first-order models for spring selection, material choice, and friction tuning
+  - Honed in on target torque profile through iterative fabrication and measurement of 3D-printed and CNC-machined prototypes
+- org: Rotor Technologies
+  role: Graduate Engineering Intern
+  start: Jun 2023
+  end: Sep 2023
+  location: Nashua, NH
+  link: https://www.rotor.ai/
+  bullets:
+  - Achieved <strong>100:1 LiDAR compression</strong> via H.265 encoding, enabling low-latency streaming for remotely-piloted helicopters
+  - Streamlined sensor testing without flight hardware by emulating onboard sensors from recorded video and packet captures
+  - Reduced <strong>real-time bandwidth by up to 3×</strong> via azimuth-level decimation and adaptive bitrate control
+- org: Rotor Technologies
+  role: Undergraduate Engineering Intern
+  start: Jun 2022
+  end: Aug 2022
+  location: Nashua, NH
+  link: https://www.rotor.ai/
+  bullets:
+  - Expanded subscale helicopter testing infrastructure for perception, flight controls, and data logging from 1 to 3 units
+  - Integrated onboard power and data systems and bridged EKF and airspeed data from PX4 to proprietary flight software

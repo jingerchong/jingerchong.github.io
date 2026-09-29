@@ -1,0 +1,111 @@
+:root {
+  --color-background: #fff;
+  --color-text: #000;
+  --color-light: #D9DCD6;
+  --color-grey: #646E78;
+  --color-accent: #EFCA08;
+  --color-theme: #08415C;
+}
+
+
+::-moz-selection {
+    color: var(--color-text);
+    background: var(--color-accent);
+}
+
+::selection {
+    color: var(--color-text);
+    background: var(--color-accent);
+}
+
+a {
+    color: var(--color-theme) !important;
+}
+
+pre, code {
+    border: none !important;
+    background-color: var(--color-light) !important;
+}
+
+h2 a {
+    color: var(--color-text) !important;
+}
+
+h2:after {
+    background: var(--color-theme);
+}
+
+.site-footer {
+    background-color: var(--color-theme);
+    color: var(--color-light) !important;
+    a:active, a:hover {
+        color:var(--color-accent) !important;
+    } a {
+        color: var(--color-light) !important;
+    }
+}
+
+.site-header {
+    background-color: var(--color-theme);
+    color: var(--color-light) ;
+}
+
+.page-link {
+    color: var(--color-light) !important;
+}
+
+.page-link:hover, .page-link:active {
+    color:var(--color-accent) !important;
+}
+
+.current-page {
+    color:var(--color-accent) !important;
+}
+
+.site-footer {
+    h2:after {
+        background: var(--color-accent);
+    }
+}
+
+.svg-icon {
+    fill: var(--color-light) !important;
+    :active, :hover {
+        fill: var(--color-accent);
+    }
+}
+
+.identity-row .svg-icon {
+    fill: var(--color-theme) !important;
+}
+
+.identity-row a:hover .svg-icon, .identity-row a:active .svg-icon {
+    fill: var(--color-accent) !important;
+}
+
+@media screen and (max-width: 600px) { .site-nav {
+    background-color: var(--color-theme) !important;
+    .menu-icon > svg {
+        fill: var(--color-light) !important;
+    }
+    border-color: var(--color-light) !important;
+}}
+
+.banner-text-1 {
+    color: var(--color-light);
+    background-color: var(--color-theme);
+}
+
+.banner-text-2 {
+    color: var(--color-accent);
+    background-color: var(--color-theme);
+}
+
+.banner-text-3 {
+    color: var(--color-light);
+    background-color: var(--color-theme);
+}
+
+.post-meta {
+    color: var(--color-grey) !important;
+}
