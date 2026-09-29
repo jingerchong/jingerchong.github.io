@@ -26,7 +26,7 @@ ignored; never edit or commit it.
 | --- | --- |
 | `index.html`, `research.md`, `industry.html`, `projects.html`, `about.html` | The five navigation pages; each contains its own markup and front matter. `about.html` renders Education, Skills, Teaching, then Service from `_data/`. |
 | `_projects/*.markdown` | Fourteen published project files (plus hidden `published: false` drafts), one per `/projects/:slug/` page, with metadata and any available writeup. The homepage features the first three `featured` projects. New projects may use `.md`. |
-| `_data/*.yml` | Eight current data files: education, industry, links, publications, research, service, skills, and teaching. `news.yml` is optional and has not been created yet. |
+| `_data/*.yml` | Eight current data files: education, industry, links, publications, research, service, skills, and teaching. |
 | `_layouts/project.html`, `_layouts/with-banner.html`, `_includes/` | Project detail layout, homepage banner shell, and shared cards, galleries, navigation, and list components. Minima supplies the default layout. |
 | `assets/images/<slug>/`, `_sass/`, `assets/main.scss` | Project covers and galleries, shared colors, typography, and responsive styles. |
 | `redirects/` and `industry.html` | Redirects for old category URLs, `/cv/`, and `/experience/`. Project pages have no legacy URL redirects. |
@@ -87,21 +87,17 @@ old URL; do not create a redirect for it.
   differs from the visible year, set `time_datetime` to that year. Entries
   appear newest first across all groups. Add `writeup` only for a real page
   or verified external URL. No image is needed.
-- **News item:** Create `_data/news.yml` when there is a verified item. Add a
-  row with ISO `date` (`YYYY-MM-DD`) and `text`; `url` is optional. Rows appear
-  newest first on the homepage. The News section stays hidden while the file
-  is absent or the list is empty.
 
 ## Accuracy and change workflow
 
 - Preserve authored content while reorganizing. Use current
   owner-provided material and verified sources for claims; do not infer
   dates, degrees, metrics, awards, publication status, or media. `TODO.md`
-  tracks remaining owner decisions, including GE Vernova public wording,
-  Rotor LiDAR compression, and ICRA 2027 policy.
+  tracks open work.
 - Keep the private résumé, phone number, street address, proprietary work,
   and unpublished patent material out of public output. The public CV is
   `downloads/jinger-chong-cv.pdf`; verify redaction before replacing it.
+- Jinger approved the remaining K–12 outreach photos for public display.
 - Missing media should disappear cleanly. Record the asset needed in
   `TODO.md`; do not add a broken image, dead `href="#"`, or invented media.
 - Keep semantic headings, meaningful alt text, keyboard focus, readable

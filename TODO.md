@@ -1,8 +1,7 @@
-# TODO — portfolio launch and application season
+# TODO — portfolio content and improvements
 
-This is the single place to track site work. The list reflects the current source files as of
-2026-09-28. A missing cover is intentionally omitted by the templates; hidden drafts have
-`published: false` and are not launch blockers.
+This is the single place to track open site work. A missing cover is intentionally omitted by
+the templates; hidden drafts have `published: false` and are not launch blockers.
 
 ## Project and writeup progress tracker
 
@@ -71,9 +70,6 @@ Use only owner-approved figures, results, and public URLs for further additions.
 
 ## Site improvements during applications
 
-- [ ] **Review outreach photos before displaying them.** The K–12 outreach images are excluded
-      from the published site because they include identifiable students. Confirm public-use
-      approval before removing `assets/images/abes-outreach` from `_config.yml`'s exclude list.
 - [ ] Add strong, rights-cleared covers to the three featured projects. The racecar has a cover;
       pool and quadrotor do not. Consider whether a research-specific banner would better signal
       the current work than the shop photograph.
@@ -81,38 +77,5 @@ Use only owner-approved figures, results, and public URLs for further additions.
       approved photos and useful detail (Fusion 360 and Illustrator workshops for 70+ students;
       coached a six-member team). Optionally add Rotor 2022's subscale-helicopter CAD/SAS and
       procurement work after public wording is approved.
-- [ ] Add talks or a News section when there are verified items. Revisit a dedicated Publications
+- [ ] Add verified talks if useful. Revisit a dedicated Publications
       page once the list grows. Keep the old sketch only if it adds value as a footer or 404 detail.
-
-## Editorial decisions already made
-
-- The 2026-09-29 `revamp` GitHub Actions production build and local-link check passed after
-  locking native gems for Windows and Linux and excluding `vendor/` from Jekyll output.
-- The project URLs now use `struct-gp`, `safety-metrics`, `pool-robot`, `bottle-flip`, and
-  `2048-rl`; the hidden drafts use `novel-view-sythesis`, `infant-gaze`, and `ur5-lego`.
-  Former project URLs have no redirects. The 2048 images moved with its slug.
-- Jinger approved the public GE Vernova bullets, metrics, deployment and invention-disclosure
-  wording and Rotor's 100:1 LiDAR compression claim on 2026-09-28.
-- Jinger confirmed that the ICRA 2027 anonymity policy permits the current arXiv link. Keep the
-  publication status current; on 2026-09-28 she confirmed it is still under review.
-- Jinger confirmed the arXiv link points to the updated ICRA manuscript.
-- Jinger confirmed the public CV's Sep 2022–Present MIT Mechatronics Research Lab timeline.
-  Research → NOW uses the same timeline and role title. The public CV contains no phone number or
-  street address.
-- Hide Jansen’s Linkage until its blurb or writeup is approved. External links were checked on
-  2026-09-28; the dead ReVise team-page link was removed and its webcast uses a direct Vimeo link.
-  The four Alfredo YouTube videos resolve.
-- The 2026-09-28 production build and local HTML/link check passed. The main routes and redirects
-  were previewed at desktop and phone widths; mobile image and navigation layout was adjusted.
-- Orange and Bronze Software Labs stays off the site (CV only).
-- 2026-09-28: Edgerton K-12 Mentor stays unlinked in Service until `/projects/edventures/` is
-  published. Keep a mix of community and outreach roles for personality; sort Service newest first.
-  Keep the current 2.00B teaching titles. Segway Robot, Flashlight, Iron Man, Home Upgrades, and the Photography
-  page from the old site stay retired.
-- 2026-09-28: Service lists one Student Project Lab (4-409) row (Shop Mentor, 2019 – 2021);
-  the separate Assistant Shop Manager row was removed. Banana Lounge stays.
-- 2026-09-28: Keep Andres Bonifacio Elementary School Robotics Outreach and Banana Lounge in
-  Service. Remove the Filipino Students Association and Women's Independent Living Group rows
-  to focus the section on impact and personality.
-- Keep the Skills list robotics-focused. Do not add Java, HTML/CSS, SQL, LaTeX, OpenSCAD, or
-  Illustrator just to mirror the old résumé.
