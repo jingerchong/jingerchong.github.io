@@ -180,6 +180,15 @@ h2:after {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .headshot {
+        display: block;
+        float: none;
+        width: min(12rem, 60%);
+        margin: 0 auto 1.25rem;
+    }
+}
+
 .skills-category {
     font-size: inherit;
     font-weight: 700 !important;
@@ -235,9 +244,11 @@ h2:after {
 
 @media screen and (max-width: 480px) {
     .post-cover {
+        float: none;
         width: 100%;
-        margin-left: 1em;
-        margin-bottom: 0.5em;
+        max-width: 100%;
+        max-height: none;
+        margin: 0 0 1em;
     }
 }
 
@@ -258,4 +269,13 @@ h2:after {
     .grid ul {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+.video-embed iframe {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
 }

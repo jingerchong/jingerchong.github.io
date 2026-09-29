@@ -5,8 +5,6 @@ order: 5
 year: 2019
 context: Discover Mechanical Engineering pre-orientation
 summary: An early non-Lego robot build during MIT pre-orientation.
-redirect_from:
-- /soccer-robot/
 ---
 
 Through MIT's Discover Mechanical Engineering First-Year Pre-Orientation Program, I built my first non-Lego robot.
@@ -17,6 +15,6 @@ We were each instructed to build a base soccer robot, then given room to add oth
 
 ### Building the robot
 
-Worked in the famous MIT Pappalardo Lab, used sheet metal to build a chassis, added wheel guards and guides for the ball. Had a tournament on the last day!
+I built the sheet-metal chassis in MIT's Pappalardo Lab and added wheel guards and ball guides before the final tournament.
 
 {% include gallery.html dir="building-the-robot" title="Building the robot" %}

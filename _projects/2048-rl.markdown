@@ -1,0 +1,18 @@
+---
+title: Temporal-Difference Learning for 2048
+tier: unlisted
+order: 2
+year: 2020
+context: NCTU Computer Games and Intelligence Lab
+summary: A temporal-difference learning agent developed during an NCTU CGI Lab internship.
+---
+
+During a research internship at National Chiao Tung University's Computer Games and Intelligence Lab, I trained a temporal-difference learning agent to play 2048. The agent learns a value function over board states and selects moves greedily with respect to that estimate.
+
+The agent first reached the 2048 tile after 2,000 training rounds, and hit a 93% win rate after 20,000. I also investigated how changing the probability of spawning a 4-tile in the environment affects the final score and the learning speed.
+
+Full C++ implementation on [GitHub](https://github.com/jingerchong/2048).
+
+### Some results
+
+{% include gallery.html dir="some-results" title="Some results" %}

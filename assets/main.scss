@@ -47,6 +47,13 @@
     border: 0 !important;
     text-align: right;
   }
+
+  .site-header .site-nav .trigger {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: end;
+    column-gap: 1.5rem;
+  }
 }
 
 .site-footer .social-media-list {

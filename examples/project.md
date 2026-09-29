@@ -9,7 +9,6 @@ summary: One verified sentence about the work. # Required: card and detail intro
 # stack: [Python, ROS]                         # Optional: detail-page chips
 # award: Verified award                        # Optional: detail-page metadata
 # links: {video: https://example.com}          # Optional; omit unknown links
-# redirect_from: [/old-project-url/]           # Only when preserving a real old URL
 # sitemap: false                               # For an intentionally empty archival page
 ---
 

@@ -18,6 +18,7 @@ cd 'C:\Users\Jinger\Documents\jingerchong.github.io'
 gem install bundler -v 2.5.22
 bundle install
 bundle exec -- C:\Ruby33-x64\bin\jekyll.bat build
+python scripts/check_site.py _site
 bundle exec -- C:\Ruby33-x64\bin\jekyll.bat serve
 ```
 
@@ -25,3 +26,7 @@ bundle exec -- C:\Ruby33-x64\bin\jekyll.bat serve
 <http://localhost:4000> after the server starts, and press Ctrl+C to stop it.
 Restart the server after changing `_config.yml`. The generated `_site/`
 directory is ignored by Git.
+
+The site check reports broken local links, missing image alt text or iframe titles,
+and visible drafting placeholders. GitHub Actions runs the same check after each
+production build.

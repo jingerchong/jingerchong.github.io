@@ -5,13 +5,11 @@ order: 4
 year: 2019
 context: Freshman engineering seminar
 summary: A freshman engineering seminar mechanism.
-redirect_from:
-- /rubber-band-turret/
 ---
 
 A fun rubber band shooting contraption for EC.A790 Engineering, Art, Science freshman seminar.
 
-Arduino code uploaded on [Github](https://github.com/jingerchong/)
+Arduino code uploaded on [GitHub](https://github.com/jingerchong/rubber-band-turret).
 
 ### Rough prototyping
 

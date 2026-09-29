@@ -4,14 +4,14 @@ title: Projects
 permalink: /projects/
 ---
 <div class="projects-page">
-  <h2>PROJECTS</h2>
+  <h2>FEATURED</h2>
   {% assign featured_projects = site.projects | where: 'tier', 'featured' %}
   {% assign normal_projects = site.projects | where: 'tier', 'normal' %}
   {% assign projects = featured_projects | concat: normal_projects | sort: 'order' %}
   <div class="project-grid">
     {% for item in projects %}{% include project-card.html item=item %}{% endfor %}
   </div>
-  <h2>ARCHIVE</h2>
+  <h2>MORE</h2>
   {% assign earlier_work = site.projects | where: 'tier', 'archive' | sort: 'order' %}
   <div class="service-list">
     {% for item in earlier_work %}

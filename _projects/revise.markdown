@@ -5,13 +5,15 @@ order: 4
 year: 2021
 context: 2.009 Product Engineering Processes
 summary: A pneumatically actuated vise using granular jamming to grip irregular workpieces.
-redirect_from:
-- /revise/
 ---
 
 ReVise is an integrated vise solution designed to hold tightly onto irregular workpieces without damaging them. The metal vise houses a self-regulated pneumatic system attached to two removable pouches. Through *granular jamming*, the pouches can conform to any geometry and hold their shape. As a result, the clamping force is distributed over a larger contact area, improving grip while minimizing risk.
 
 This was the product our 20-member team showcased on December 6, 2021 in Kresge Auditorium for the capstone project class *2.009 Product Engineering Processes*. During the presentation, we clamped a raw egg without cracking its shell. Getting there meant iterating through the process Prof. David Wallace summed up as *"Ideate. Model. Test. Repeat."*
+
+### My role
+
+I headed the task force responsible for designing and manufacturing the vise body, built mainly from waterjet-cut steel plates welded together. I also created the team's CAD assembly, renders, and animations, and designed the brochure, posters, and slides for our 20-member team.
 
 Quick links and photos below.
 - [initial prototype CAD](https://a360.co/3BDgh3M)
@@ -20,10 +22,8 @@ Quick links and photos below.
 - [final prototype rendering CAD](https://a360.co/3qD6mrA)
 - [product brochure]({{ '/downloads/revise-product-sheet.pdf' | relative_url }})
 - [course website](https://web.mit.edu/2.009/www/index.html)
-- [team page](https://web.mit.edu/2.009/www/teams/home.html?t=Pink)
-- [final presentation webcast](https://player.vimeo.com/video/653895567), also available below:
+- [final presentation webcast](https://vimeo.com/653895567) (ReVise begins around 2:18:38)
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/653895567#t=2h18m38s?h=fca9dee2ba&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 ### Initial CAD photos and animations
 

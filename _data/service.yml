@@ -1,5 +1,4 @@
-# Add one entry per service role. Groups display in this order: reviewing, outreach, community.
-# Within each group, the newest datetime appears first.
+# Add one entry per service role. All entries display newest first by datetime.
 # - role: Example role               # Required
 #   organization: Example group      # Required
 #   date: 2026                      # Displayed year; omit or leave empty when the name already dates it
@@ -13,13 +12,14 @@
   datetime: 2026-09
   time_datetime: 2027
   group: reviewing
+  writeup: https://2027.ieee-icra.org/
 
 - role: Mentor
   organization: Edgerton Center K-12 Maker Education
   date: 2020, 2021
   datetime: 2021-01
   group: outreach
-  writeup: https://edgerton.mit.edu/
+  # writeup: /projects/edventures/  # link once the Edventures draft is published
 
 - role: Teacher
   organization: ESP Splash
@@ -35,15 +35,16 @@
   group: outreach
   writeup: /projects/abes-outreach/
 
-- role: Organizer
-  organization: SJCS Robocup
-  date: 2018
-  datetime: 2018-04
-  group: outreach
-  writeup: /projects/sjcs-robocup/
-
 - role: Volunteer
   organization: Banana Lounge
   date: 2021 – 2022
   datetime: 2022-01
   group: community
+  writeup: https://ua.mit.edu/innovation/
+
+- role: Shop Mentor
+  organization: Edgerton Center Student Project Lab (4-409)
+  date: 2019 – 2021
+  datetime: 2021-09
+  group: community
+  writeup: https://edgerton.mit.edu/for-MIT-students/student-shops/student-project-lab-4-409

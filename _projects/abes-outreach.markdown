@@ -5,8 +5,6 @@ order: 340
 year: 2019
 context: Andres Bonifacio Elementary School Robotics Outreach
 summary: A hands-on introduction-to-robotics workshop for elementary students.
-redirect_from:
-- /abes-outreach/
 ---
 
 We held an introduction to robotics workshop at Andres Bonifacio Elementary School (ABES), a local public school working to strengthen its STEM program. The workshop was requested by a teacher from ABES, and drew about 50 students from 4th to 6th grade.
