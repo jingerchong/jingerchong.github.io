@@ -42,8 +42,9 @@ redirects to the PDF configured by `cv_url`.
 
 ## Current layout and design system
 
-- Home: banner, bio with one More about me link, Now line, Publications, Projects
+- Home: banner, one bio paragraph with a View my CV link, Publications, Projects
   (three featured rows), Experience with All experience link, then Contact.
+  Internship availability appears only in the banner, with no separate Now paragraph.
   `tagline`, `status`, `contact_email`, and `cv_url` come from `_config.yml`.
   Restart the local server after changing configuration.
 - Navigation stays Research, Industry, Projects, About. Industry is the route/nav
