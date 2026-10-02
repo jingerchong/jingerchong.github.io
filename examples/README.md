@@ -15,6 +15,9 @@ skills, teaching, service, and social links.
 | Research | Now, Before |
 | Industry | Experience |
 
+The More list places title/context on the left and dates at the right edge,
+including on phones.
+
 Home links use All projects and All experience. Navigation remains Research,
 Industry, Projects, About. Contact shows the configured email as a mailto link.
 Banner tagline and internship status are configured in `_config.yml`.

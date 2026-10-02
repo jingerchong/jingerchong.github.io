@@ -158,7 +158,8 @@ h2.sec, .project-writeup h2 { @include section-heading; }
 }
 .list li > span:first-child { flex: 1; }
 .list .meta-t { white-space: nowrap; }
-.list.archive li { display: grid; grid-template-columns: var(--col) minmax(0, 1fr); gap: var(--sp-3); }
+.list.archive li { display: grid; grid-template-columns: minmax(0, 1fr) max-content; gap: var(--sp-2); align-items: baseline; }
+.list.archive .meta-t { text-align: right; }
 
 // ---------- Entry (.ent): Research, Industry, Education ----------
 .ent { margin: 0 0 var(--sp-3); }
@@ -352,7 +353,6 @@ dl.meta dd { margin: 0; }
   .lc.pubs > li { grid-template-columns: 1fr; }
   .pubs .v .meta-t { display: inline; margin-left: .6em; }
   .list li { flex-direction: column; gap: 0; padding: var(--sp-1) 0; }
-  .list.archive li { grid-template-columns: 1fr; gap: 0; }
   .ent .h { gap: 0 var(--sp-2); }
 
   .me img { width: var(--col); height: var(--col); margin-left: var(--sp-2); }

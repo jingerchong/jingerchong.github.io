@@ -49,7 +49,8 @@ redirects to the PDF configured by `cv_url`.
 - Navigation stays Research, Industry, Projects, About. Industry is the route/nav
   name; Experience is the heading on Home and Industry.
 - Projects: FEATURED combines `featured` and `normal`, ordered together by `order`;
-  MORE lists `archive`. Changing the heading does not change tier behavior.
+  MORE lists `archive`, with title/context on the left and dates aligned at the right
+  edge on desktop and phones. Changing the heading does not change tier behavior.
 - About: OFF THE CLOCK with a floated square headshot, Education, Skills,
   Teaching, Service. Research uses NOW and BEFORE.
 - Project detail: back link, context/year kicker, title, optional metadata and
