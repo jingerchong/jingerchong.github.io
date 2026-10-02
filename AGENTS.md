@@ -30,15 +30,17 @@ ignored; never edit or commit it.
 | `_data/*.yml` | Eight current data files: education, industry, links, publications, research, service, skills, and teaching. |
 | `_layouts/default.html`, `_layouts/project.html`, `_layouts/with-banner.html`, `_includes/` | Shared page shell, project detail layout, homepage banner shell, and shared cards, galleries, navigation, and list components. Minima remains the GitHub Pages theme. |
 | `assets/images/<slug>/`, `_sass/`, `assets/main.scss` | Project covers and galleries, shared colors, typography, and responsive styles. |
+| `assets/citations.js`, `assets/media.js` | Clipboard citations and reduced-motion-aware local video playback. |
+| `scripts/check_site.py`, `.github/workflows/site-check.yml` | Local and CI checks for generated pages, links, markup, and excluded development files. |
 | `redirects/` and `industry.html` | Redirects for `/projects/archive/`, `/cv/`, and `/experience/`. Project pages have no legacy URL redirects. |
 | `downloads/` | Public PDFs, including the CV path configured once as `cv_url` in `_config.yml`. |
 | `examples/` | Excluded authoring guide, copyable project example, and historical design references. Every `_data` file has a commented row example. |
 | `TODO.md` | The only source for editorial and launch TODOs; it is excluded from the published site. |
 
-`_includes/header.html` lists the navigation URLs directly: Research, Industry,
-Projects, and About. The former
-root writeup URLs are retired. Former category URLs are retired; `/projects/archive/` redirects to `/projects/`; `/experience/` redirects to `/industry/`; `/cv/`
-redirects to the PDF configured by `cv_url`.
+`_includes/header.html` generates the four navigation URLs from their labels.
+Former root writeup and category URLs are retired. The retained redirects are
+`/projects/archive/` to `/projects/`, `/experience/` to `/industry/`, and `/cv/`
+to the PDF configured by `cv_url`.
 
 ## Current layout and design system
 
@@ -46,7 +48,6 @@ redirects to the PDF configured by `cv_url`.
   (three featured rows), Experience with All experience link, then Contact.
   Internship availability appears only in the banner, with no separate Now paragraph.
   `tagline`, `status`, `contact_email`, and `cv_url` come from `_config.yml`.
-  Restart the local server after changing configuration.
 - Navigation stays Research, Industry, Projects, About. Industry is the route/nav
   name; Experience is the heading on Home and Industry.
 - Projects: FEATURED combines `featured` and `normal`, ordered together by `order`;
@@ -92,15 +93,16 @@ old URL; do not create a redirect for it.
   `slides`, `poster`, `website` order, then other keys. A `paper` PDF is labeled
   PDF (other paper URLs: Paper); other PDF targets get a `(PDF)` suffix.
   Empty and `#` targets are skipped. Keep public PDF writeups in `downloads/<slug>/`.
-  Do not add redirects for former project URLs. Missing covers use blueprint
+  Missing covers use blueprint
   tiles in listings and no detail-page hero; set `placeholder` to `pool`,
   `quadrotor`, `prediction`, or `safety` to pick the tile drawing (anything else
-  gets a generic arm). Previous/next follows grid order.
+  gets a generic arm).
 - **Gallery:** Place files under `assets/images/<slug>/<descriptive-name>/`
   as `01.webp`, `02.webp`, and so on. Add
-  `{% raw %}{% include gallery.html dir="descriptive-name" title="Descriptive title" %}{% endraw %}`
+  `{% include gallery.html dir="descriptive-name" title="Descriptive title" %}`
   at the desired point in the project's Markdown body. The include uses the
-  project filename slug, reads only that folder, and sorts by filename. The
+  project filename slug and sorts matching files by path. Keep only image files
+  in gallery folders (including any subfolders). The
   optional cover lives at `assets/images/<slug>/cover.webp` (16:10 in listings,
   16:9 on the page). Set `image` to its path for social sharing; the default is
   the site banner. Set `hero_video` to a YouTube ID to replace the page hero.

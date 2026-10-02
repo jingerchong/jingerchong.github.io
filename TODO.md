@@ -5,28 +5,19 @@ Open work only. Current layout and authoring rules live in `AGENTS.md` and
 
 ## Project writeups and evidence to add while sending applications
 
-The two research stories now have text-first pages based on the public papers and the existing CV.
-Use only owner-approved figures, results, and public URLs for further additions.
-
-- [ ] **Human motion prediction.** Add an approved figure or 4-second predicted-pose loop and a
-      public code link if available. The writeup links the updated ICRA manuscript on arXiv.
-- [ ] **Perception-aware safety.** Add an approved figure or diagram and a public code link if
-      available. The writeup already includes the verified ICRA 2024 DOI and first-author PDF.
-- [ ] **Autonomous Pool-Playing Robot.** The current page covers problem, approach, and result;
-      add a simulation screenshot or short loop at `assets/images/pool-robot/cover.webp`,
+- [ ] **Human motion prediction (`struct-gp`).** Add an approved cover, figure or
+      prediction loop, and a public code link if available.
+- [ ] **Perception-aware safety (`safety-metrics`).** Add an approved cover,
+      figure or diagram, and a public code link if available.
+- [ ] **Autonomous Pool-Playing Robot.** Add a simulation screenshot or short loop,
       Jinger's specific contribution, and a clearer result or limitation if documented.
-- [ ] **Autonomous Racecar Stack (Alfredo).** The course outcome, algorithms, and video captions
-      are present. Add Jinger's own role and main technical challenge when documented. Add a
-      standalone code link only if useful and public.
-- [ ] **Water Bottle Flipping Quadrotor.** The method and four-fill-level result are present; add a
-      flip diagram or short loop at `assets/images/bottle-flip/cover.webp`, explain
-      Jinger's contribution and team, and give any approved comparison or failure cases.
-- [ ] **Granular-Jamming Vise (ReVise).** Jinger's role is now described. Consider a shorter
-      reader-facing account of the design iterations and final outcome. The CAD, brochure, and
-      direct webcast links were checked.
-
-- [ ] Add covers for `struct-gp` and `safety-metrics`, plus an approved figure to replace
-      the illustrative Research diagram.
+- [ ] **Autonomous Racecar Stack (Alfredo).** Add Jinger's individual role and main
+      technical challenge; add a standalone code link only if useful and public.
+- [ ] **Water Bottle Flipping Quadrotor.** Add a cover or simulation clip, role,
+      team, and approved comparisons or failure cases.
+- [ ] **Granular-Jamming Vise (ReVise).** Consider a shorter account of design
+      iterations and the resulting outcome.
+- [ ] Replace the illustrative Research diagram with an approved research figure.
 - [ ] Add approved off-the-clock photos when available.
 
 ### Parked drafts — keep hidden until Jinger supplies details
@@ -49,8 +40,9 @@ Use only owner-approved figures, results, and public URLs for further additions.
 
 - [ ] Add a short teaching writeup for the Spring 2023 2.00B Lab Instructor role if there are
       approved photos and useful detail (Fusion 360 and Illustrator workshops for 70+ students;
-      coached a six-member team). Optionally add Rotor 2022's subscale-helicopter CAD/SAS and
-      procurement work after public wording is approved.
+      coached a six-member team).
+- [ ] Optionally expand Rotor 2022's subscale-helicopter CAD/SAS and procurement
+      work after public wording is approved.
 - [ ] Add verified talks if useful. Revisit a dedicated Publications
       page once the list grows.
 

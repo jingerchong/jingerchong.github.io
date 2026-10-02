@@ -20,7 +20,8 @@ including on phones.
 
 Home links use All projects and All experience. Navigation remains Research,
 Industry, Projects, About. Contact shows the configured email as a mailto link.
-Banner tagline and internship status are configured in `_config.yml`.
+Home has one bio paragraph ending with View my CV; internship availability
+appears only in the banner. Banner tagline and status are configured in `_config.yml`.
 
 Publication `paper` links to PDFs display PDF, while non-PDF paper targets display
 Paper. Other PDF links retain their descriptive label and a (PDF) suffix.
