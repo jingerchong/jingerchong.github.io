@@ -1,13 +1,13 @@
-<div class="education-list">
-  <div class="education-institution-row">
-    <p class="education-institution">{{ site.data.education.institution }}</p>
-    <span class="education-location">{{ site.data.education.location }}</span>
+<div class="ent">
+  <div class="h">
+    <p class="item">{{ site.data.education.institution }}</p>
+    <span class="meta-t">{{ site.data.education.location }}</span>
   </div>
   {% for entry in site.data.education.entries %}
     <article class="education-entry">
-      <div class="education-degree-row">
-        <h3>{{ entry.degree }}</h3>
-        <time datetime="{{ entry.datetime }}">{{ entry.date }}</time>
+      <div class="h">
+        <h3 class="role">{{ entry.degree }}</h3>
+        <time class="meta-t" datetime="{{ entry.datetime }}">{{ entry.date }}</time>
       </div>
       {% for detail in entry.details %}<p class="education-secondary">{{ detail | replace: 'Kamal Youcef-Toumi', '<a href="https://meche.mit.edu/people/faculty/YOUCEF@MIT.EDU" target="_blank" rel="noopener noreferrer">Kamal Youcef-Toumi</a>' }}</p>{% endfor %}
     </article>

@@ -1,0 +1,7 @@
+{% if include.links %}
+{% assign fixed = 'paper,arxiv,code,video,report,slides,poster,website' | split: ',' %}
+{% capture links_html %}
+{% for key in fixed %}{% assign target = include.links[key] | strip %}{% if target != empty and target != '#' %}{% include single-link.html key=key target=target %}{% endif %}{% endfor %}
+{% for link in include.links %}{% unless fixed contains link[0] %}{% assign target = link[1] | strip %}{% if target != empty and target != '#' %}{% assign key = link[0] %}{% include single-link.html key=key target=target %}{% endif %}{% endunless %}{% endfor %}
+{% endcapture %}{% assign links_html = links_html | strip %}{% if links_html != empty %}<div class="linkrow">{{ links_html }}</div>{% endif %}
+{% endif %}

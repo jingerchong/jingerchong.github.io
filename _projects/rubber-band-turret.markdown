@@ -5,6 +5,7 @@ order: 4
 year: 2019
 context: Freshman engineering seminar
 summary: A freshman engineering seminar mechanism.
+image: /assets/images/rubber-band-turret/cover.webp
 ---
 
 A fun rubber band shooting contraption for EC.A790 Engineering, Art, Science freshman seminar.

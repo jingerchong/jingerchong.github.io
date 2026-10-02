@@ -5,6 +5,7 @@ order: 5
 year: 2019
 context: Discover Mechanical Engineering pre-orientation
 summary: An early non-Lego robot build during MIT pre-orientation.
+image: /assets/images/soccer-robot/cover.webp
 ---
 
 Through MIT's Discover Mechanical Engineering First-Year Pre-Orientation Program, I built my first non-Lego robot.

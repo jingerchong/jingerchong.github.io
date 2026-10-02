@@ -1,15 +1,5 @@
-<div id="banner-image">
-    <div class="wrapper">
-        <div class="banner-text">
-        <span class="banner-text-1">
-            Hi, I'm
-        </span> <br>
-        <span class="banner-text-2">
-            Jinger
-        </span> <br>
-        <span class="banner-text-3">
-            Robotics &amp; Perception at MIT
-        </span>
-        </div>
-    </div>
-</div>
+<section class="hero" aria-label="Introduction" style="background-image: url('{{ site.banner | relative_url }}')"><div class="wrapper">
+<h1>Hi, I'm<strong>Jinger</strong></h1>
+<p class="tagline mono">Human intent prediction · Autonomous navigation</p>
+{% assign status = site.status | strip %}{% if status != empty %}<span class="status">{{ status }}</span>{% endif %}
+</div></section>

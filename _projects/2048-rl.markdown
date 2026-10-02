@@ -5,6 +5,7 @@ order: 2
 year: 2020
 context: NCTU Computer Games and Intelligence Lab
 summary: A temporal-difference learning agent developed during an NCTU CGI Lab internship.
+image: /assets/images/2048-rl/cover.webp
 ---
 
 During a research internship at National Chiao Tung University's Computer Games and Intelligence Lab, I trained a temporal-difference learning agent to play 2048. The agent learns a value function over board states and selects moves greedily with respect to that estimate.

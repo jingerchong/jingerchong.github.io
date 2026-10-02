@@ -5,6 +5,7 @@ order: 310
 year: 2019
 context: ESP Splash
 summary: A class on mechanical linkages taught to high school students.
+image: /assets/images/esp-splash/cover.webp
 ---
 
 We taught a class on the mathematics and design of mechanical linkages.

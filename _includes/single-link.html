@@ -1,0 +1,2 @@
+{% assign link_path = include.target | split: '?' | first | split: '#' | first | downcase %}{% assign extension = link_path | slice: -4, 4 %}
+<a href="{{ include.target | relative_url }}">{% case include.key %}{% when 'arxiv' %}arXiv{% when 'google_patents' %}Google Patents{% else %}{{ include.key | replace: '_', ' ' | capitalize }}{% endcase %}{% if extension == '.pdf' or include.target contains 'arxiv.org/pdf/' %} (PDF){% endif %}</a>

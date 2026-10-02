@@ -2,14 +2,23 @@
 layout: default
 ---
 <article class="project-detail">
-  <h1>{{ page.title }}</h1>
-  {% if page.context or page.year or page.award %}<p class="post-meta">{% if page.context %}{{ page.context }}{% endif %}{% if page.context and page.year %} · {% endif %}{% if page.year %}{{ page.year }}{% endif %}{% if page.award %} · {{ page.award }}{% endif %}</p>{% endif %}
-  {% assign cover_path = '/assets/images/' | append: page.slug | append: '/cover.webp' %}
-  {% assign cover_file = site.static_files | where: 'path', cover_path | first %}
-  {% if cover_file %}<img class="post-cover" src="{{ cover_path | relative_url }}" alt="{{ page.title | escape }} cover">{% endif %}
-  {% if page.summary %}<p class="tldr">{{ page.summary }}</p>{% endif %}
-  {% assign body_text = content | strip %}
-  {% if body_text != empty %}<div class="project-writeup">{{ content }}</div>{% endif %}
-  {% if page.stack and page.stack.size > 0 %}<h2>Stack</h2><p class="chips">{% for item in page.stack %}<span class="chip">{{ item }}</span>{% endfor %}</p>{% endif %}
-  {% if page.links %}<p class="project-links">{% for link in page.links %}{% if link[1] and link[1] != '#' %}<a href="{{ link[1] | relative_url }}">{{ link[0] | capitalize }}</a>{% unless forloop.last %} · {% endunless %}{% endif %}{% endfor %}</p>{% endif %}
+<p class="back mono"><a href="{{ '/projects/' | relative_url }}">← Projects</a></p>
+{% include kicker.html item=page %}
+<h1 class="p-title"><span>{{ page.title }}</span></h1>
+{% capture metadata %}{% assign fields = 'role,team,award' | split: ',' %}{% for field in fields %}{% assign value = page[field] | strip %}{% if value != empty %}<dt>{{ field }}</dt><dd>{{ value }}</dd>{% endif %}{% endfor %}
+{% if page.stack.size > 0 %}<dt>Stack</dt><dd><div class="chips">{% for item in page.stack %}<span class="chip">{{ item }}</span>{% endfor %}</div></dd>{% endif %}{% endcapture %}
+{% assign metadata = metadata | strip %}{% if metadata != empty %}<dl class="meta">{{ metadata }}</dl>{% endif %}
+{% include link-row.html links=page.links %}
+{% assign cover_path = '/assets/images/' | append: page.slug | append: '/cover.webp' %}
+{% assign cover_file = site.static_files | where: 'path', cover_path | first %}
+{% assign hero_video = page.hero_video | strip %}
+{% if hero_video != empty %}<div class="p-hero">{% include youtube.html id=hero_video title=page.title %}</div>{% elsif cover_file %}<div class="p-hero"><img src="{{ cover_path | relative_url }}" alt="{{ page.title | escape }}"></div>{% endif %}
+{% assign tldr = page.tldr | default: page.summary %}{% if tldr %}<p class="tldr">{{ tldr }}</p>{% endif %}
+<div class="project-writeup">{{ content }}</div>
+{% assign featured = site.projects | where: 'tier', 'featured' %}{% assign normal = site.projects | where: 'tier', 'normal' %}{% assign ordered = featured | concat: normal | sort: 'order' %}
+{% for item in ordered %}{% if item.url == page.url %}
+<nav class="pn" aria-label="Adjacent projects">
+{% unless forloop.first %}{% assign previous_index = forloop.index0 | minus: 1 %}{% assign previous = ordered[previous_index] %}<a href="{{ previous.url | relative_url }}"><span class="mono">← Previous</span><br>{{ previous.title }}</a>{% endunless %}
+{% unless forloop.last %}{% assign next_index = forloop.index0 | plus: 1 %}{% assign next = ordered[next_index] %}<a href="{{ next.url | relative_url }}"><span class="mono">Next →</span><br>{{ next.title }}</a>{% endunless %}
+</nav>{% endif %}{% endfor %}
 </article>

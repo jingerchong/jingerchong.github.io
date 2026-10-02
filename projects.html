@@ -4,6 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 <div class="projects-page">
+  <h1 class="visually-hidden">Projects</h1>
   <h2>FEATURED</h2>
   {% assign featured_projects = site.projects | where: 'tier', 'featured' %}
   {% assign normal_projects = site.projects | where: 'tier', 'normal' %}
@@ -13,18 +14,5 @@ permalink: /projects/
   </div>
   <h2>MORE</h2>
   {% assign earlier_work = site.projects | where: 'tier', 'archive' | sort: 'order' %}
-  <div class="service-list">
-    {% for item in earlier_work %}
-      <article class="service-entry">
-        <div class="service-title-row">
-          <h3>
-            {% capture archive_label %}<span class="service-role">{{ item.title }}, </span><span class="service-organization">{{ item.context }}</span>{% endcapture %}
-            {% assign archive_body = item.content | strip %}
-            {% if archive_body == empty %}{{ archive_label }}{% else %}<a href="{{ item.url | relative_url }}">{{ archive_label }}</a>{% endif %}
-          </h3>
-          <time datetime="{{ item.year | append: '' | slice: 0, 4 }}">{{ item.year }}</time>
-        </div>
-      </article>
-    {% endfor %}
-  </div>
+  <ul class="list archive">{% for item in earlier_work %}<li><time class="meta-t" datetime="{{ item.year | append: '' | slice: 0, 4 }}">{{ item.year }}</time><span><a href="{{ item.url | relative_url }}">{{ item.title }}{% if item.context %}, <em>{{ item.context }}</em>{% endif %}</a></span></li>{% endfor %}</ul>
 </div>

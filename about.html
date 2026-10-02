@@ -4,15 +4,15 @@ title: About
 permalink: /about/
 ---
 <div class="about-page">
+  <h1 class="visually-hidden">About</h1>
+  <h2>Outside the lab</h2>
+  <div class="me"><p>Outside the lab, I'm a serial hobbyist. I shoot astro, bird, portrait, and event photography, which is probably how my obsession with perception systems started long before grad school. I run, lift, climb, and am training for my first triathlon. I also play guitar and drums and sing (not simultaneously, though I'm working on it).</p><img src="{{ site.headshot | relative_url }}" alt="Jinger Chong" width="150" height="150"></div>
   <h2>Education</h2>
   {% include education.html %}
   <h2>Skills</h2>
-  {% for skill in site.data.skills %}
-    <h4 class="skills-category">{{ skill.category }}</h4>
-    <ul class="skill-list">
-      {% for item in skill.items %}<li>{{ item }}</li>{% endfor %}
-    </ul>
-  {% endfor %}
+  <div class="skills">{% for skill in site.data.skills %}
+    <span class="label">{{ skill.category }}</span><div class="chips">{% for item in skill.items %}<span class="chip">{{ item }}</span>{% endfor %}</div>
+  {% endfor %}</div>
   <h2>Teaching</h2>
   {% include service.html items=site.data.teaching %}
   <h2>Service</h2>

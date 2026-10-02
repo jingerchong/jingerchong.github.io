@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+{% include head.html %}
+<body>
+{% include header.html %}
+{% if page.layout == 'with-banner' %}{% include banner.html %}{% endif %}
+<main id="main" class="page-content" tabindex="-1"><div class="wrapper">{{ content }}</div></main>
+{% include footer.html %}
+</body></html>

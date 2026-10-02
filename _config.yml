@@ -1,5 +1,6 @@
 title: Jinger Chong
-contact_email: jinger [at] mit.edu
+contact_email: jinger@mit.edu
+status: Open to Summer 2027 research internships
 description: Portfolio
 cv_url: /downloads/jinger-chong-cv.pdf
 
@@ -26,6 +27,10 @@ collections:
 defaults:
   - scope:
       path: ""
+    values:
+      image: /assets/banner.webp
+  - scope:
+      path: ""
       type: projects
     values:
       layout: project
@@ -35,3 +40,5 @@ exclude:
   - TODO.md
   - examples
   - vendor
+  - Claude outputs
+  - "*.psd"

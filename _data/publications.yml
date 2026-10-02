@@ -10,16 +10,37 @@
   venue: ICRA
   year: 2027
   status: Under review
-  links: {url: https://arxiv.org/abs/2603.07096}
+  links: {arxiv: https://arxiv.org/abs/2603.07096, paper: https://arxiv.org/pdf/2603.07096}
+  bibtex: |
+    @misc{chong2026structuredmultitaskgaussianprocesses,
+          title={Structured Multitask Gaussian Processes for Probabilistic Full-Body Human Motion Prediction},
+          author={Jinger Chong and Xiaotong Zhang and Kamal Youcef-Toumi},
+          year={2026},
+          eprint={2603.07096},
+          archivePrefix={arXiv},
+          primaryClass={cs.RO},
+          url={https://arxiv.org/abs/2603.07096},
+    }
 - title: "How Does Perception Affect Safety: New Metrics and Strategy"
   authors: X. Zhang, J. Chong, K. Youcef-Toumi
   venue: ICRA
   year: 2024
   status: Published
-  links: {url: https://ieeexplore.ieee.org/document/10610657}
+  links: {paper: https://arxiv.org/pdf/2312.07744, arxiv: https://arxiv.org/abs/2312.07744}
+  bibtex: |
+    @INPROCEEDINGS{10610657,
+      author={Zhang, Xiaotong and Chong, Jinger and Youcef-Toumi, Kamal},
+      booktitle={2024 IEEE International Conference on Robotics and Automation (ICRA)},
+      title={How Does Perception Affect Safety: New Metrics and Strategy},
+      year={2024},
+      volume={},
+      number={},
+      pages={13411-13417},
+      keywords={Measurement;Accuracy;Computational modeling;Collaboration;Detectors;Real-time systems;Inference algorithms},
+      doi={10.1109/ICRA57147.2024.10610657}}
 - title: Multi-Function Hinge
   authors: J. Chong, D. Yaremenko, B. Tomky, D. Caplow-Munro
   venue: US 2026/0143604 A1
   year: 2026
   status: Pending
-  links: {url: https://patents.google.com/patent/US20260143604/}
+  links: {google_patents: https://patents.google.com/patent/US20260143604/}

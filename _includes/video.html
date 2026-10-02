@@ -1,0 +1,4 @@
+{% if include.mp4 or include.webm %}<figure class="video-figure"><div class="video-embed"><video controls muted loop playsinline preload="metadata" data-loop aria-label="{{ include.title | default: page.title | escape }}"{% if include.poster %} poster="{{ include.poster | relative_url }}"{% endif %}>
+{% if include.webm %}<source src="{{ include.webm | relative_url }}" type="video/webm">{% endif %}
+{% if include.mp4 %}<source src="{{ include.mp4 | relative_url }}" type="video/mp4">{% endif %}
+</video></div>{% if include.caption %}<figcaption class="small">{{ include.caption }}</figcaption>{% endif %}</figure>{% endif %}

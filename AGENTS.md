@@ -27,7 +27,7 @@ ignored; never edit or commit it.
 | `index.html`, `research.md`, `industry.html`, `projects.html`, `about.html` | The five navigation pages; each contains its own markup and front matter. `about.html` renders Education, Skills, Teaching, then Service from `_data/`. |
 | `_projects/*.markdown` | Fourteen published project files (plus hidden `published: false` drafts), one per `/projects/:slug/` page, with metadata and any available writeup. The homepage features the first three `featured` projects. New projects may use `.md`. |
 | `_data/*.yml` | Eight current data files: education, industry, links, publications, research, service, skills, and teaching. |
-| `_layouts/project.html`, `_layouts/with-banner.html`, `_includes/` | Project detail layout, homepage banner shell, and shared cards, galleries, navigation, and list components. Minima supplies the default layout. |
+| `_layouts/default.html`, `_layouts/project.html`, `_layouts/with-banner.html`, `_includes/` | Shared page shell, project detail layout, homepage banner shell, and shared cards, galleries, navigation, and list components. Minima remains the GitHub Pages theme. |
 | `assets/images/<slug>/`, `_sass/`, `assets/main.scss` | Project covers and galleries, shared colors, typography, and responsive styles. |
 | `redirects/` and `industry.html` | Redirects for old category URLs, `/cv/`, and `/experience/`. Project pages have no legacy URL redirects. |
 | `downloads/` | Public PDFs, including the CV path configured once as `cv_url` in `_config.yml`. |
@@ -53,15 +53,25 @@ old URL; do not create a redirect for it.
   (first three by order) and Projects grid; `normal` appears in the grid;
   `archive` appears in the list headed MORE on `/projects/`; `unlisted` has a page but no card or
   Archive row. Lower `order` values appear earlier within the relevant list.
-  Write the full article below the front matter. Optional `stack`, `award`,
-  and verified `links` appear on the detail page. Do not add redirects for
-  former project URLs. A missing cover is skipped.
+  Write the full article below the front matter; use descriptive `##` headings
+  only for longer articles. Optional `tldr` (2–3 sentences, falling back to
+  `summary`), `role`, `team`, `award`, and `stack` appear on the detail page.
+  Verified `links` appear at the top in Paper, arXiv, Code, Video, Report,
+  Slides, Poster, Website order, then other keys; empty and `#` targets are
+  skipped and PDFs labeled. Keep public PDF writeups in `downloads/<slug>/`.
+  Do not add redirects for former project URLs. Missing covers use blueprint
+  tiles in listings and no detail-page hero. Previous/next follows grid order.
 - **Gallery:** Place files under `assets/images/<slug>/<descriptive-name>/`
   as `01.webp`, `02.webp`, and so on. Add
   `{% raw %}{% include gallery.html dir="descriptive-name" title="Descriptive title" %}{% endraw %}`
   at the desired point in the project's Markdown body. The include uses the
   project filename slug, reads only that folder, and sorts by filename. The
-  optional cover lives at `assets/images/<slug>/cover.webp`.
+  optional cover lives at `assets/images/<slug>/cover.webp` (16:10 in listings,
+  16:9 on the page). Set `image` to its path for social sharing; the default is
+  the site banner. Set `hero_video` to a YouTube ID to replace the page hero.
+  Use `youtube.html` with `id`, `title`, and optional `caption` for embeds;
+  use `video.html` with `mp4` and/or `webm`, `title`, optional `poster` and
+  `caption` for local loops. Local loops have controls and respect reduced motion.
 - **Publication or patent:** Copy the commented entry in
   `_data/publications.yml`. Fill `title`, `authors`, `venue`, and `year`; add
   `status` and a verified `links.url` when available. File order controls

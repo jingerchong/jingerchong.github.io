@@ -5,6 +5,7 @@ order: 240
 year: 2020
 context: 16.632 Intro to Autonomous Machines
 summary: RF controllers and sensor shields assembled for student-built robot cars.
+image: /assets/images/rf-controllers/cover.webp
 ---
 
 I assembled 25 controllers for the NEET Autonomous Machines sophomore project class, 2.S007 Design and Manufacturing I (of Robotic Systems)!

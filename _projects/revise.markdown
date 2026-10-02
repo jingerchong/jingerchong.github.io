@@ -5,6 +5,7 @@ order: 4
 year: 2021
 context: 2.009 Product Engineering Processes
 summary: A pneumatically actuated vise using granular jamming to grip irregular workpieces.
+image: /assets/images/revise/cover.webp
 ---
 
 ReVise is an integrated vise solution designed to hold tightly onto irregular workpieces without damaging them. The metal vise houses a self-regulated pneumatic system attached to two removable pouches. Through *granular jamming*, the pouches can conform to any geometry and hold their shape. As a result, the clamping force is distributed over a larger contact area, improving grip while minimizing risk.
