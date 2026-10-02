@@ -1,5 +1,6 @@
 <section class="hero" aria-label="Introduction" style="background-image: url('{{ site.banner | relative_url }}')"><div class="wrapper">
 <h1>Hi, I'm<strong>Jinger</strong></h1>
-<p class="tagline mono">Human intent prediction · Autonomous navigation</p>
-{% assign status = site.status | strip %}{% if status != empty %}<span class="status">{{ status }}</span>{% endif %}
+<p class="tagline">{{ site.tagline }}</p>
+{%- assign status = site.status | strip -%}{%- if status != empty %}
+<span class="status">{{ status }}</span>{% endif %}
 </div></section>

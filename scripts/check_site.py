@@ -16,9 +16,19 @@ class PageParser(HTMLParser):
         self.links = []
         self.text = []
         self.accessibility = []
+        self.ids = set()
+        self.in_anchor = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "a":
+            if self.in_anchor:
+                self.accessibility.append("nested anchor (malformed link)")
+            self.in_anchor = True
+        if attrs.get("id"):
+            if attrs["id"] in self.ids:
+                self.accessibility.append(f"duplicate id: {attrs['id']}")
+            self.ids.add(attrs["id"])
         if tag == "img" and "alt" not in attrs:
             self.accessibility.append("image without alt text")
         if tag == "iframe" and not attrs.get("title"):
@@ -26,6 +36,10 @@ class PageParser(HTMLParser):
         for name in ("href", "src"):
             if name in attrs:
                 self.links.append((name, attrs[name]))
+
+    def handle_endtag(self, tag):
+        if tag == "a":
+            self.in_anchor = False
 
     def handle_data(self, data):
         self.text.append(data)
@@ -56,6 +70,10 @@ def main():
         return 1
 
     errors = []
+    for name in ("README.md", "AGENTS.md", "TODO.md", "Gemfile", "Gemfile.lock",
+                 "scripts", "examples", "Claude outputs"):
+        if (SITE / name).exists():
+            errors.append(f"development-only content in published output: {name}")
     pages = list(SITE.rglob("*.html"))
     for page in pages:
         parser = PageParser()

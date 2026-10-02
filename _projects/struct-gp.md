@@ -1,5 +1,6 @@
 ---
 title: Probabilistic Human Motion Prediction
+placeholder: prediction # Blueprint tile until assets/images/struct-gp/cover.webp exists
 tier: normal
 order: 5
 year: 2026

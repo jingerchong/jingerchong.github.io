@@ -5,6 +5,9 @@
 #   end: Aug 2026                      # Required: visible end
 #   location: City, State              # Required: visible location
 #   link: https://example.com          # Optional: organization link
+#   home: false                        # Optional: hide from the Home list
+#   home_role: Example combined role   # Optional: override the Home role label
+#   home_date: 2025 - 2026              # Optional: override the Home date
 #   bullets:                            # Required: verified public contributions; HTML <strong> is supported
 #     - Describe a contribution.
 - org: GE Vernova Advanced Research Center
@@ -28,6 +31,8 @@
   - Honed in on target torque profile through iterative fabrication and measurement of 3D-printed and CNC-machined prototypes
 - org: Rotor Technologies
   role: Graduate Engineering Intern
+  home_role: Graduate and Undergraduate Engineering Intern # Optional: label for the one-line Home list
+  home_date: 2022 – 2023                                   # Optional: Home list date (default: start year)
   start: Jun 2023
   end: Sep 2023
   location: Nashua, NH
@@ -38,6 +43,7 @@
   - Reduced <strong>real-time bandwidth by up to 3×</strong> via azimuth-level decimation and adaptive bitrate control
 - org: Rotor Technologies
   role: Undergraduate Engineering Intern
+  home: false # Folded into the 2023 Rotor row on Home
   start: Jun 2022
   end: Aug 2022
   location: Nashua, NH

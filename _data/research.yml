@@ -1,5 +1,6 @@
 # Research experience. Set current: true for roles shown under NOW; other rows appear under BEFORE.
 # - org: Example Lab                  # Required: heading
+#   current: true                    # Optional: show under NOW rather than BEFORE
 #   role: Research Assistant          # Required: role line
 #   start: Sep 2022                   # Required: visible start
 #   end: May 2023                     # Required: visible end

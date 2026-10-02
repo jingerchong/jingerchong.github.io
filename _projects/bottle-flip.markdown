@@ -1,5 +1,6 @@
 ---
 title: Water Bottle Flipping Quadrotor
+placeholder: quadrotor # Blueprint tile until assets/images/bottle-flip/cover.webp exists
 tier: featured
 year: 2023
 order: 3

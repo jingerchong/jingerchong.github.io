@@ -1,7 +1,9 @@
-{% if include.links %}
-{% assign fixed = 'paper,arxiv,code,video,report,slides,poster,website' | split: ',' %}
-{% capture links_html %}
-{% for key in fixed %}{% assign target = include.links[key] | strip %}{% if target != empty and target != '#' %}{% include single-link.html key=key target=target %}{% endif %}{% endfor %}
-{% for link in include.links %}{% unless fixed contains link[0] %}{% assign target = link[1] | strip %}{% if target != empty and target != '#' %}{% assign key = link[0] %}{% include single-link.html key=key target=target %}{% endif %}{% endunless %}{% endfor %}
-{% endcapture %}{% assign links_html = links_html | strip %}{% if links_html != empty %}<div class="linkrow">{{ links_html }}</div>{% endif %}
-{% endif %}
+{%- comment -%}Links in a fixed order (paper/PDF, arXiv, Code, Video, Report, Slides, Poster, Website,
+then any other key), separated by "·". Empty and "#" values are skipped. Outputs anchors only;
+callers wrap them in <div class="linkrow">.{%- endcomment -%}
+{%- if include.links -%}
+{%- assign fixed = 'paper,arxiv,code,video,report,slides,poster,website' | split: ',' -%}
+{%- assign link_count = 0 -%}
+{%- for key in fixed -%}{%- assign target = include.links[key] | strip -%}{%- if target != empty and target != '#' -%}{%- if link_count > 0 -%}<span class="sep" aria-hidden="true">·</span>{%- endif -%}{%- include single-link.html key=key target=target -%}{%- assign link_count = link_count | plus: 1 -%}{%- endif -%}{%- endfor -%}
+{%- for link in include.links -%}{%- unless fixed contains link[0] -%}{%- assign target = link[1] | strip -%}{%- if target != empty and target != '#' -%}{%- if link_count > 0 -%}<span class="sep" aria-hidden="true">·</span>{%- endif -%}{%- assign link_key = link[0] -%}{%- include single-link.html key=link_key target=target -%}{%- assign link_count = link_count | plus: 1 -%}{%- endif -%}{%- endunless -%}{%- endfor -%}
+{%- endif -%}

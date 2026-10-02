@@ -1,18 +1,48 @@
-:root{
-  /* color: 4 roles + 2 neutrals */
-  --text:#111; --grey:#646E78; --light:#D9DCD6; --paper:#f5f6f2; --theme:#08415C; --accent:#EFCA08; --deep:#062f43;
-  /* families: 2 */
-  --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
-  /* sizes: 7 steps */
-  --fs-display:3.3em;  /* hero name */
-  --fs-title:2.25em;   /* project page title */
-  --fs-lede:1.2em;     /* research lede */
-  --fs-item:1.05em;    /* item titles: projects, papers, orgs, degrees */
-  --fs-body:1em;       /* 16px prose */
-  --fs-small:.92em;    /* summaries, authors, secondary lines */
-  --fs-mono:.8em;      /* everything mono: labels, dates, kickers, chips, buttons */
-  /* spacing: 4 steps */
-  --sp-1:.4rem; --sp-2:.9rem; --sp-3:1.6rem; --sp-4:3rem;
-  --content:1040px; --prose:760px; --gutter:28px; --green:#1a7f37;
-  --col:150px;         /* the shared left column */
+// Design tokens: the whole type, color and spacing system.
+// Build everything from these; do not add one-off sizes, colors or margins.
+:root {
+  // Color: text + meta grey, brand navy/yellow, and three neutrals.
+  --text: #111;
+  --grey: #646E78;
+  --light: #D9DCD6;
+  --paper: #f5f6f2;
+  --theme: #08415C;
+  --accent: #EFCA08;
+  --deep: #062f43;      // hero gradient
+  --green: #1a7f37;     // status dot
+  --rule-dark: rgba(217, 220, 214, .3); // hairlines on navy
+
+  // Families: two.
+  --sans: "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  // Sizes: seven steps.
+  --fs-display: 3.3em; // hero name
+  --fs-title: 2.25em;  // project page title
+  --fs-lede: 1.2em;    // Research lede, project TL;DR, footer email
+  --fs-item: 1.05em;   // titles of projects, papers, orgs, degrees
+  --fs-body: 1em;      // 16px prose
+  --fs-small: .92em;   // summaries, authors, secondary lines, link rows, desktop nav
+  --fs-mono: .8em;     // every mono element and the phone nav
+
+  // Spacing: four steps (rem, so gaps don't scale with the font next to them).
+  --sp-1: .4rem;
+  --sp-2: .9rem;
+  --sp-3: 1.6rem;
+  --sp-4: 3rem;
+
+  // Widths.
+  --content: 1040px; // page content
+  --article: 780px;  // project pages: the whole article column
+  --gutter: 28px;
+  --col: 150px;      // the shared left column
+}
+
+@media (max-width: 600px) {
+  :root {
+    --fs-display: 2.4em;
+    --fs-title: 1.6em;
+    --gutter: 16px;
+    --col: 96px;
+  }
 }

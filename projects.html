@@ -3,16 +3,15 @@ layout: default
 title: Projects
 permalink: /projects/
 ---
-<div class="projects-page">
-  <h1 class="visually-hidden">Projects</h1>
-  <h2>FEATURED</h2>
-  {% assign featured_projects = site.projects | where: 'tier', 'featured' %}
-  {% assign normal_projects = site.projects | where: 'tier', 'normal' %}
-  {% assign projects = featured_projects | concat: normal_projects | sort: 'order' %}
-  <div class="project-grid">
-    {% for item in projects %}{% include project-card.html item=item %}{% endfor %}
-  </div>
-  <h2>MORE</h2>
-  {% assign earlier_work = site.projects | where: 'tier', 'archive' | sort: 'order' %}
-  <ul class="list archive">{% for item in earlier_work %}<li><time class="meta-t" datetime="{{ item.year | append: '' | slice: 0, 4 }}">{{ item.year }}</time><span><a href="{{ item.url | relative_url }}">{{ item.title }}{% if item.context %}, <em>{{ item.context }}</em>{% endif %}</a></span></li>{% endfor %}</ul>
-</div>
+<h1 class="visually-hidden">Projects</h1>
+<h2 class="sec">Featured</h2>
+{% assign featured_projects = site.projects | where: 'tier', 'featured' %}
+{% assign normal_projects = site.projects | where: 'tier', 'normal' %}
+{% assign projects = featured_projects | concat: normal_projects | sort: 'order' %}
+<div class="project-grid">{% for item in projects %}{% include project-card.html item=item %}{% endfor %}</div>
+
+<h2 class="sec">More</h2>
+{% assign earlier_work = site.projects | where: 'tier', 'archive' | sort: 'order' %}
+<ul class="list archive">{% for item in earlier_work %}{% assign body = item.content | strip %}
+<li><time class="meta-t" datetime="{{ item.year | append: '' | slice: 0, 4 }}">{{ item.year }}</time><span>{% if body != empty %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}{% if item.context %}, <em>{{ item.context }}</em>{% endif %}</span></li>{% endfor %}
+</ul>

@@ -1,5 +1,6 @@
 ---
 title: Autonomous Pool-Playing Robot
+placeholder: pool # Blueprint tile until assets/images/pool-robot/cover.webp exists
 tier: featured
 award: Outstanding Project
 year: 2023

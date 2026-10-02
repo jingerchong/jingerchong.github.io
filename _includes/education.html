@@ -1,15 +1,7 @@
-<div class="ent">
-  <div class="h">
-    <p class="item">{{ site.data.education.institution }}</p>
-    <span class="meta-t">{{ site.data.education.location }}</span>
-  </div>
-  {% for entry in site.data.education.entries %}
-    <article class="education-entry">
-      <div class="h">
-        <h3 class="role">{{ entry.degree }}</h3>
-        <time class="meta-t" datetime="{{ entry.datetime }}">{{ entry.date }}</time>
-      </div>
-      {% for detail in entry.details %}<p class="education-secondary">{{ detail | replace: 'Kamal Youcef-Toumi', '<a href="https://meche.mit.edu/people/faculty/YOUCEF@MIT.EDU" target="_blank" rel="noopener noreferrer">Kamal Youcef-Toumi</a>' }}</p>{% endfor %}
-    </article>
-  {% endfor %}
-</div>
+<div class="ent"><div class="h"><h3 class="item">{{ site.data.education.institution }}</h3><span class="meta-t">{{ site.data.education.location }}</span></div></div>
+{% for entry in site.data.education.entries %}
+<article class="ent">
+<div class="h"><h4 class="role">{{ entry.degree }}</h4><time class="meta-t" datetime="{{ entry.datetime }}">{{ entry.date }}</time></div>
+{% for detail in entry.details %}<p class="small">{{ detail | replace: 'Kamal Youcef-Toumi', '<a href="https://meche.mit.edu/people/faculty/YOUCEF@MIT.EDU" target="_blank" rel="noopener noreferrer">Kamal Youcef-Toumi</a>' }}</p>{% endfor %}
+</article>
+{% endfor %}

@@ -1,5 +1,5 @@
 <article class="ent">
-<div class="h"><h3 class="item">{% if include.item.link %}<a href="{{ include.item.link }}">{{ include.item.org }}</a>{% else %}{{ include.item.org }}{% endif %}</h3><span class="meta-t">{{ include.item.location }}</span></div>
+<div class="h"><h3 class="item">{% if include.item.link %}<a href="{{ include.item.link }}" target="_blank" rel="noopener noreferrer">{{ include.item.org }}</a>{% else %}{{ include.item.org }}{% endif %}</h3><span class="meta-t">{{ include.item.location }}</span></div>
 <div class="h"><h4 class="role">{{ include.item.role }}</h4><span class="meta-t">{{ include.item.start }} – {{ include.item.end }}</span></div>
 <ul>{% for bullet in include.item.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>
 </article>

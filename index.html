@@ -2,17 +2,21 @@
 layout: with-banner
 title: Home
 ---
-<div class="home">
-<div class="prose"><p>I'm a PhD candidate in Mechanical Engineering at MIT, building probabilistic models that help robots reason about uncertainty in what people will do next, so they can collaborate safely. <a href="{{ '/about/' | relative_url }}">More about me →</a></p>
-<p class="now"><span class="label">Now</span>Seeking a Summer 2027 robotics research internship in human intent prediction, perception, or uncertainty-aware navigation/HRI. <a href="{{ site.cv_url | relative_url }}">View my CV →</a></p></div>
-<h2>Publications</h2>
+<p>I'm a PhD candidate in Mechanical Engineering at MIT, building probabilistic models that help robots reason about uncertainty in what people will do next, so they can collaborate safely. <a href="{{ '/about/' | relative_url }}">More about me →</a></p>
+<p class="now"><span class="label">Now</span>Seeking a Summer 2027 robotics research internship in human intent prediction, perception, or uncertainty-aware navigation/HRI. <a href="{{ site.cv_url | relative_url }}">View my CV →</a></p>
+
+<h2 class="sec">Publications</h2>
 <ul class="lc pubs">{% for pub in site.data.publications %}{% include pub-item.html pub=pub %}{% endfor %}</ul>
-<h2>Projects <a class="more" href="{{ '/projects/' | relative_url }}">All projects →</a></h2>
-<ul class="lc">{% assign featured = site.projects | where: 'tier', 'featured' | sort: 'order' %}{% for item in featured limit:3 %}
-<li><a class="th" href="{{ item.url | relative_url }}" aria-label="{{ item.title | escape }}">{% include project-image.html item=item %}</a>
-<div>{% include kicker.html item=item %}<h3 class="item"><a class="item-link" href="{{ item.url | relative_url }}">{{ item.title }}</a></h3><p class="small">{{ item.summary }}</p></div></li>
-{% endfor %}</ul>
-<h2>Experience <a class="more" href="{{ '/industry/' | relative_url }}">All experiences →</a></h2>
-<ul class="list">{% for item in site.data.industry limit:2 %}<li><span>{{ item.role }}, <em>{{ item.org }}</em></span><span class="meta-t">{{ item.start | split: ' ' | last }}</span></li>{% endfor %}
-<li><span>Graduate and Undergraduate Engineering Intern, <em>Rotor Technologies</em></span><span class="meta-t">2022 – 2023</span></li></ul>
-</div>
+
+<h2 class="sec"><span>Projects</span><a class="more" href="{{ '/projects/' | relative_url }}">All projects →</a></h2>
+{% assign featured = site.projects | where: 'tier', 'featured' | sort: 'order' %}
+<ul class="lc">{% for item in featured limit:3 %}{% include project-row.html item=item %}{% endfor %}</ul>
+
+<h2 class="sec"><span>Experience</span><a class="more" href="{{ '/industry/' | relative_url }}">All experience →</a></h2>
+<ul class="list">
+{%- for item in site.data.industry -%}{%- unless item.home == false %}
+{%- assign start_year = item.start | split: ' ' | last %}
+<li><span>{{ item.home_role | default: item.role }}, <em>{{ item.org }}</em></span><span class="meta-t">{{ item.home_date | default: start_year }}</span></li>
+{%- endunless -%}{%- endfor %}
+</ul>
+<script src="{{ '/assets/citations.js' | relative_url }}" defer></script>

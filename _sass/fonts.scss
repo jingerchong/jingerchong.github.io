@@ -1,20 +1,45 @@
+// Base type and the text roles every page reuses.
 * { box-sizing: border-box; }
 html, body { margin: 0; }
-body { color: var(--text); background: white; font-family: var(--sans); font-size: var(--fs-body); line-height: 1.6; }
-h1 { font-size: var(--fs-title); line-height: 1.2; text-transform: uppercase; }
-h3, h4 { font-size: var(--fs-item); line-height: 1.35; }
-p { margin: 0 0 var(--sp-2); }
+body {
+  color: var(--text);
+  background: #fff;
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
 img { max-width: 100%; height: auto; }
+p { margin: 0 0 var(--sp-2); }
+h1, h2, h3, h4 { margin: 0; }
 a { color: var(--theme); text-decoration: none; }
-main a:not(.card-link):not(.th):not(.btn):not(.item-link) { box-shadow: inset 0 -2px 0 var(--accent); }
-main a:not(.card-link):not(.th):not(.btn):not(.item-link):hover { box-shadow: inset 0 -.45em 0 var(--accent); }
-a:focus-visible, summary:focus-visible, video:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 ::selection { color: var(--text); background: var(--accent); }
-.meta-t, .label, .kicker, .chip, .btn, .status, dt, code, pre, .mono { font-family: var(--mono); font-size: var(--fs-mono); font-variant-numeric: tabular-nums; }
+
+// Body links: navy with a 2px yellow underline that thickens on hover.
+main a:not([class]) {
+  box-shadow: inset 0 -2px 0 var(--accent);
+  transition: box-shadow .15s;
+}
+main a:not([class]):hover { box-shadow: inset 0 -.55em 0 var(--accent); }
+a:focus-visible, summary:focus-visible, button:focus-visible, video:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+// Mono roles: one size; labels and meta differ only by color and weight.
+.meta-t, .label, .kicker, .chip, .btn, .status, dl.meta dt, .back, .colo, code, pre {
+  font-family: var(--mono);
+  font-size: var(--fs-mono);
+  font-weight: 400;
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+}
 .meta-t { color: var(--grey); }
-.label { color: var(--theme); font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
-.item { font-size: var(--fs-item); font-weight: 700; line-height: 1.35; margin: var(--sp-1) 0; }
-.small, .linkrow, .education-secondary { font-size: var(--fs-small); }
-.lede, .tldr { font-size: var(--fs-lede); line-height: 1.5; }
-pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); padding: var(--sp-2); }
-pre code { font-size: inherit; }
+.label { color: var(--theme); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+
+// Item titles, secondary text, ledes.
+.item { font-size: var(--fs-item); font-weight: 700; line-height: 1.35; margin: 0; }
+.item a { color: inherit; }
+.small { font-size: var(--fs-small); margin: 0; }
+.lede { font-size: var(--fs-lede); line-height: 1.5; }
+.role { font-style: italic; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; }

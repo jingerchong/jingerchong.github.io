@@ -4,7 +4,13 @@
 #   venue: Example venue              # Required
 #   year: 2026                        # Required
 #   status: Published                 # Optional, displayed after the year
-#   links: {url: https://example.com} # Optional; use a verified public URL
+#   links:                           # Optional; verified URLs only
+#     paper: https://example.com/paper.pdf # PDF label for PDF targets
+#     arxiv: https://arxiv.org/abs/IDENTIFIER
+#     project: /projects/example/     # Only after its page exists
+#   bibtex: |                        # Optional: CITE copies this verbatim
+#     Paste the verified BibTeX entry here.
+# For patents, use type: patent and links.google_patents; no CITE is shown.
 - title: Structured Multitask Gaussian Processes for Probabilistic Full-Body Human Motion Prediction
   authors: J. Chong, X. Zhang, K. Youcef-Toumi
   venue: ICRA

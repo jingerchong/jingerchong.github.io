@@ -1,5 +1,6 @@
 ---
 title: Perception-Aware Safety Metrics
+placeholder: safety # Blueprint tile until assets/images/safety-metrics/cover.webp exists
 tier: normal
 order: 6
 year: 2024

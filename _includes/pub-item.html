@@ -1,7 +1,9 @@
+{%- assign is_patent = false -%}{%- if include.pub.type == 'patent' or include.pub.links.google_patents -%}{%- assign is_patent = true -%}{%- endif -%}
 <li>
-<div class="v"><span class="kicker{% if include.pub.status == 'Pending' %} outline{% endif %}">{% if include.pub.status == 'Pending' %}Patent{% else %}{{ include.pub.venue }} {{ include.pub.year }}{% endif %}</span>{% if include.pub.status %}<span class="meta-t">{{ include.pub.status }}</span>{% endif %}</div>
-<div><h3 class="item">{{ include.pub.title }}</h3>
-<p class="small">{{ include.pub.authors | replace: 'J. Chong', '<strong>J. Chong</strong>' }}{% if include.pub.status == 'Pending' %} · {{ include.pub.venue }}{% endif %}</p>
-{% include link-row.html links=include.pub.links %}
-{% if include.pub.bibtex %}<details class="cite"><summary>Cite<span class="visually-hidden"> {{ include.pub.title }}</span></summary><pre>{{ include.pub.bibtex | escape }}</pre></details>{% endif %}
-</div></li>
+<div class="v"><span class="kicker{% if is_patent %} outline{% endif %}">{% if is_patent %}PATENT{% else %}{{ include.pub.venue }} {{ include.pub.year }}{% endif %}</span>{% if include.pub.status %}<span class="meta-t">{{ include.pub.status }}</span>{% endif %}</div>
+<div>
+<h3 class="item">{{ include.pub.title }}</h3>
+<p class="small">{{ include.pub.authors | replace: 'J. Chong', '<strong>J. Chong</strong>' }}{% if is_patent %} · {{ include.pub.venue }}{% endif %}</p>
+<div class="linkrow">{% include link-row.html links=include.pub.links %}{% if include.pub.bibtex and is_patent == false %}<button type="button" class="cite" data-bibtex="{{ include.pub.bibtex | strip | escape }}" aria-label="Copy BibTeX for {{ include.pub.title | escape }}">Cite</button><span class="visually-hidden" role="status"></span>{% endif %}</div>
+</div>
+</li>

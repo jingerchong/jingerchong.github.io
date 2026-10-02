@@ -1,4 +1,4 @@
 <article class="project-card"><a class="card-link" href="{{ include.item.url | relative_url }}">
 <div class="th">{% include project-image.html item=include.item %}</div>
-<div class="card-body">{% include kicker.html item=include.item %}<h3 class="item">{{ include.item.title }}</h3><p class="small">{{ include.item.summary }}</p></div>
+<div class="card-body"><div class="ck">{% include kicker.html item=include.item %}</div><h3 class="item"><span>{{ include.item.title }}</span></h3><p class="small">{{ include.item.summary }}</p></div>
 </a></article>

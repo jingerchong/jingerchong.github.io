@@ -3,7 +3,7 @@
 Read this guide with `README.md`, `_config.yml`, and `TODO.md` before editing.
 This is Jinger Chong's robotics research portfolio. Preserve its navy
 `#08415C`, yellow `#EFCA08`, robot-arm logo, banner, uppercase headings, and
-underlined section headings. `_sass/_tokens.scss` defines the colors. Keep the
+mono section headings with a hairline rule. `_sass/_tokens.scss` defines the colors. Keep the
 site compatible with Jekyll 3.10, Minima, and GitHub Pages; ordinary updates
 need only Liquid, Markdown, Sass, YAML, and a small amount of vanilla JavaScript.
 
@@ -16,6 +16,7 @@ dependencies. From the repository root:
 $env:Path = 'C:\Ruby33-x64\bin;' + $env:Path
 bundle install
 bundle exec -- C:\Ruby33-x64\bin\jekyll.bat build
+python scripts/check_site.py _site
 bundle exec -- C:\Ruby33-x64\bin\jekyll.bat serve
 ```
 
@@ -24,21 +25,50 @@ ignored; never edit or commit it.
 
 | Source | Purpose |
 | --- | --- |
-| `index.html`, `research.md`, `industry.html`, `projects.html`, `about.html` | The five navigation pages; each contains its own markup and front matter. `about.html` renders Education, Skills, Teaching, then Service from `_data/`. |
-| `_projects/*.markdown` | Fourteen published project files (plus hidden `published: false` drafts), one per `/projects/:slug/` page, with metadata and any available writeup. The homepage features the first three `featured` projects. New projects may use `.md`. |
+| `index.html`, `research.html`, `industry.html`, `projects.html`, `about.html` | The five navigation pages; each contains its own markup and front matter. `about.html` renders Education, Skills, Teaching, then Service from `_data/`. |
+| `_projects/*.markdown`, `_projects/*.md` | Fourteen published project files (plus hidden `published: false` drafts), one per `/projects/:slug/` page, with metadata and any available writeup. The homepage features the first three `featured` projects. New projects may use `.md`. |
 | `_data/*.yml` | Eight current data files: education, industry, links, publications, research, service, skills, and teaching. |
 | `_layouts/default.html`, `_layouts/project.html`, `_layouts/with-banner.html`, `_includes/` | Shared page shell, project detail layout, homepage banner shell, and shared cards, galleries, navigation, and list components. Minima remains the GitHub Pages theme. |
 | `assets/images/<slug>/`, `_sass/`, `assets/main.scss` | Project covers and galleries, shared colors, typography, and responsive styles. |
-| `redirects/` and `industry.html` | Redirects for old category URLs, `/cv/`, and `/experience/`. Project pages have no legacy URL redirects. |
+| `redirects/` and `industry.html` | Redirects for `/projects/archive/`, `/cv/`, and `/experience/`. Project pages have no legacy URL redirects. |
 | `downloads/` | Public PDFs, including the CV path configured once as `cv_url` in `_config.yml`. |
-| `examples/project.md` | Excluded, copyable project example. Every `_data` file has a commented row example. |
+| `examples/` | Excluded authoring guide, copyable project example, and historical design references. Every `_data` file has a commented row example. |
 | `TODO.md` | The only source for editorial and launch TODOs; it is excluded from the published site. |
 
 `_includes/header.html` lists the navigation URLs directly: Research, Industry,
 Projects, and About. The former
-root writeup URLs are retired. The old category URLs
-redirect to `/projects/`; `/experience/` redirects to `/industry/`; `/cv/`
+root writeup URLs are retired. Former category URLs are retired; `/projects/archive/` redirects to `/projects/`; `/experience/` redirects to `/industry/`; `/cv/`
 redirects to the PDF configured by `cv_url`.
+
+## Current layout and design system
+
+- Home: banner, bio with one More about me link, Now line, Publications, Projects
+  (three featured rows), Experience with All experience link, then Contact.
+  `tagline`, `status`, `contact_email`, and `cv_url` come from `_config.yml`.
+  Restart the local server after changing configuration.
+- Navigation stays Research, Industry, Projects, About. Industry is the route/nav
+  name; Experience is the heading on Home and Industry.
+- Projects: FEATURED combines `featured` and `normal`, ordered together by `order`;
+  MORE lists `archive`. Changing the heading does not change tier behavior.
+- About: OFF THE CLOCK with a floated square headshot, Education, Skills,
+  Teaching, Service. Research uses NOW and BEFORE.
+- Project detail: back link, context/year kicker, title, optional metadata and
+  stack chips, links, optional cover/video, TL;DR, article, previous/next.
+  Previous/next follows the FEATURED grid and uses `rel="prev"` / `rel="next"`.
+- Contact: clickable email, Scholar/GitHub/LinkedIn/CV links and a generated date.
+- `_sass/_tokens.scss`: IBM Plex Sans/Mono, seven type sizes, four spacing steps,
+  shared content/article widths and left column. Shared styles live in
+  `fonts.scss` and `layout.scss`; section rules use one mixin. Keep keyboard focus
+  and reduced-motion behavior. Test the banner and navigation down to 320px.
+- `project-card.html` is the grid card; `project-row.html` is the compact Home row.
+  Both reuse `project-image.html`, `blueprint.html`, and `kicker.html`.
+- `examples/design/` contains historical visual references, not current authoring
+  instructions. Current source and this guide take precedence over their old labels.
+- `TODO.md` contains only future actions and decisions not to implement. Remove
+  completed work rather than accumulating implementation history.
+- Keep development files out of `_site`: README, guides, examples, scripts,
+  dependency manifests, and local `Claude outputs/` are excluded. Local design
+  exports are ignored by Git; preserve them rather than bundling them into commits.
 
 ## How to add content
 
@@ -48,19 +78,22 @@ and use only verified public facts and URLs. Project slug changes retire the
 old URL; do not create a redirect for it.
 
 - **Project:** Copy `examples/project.md` to `_projects/<slug>.md`. Fill
-  `title`, `tier`, `order`, and `summary`; use `year` and `context` for Archive.
+  `title`, `tier`, `order`, and `summary`; use `year` and `context` for the More list.
   The filename sets `/projects/<slug>/`. `featured` appears on the homepage
-  (first three by order) and Projects grid; `normal` appears in the grid;
+  (first three by order) and Projects FEATURED grid; `normal` also appears in that grid;
   `archive` appears in the list headed MORE on `/projects/`; `unlisted` has a page but no card or
-  Archive row. Lower `order` values appear earlier within the relevant list.
+  More row. Lower `order` values appear earlier within the relevant list.
   Write the full article below the front matter; use descriptive `##` headings
   only for longer articles. Optional `tldr` (2–3 sentences, falling back to
   `summary`), `role`, `team`, `award`, and `stack` appear on the detail page.
-  Verified `links` appear at the top in Paper, arXiv, Code, Video, Report,
-  Slides, Poster, Website order, then other keys; empty and `#` targets are
-  skipped and PDFs labeled. Keep public PDF writeups in `downloads/<slug>/`.
+  Verified `links` appear at the top in `paper`, `arxiv`, `code`, `video`, `report`,
+  `slides`, `poster`, `website` order, then other keys. A `paper` PDF is labeled
+  PDF (other paper URLs: Paper); other PDF targets get a `(PDF)` suffix.
+  Empty and `#` targets are skipped. Keep public PDF writeups in `downloads/<slug>/`.
   Do not add redirects for former project URLs. Missing covers use blueprint
-  tiles in listings and no detail-page hero. Previous/next follows grid order.
+  tiles in listings and no detail-page hero; set `placeholder` to `pool`,
+  `quadrotor`, `prediction`, or `safety` to pick the tile drawing (anything else
+  gets a generic arm). Previous/next follows grid order.
 - **Gallery:** Place files under `assets/images/<slug>/<descriptive-name>/`
   as `01.webp`, `02.webp`, and so on. Add
   `{% raw %}{% include gallery.html dir="descriptive-name" title="Descriptive title" %}{% endraw %}`
@@ -74,10 +107,15 @@ old URL; do not create a redirect for it.
   `caption` for local loops. Local loops have controls and respect reduced motion.
 - **Publication or patent:** Copy the commented entry in
   `_data/publications.yml`. Fill `title`, `authors`, `venue`, and `year`; add
-  `status` and a verified `links.url` when available. File order controls
-  homepage order. No image is needed.
+  `status` and verified `links.paper` / `links.arxiv` when available. `bibtex: |`
+  stores the exact citation copied by CITE (`assets/citations.js`), with accessible
+  success/failure feedback; do not use a dropdown. Patents use `type: patent` or
+  `links.google_patents` and have no CITE. File order controls homepage order.
+  No image is needed.
 - **Industry role:** Copy the commented entry in `_data/industry.yml`. Fill
   `org`, `role`, `start`, `end`, `location`, and `bullets`; `link` is optional.
+  The homepage Experience list shows one line per role; `home: false` hides a
+  row there, and `home_role`/`home_date` override its label and date.
   Rows display in file order. Check that every bullet is approved for public
   use. No template or image edit is needed.
 - **Research entry:** Copy the commented entry in `_data/research.yml` (same

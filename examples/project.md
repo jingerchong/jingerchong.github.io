@@ -3,8 +3,8 @@
 title: Example Project                         # Required: heading and card title
 tier: normal                                   # Required: featured, normal, archive, or unlisted
 order: 100                                     # Required for lists; lower appears earlier
-year: 2026                                    # Required for Archive; shown on detail pages
-context: Course, lab, or program               # Required for Archive; optional elsewhere
+year: 2026                                    # Required for More; shown on detail pages
+context: Course, lab, or program               # Required for More; optional elsewhere
 summary: One verified sentence about the work. # Required: card introduction
 tldr: >-
   Two or three sentences about the problem, your contribution, and the
@@ -15,6 +15,7 @@ published: false                              # Remove after public-content revi
 # stack: [Python, ROS]                         # Optional: detail-page chips
 # award: Verified award                        # Optional: detail-page metadata
 # links: {video: https://example.com}          # Optional; omit unknown links
+# placeholder: quadrotor                     # pool, quadrotor, prediction, safety; default arm
 # hero_video: YouTube ID                       # Optional; replaces cover in the page hero
 # image: /assets/images/<slug>/cover.webp      # Optional; social share cover
 # sitemap: false                               # For an intentionally empty archival page
@@ -25,12 +26,17 @@ Write the complete project here in Markdown. Put a cover, if available, at
 use a 16:10 crop and the page hero uses 16:9. Missing covers use a blueprint
 tile in listings and no hero on the detail page. Previous/next follows grid order.
 
-Links appear at the top only, ordered Paper, arXiv, Code, Video, Report, Slides,
-Poster, Website, then other keys. Empty and `#` values disappear. PDF links
-receive a `(PDF)` suffix. Store reviewed public writeups in `downloads/<slug>/`.
+The Projects page combines `featured` and `normal` projects under FEATURED;
+only the first three `featured` projects appear on Home. `archive` goes under
+MORE; `unlisted` has a detail page but no listing.
+
+Links appear at the top only, ordered paper, arxiv, code, video, report, slides,
+poster, website, then other keys. Use `paper` for the manuscript: a PDF target
+is labeled PDF; other targets are labeled Paper. Other PDF links receive a
+`(PDF)` suffix. Empty and `#` values disappear. Store reviewed public writeups in `downloads/<slug>/`.
 Use descriptive `##` headings only when a longer article needs them.
 
-### Gallery section
+## Gallery section
 
 Put images at `assets/images/<slug>/gallery-name/01.webp`, `02.webp`, and so on.
 Add this include where the gallery belongs:
