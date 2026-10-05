@@ -33,7 +33,7 @@ h2.sec, .project-writeup h2 { @include section-heading; }
 
 // ---------- Page frame ----------
 .wrapper { max-width: var(--content); margin: 0 auto; padding: 0 var(--gutter); }
-.page-content { padding: var(--sp-4) 0; }
+.page-content { flex: 1 0 auto; padding: var(--sp-4) 0; }
 .skip-link {
   position: absolute; top: -100px; left: var(--sp-2); z-index: 10;
   background: var(--accent); color: var(--text); padding: var(--sp-1) var(--sp-2);

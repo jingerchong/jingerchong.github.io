@@ -39,6 +39,9 @@ Open work only. Current layout and authoring rules live in `AGENTS.md` and
 
 ## Site improvements during applications
 
+- [ ] **Research page figure.** Consider swapping the results plot for a two-panel skeleton
+      snapshot (+80 ms vs +2 s, S9 walking, from the struct-gp video clips) that shows uncertainty
+      growing; keep the plot in the struct-gp writeup.
 - [ ] **Multi-Function Hinge patent PDF.** The patent's PDF link currently points to a local copy
       (`downloads/multi-function-hinge-US20260143604A1.pdf`, from USPTO Patent Public Search).
       When Google Patents shows a Download PDF button for US20260143604A1, switch `links.paper`

@@ -2,6 +2,10 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
   color: var(--text);
   background: #fff;
   font-family: var(--sans);
