@@ -7,16 +7,16 @@
 #   links:                           # Optional; verified URLs only
 #     paper: https://example.com/paper.pdf # PDF label for PDF targets
 #     arxiv: https://arxiv.org/abs/IDENTIFIER
-#     project: /projects/example/     # Only after its page exists
+#     writeup: /projects/example/     # Only after its page exists
 #   bibtex: |                        # Optional: CITE copies this verbatim
 #     Paste the verified BibTeX entry here.
-# For patents, use type: patent and links.google_patents; no CITE is shown.
+# For patents, use type: patent and links.google_patents; add bibtex for CITE.
 - title: Structured Multitask Gaussian Processes for Probabilistic Full-Body Human Motion Prediction
   authors: J. Chong, X. Zhang, K. Youcef-Toumi
   venue: ICRA
   year: 2027
   status: Under review
-  links: {arxiv: https://arxiv.org/abs/2603.07096, paper: https://arxiv.org/pdf/2603.07096}
+  links: {arxiv: https://arxiv.org/abs/2603.07096, paper: https://arxiv.org/pdf/2603.07096, video: https://youtu.be/9IB6VJWT0Nc, writeup: /projects/struct-gp/}
   bibtex: |
     @misc{chong2026structuredmultitaskgaussianprocesses,
           title={Structured Multitask Gaussian Processes for Probabilistic Full-Body Human Motion Prediction},
@@ -32,7 +32,7 @@
   venue: ICRA
   year: 2024
   status: Published
-  links: {paper: https://arxiv.org/pdf/2312.07744, arxiv: https://arxiv.org/abs/2312.07744}
+  links: {paper: https://arxiv.org/pdf/2312.07744, arxiv: https://arxiv.org/abs/2312.07744, ieee: https://ieeexplore.ieee.org/document/10610657, writeup: /projects/safety-metrics/}
   bibtex: |
     @INPROCEEDINGS{10610657,
       author={Zhang, Xiaotong and Chong, Jinger and Youcef-Toumi, Kamal},
@@ -49,4 +49,14 @@
   venue: US 2026/0143604 A1
   year: 2026
   status: Pending
-  links: {google_patents: https://patents.google.com/patent/US20260143604/}
+  links: {paper: /downloads/multi-function-hinge-US20260143604A1.pdf, google_patents: https://patents.google.com/patent/US20260143604/}
+  bibtex: |
+    @misc{chong2026multifunctionhinge,
+      author = {Chong, Jinger and Yaremenko, Denys and Tomky, Brett and Caplow-Munro, Devin},
+      title = {Multi-Function Hinge},
+      year = {2026},
+      month = {may},
+      howpublished = {U.S. Patent Application},
+      note = {U.S. Patent Application Publication No. US 2026/0143604 A1},
+      url = {https://patents.google.com/patent/US20260143604A1}
+    }

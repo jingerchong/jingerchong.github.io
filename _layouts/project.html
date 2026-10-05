@@ -13,8 +13,12 @@ layout: default
 {%- assign metadata = metadata | strip -%}{%- if metadata != empty %}
 <dl class="meta">{{ metadata }}</dl>{% endif %}
 {%- capture links_html %}{% include link-row.html links=page.links %}{% endcapture -%}
-{%- assign links_html = links_html | strip -%}{%- if links_html != empty %}
-<div class="linkrow">{{ links_html }}</div>{% endif %}
+{%- assign links_html = links_html | strip -%}
+{%- comment -%}Cite appears when a publication's links.writeup points to this page.{%- endcomment -%}
+{%- assign pub = site.data.publications | where_exp: 'p', 'p.links.writeup == page.url' | first -%}
+{%- assign cite_html = '' -%}{%- if pub.bibtex -%}{%- capture cite_html -%}<button type="button" class="cite" data-bibtex="{{ pub.bibtex | strip | escape }}" aria-label="Copy BibTeX for {{ pub.title | escape }}">Cite</button><span class="visually-hidden" role="status"></span>{%- endcapture -%}{%- endif -%}
+{%- if links_html != empty or cite_html != '' %}
+<div class="linkrow">{{ links_html }}{{ cite_html }}</div>{% endif %}
 {%- assign cover_path = '/assets/images/' | append: page.slug | append: '/cover.webp' -%}
 {%- assign cover_file = site.static_files | where: 'path', cover_path | first -%}
 {%- assign hero_video = page.hero_video | strip -%}
@@ -33,3 +37,5 @@ layout: default
 {%- unless forloop.last -%}{%- assign next_index = forloop.index0 | plus: 1 -%}{%- assign next = ordered[next_index] -%}<a rel="next" href="{{ next.url | relative_url }}">{{ next.title }} →</a>{%- endunless -%}
 </nav>{%- endif -%}{%- endfor %}
 </article>
+{%- if cite_html != '' %}
+<script src="{{ '/assets/citations.js' | relative_url }}" defer></script>{% endif %}

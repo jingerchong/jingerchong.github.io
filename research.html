@@ -10,7 +10,7 @@ permalink: /research/
 <p class="lede">I'm currently drafting my PhD thesis proposal on human intent prediction for autonomous navigation, as part of the <a href="https://cces.mit.edu/" target="_blank" rel="noopener noreferrer">Center for Complex Engineering Systems (CCES)</a>, a collaboration between MIT and King Abdulaziz City for Science and Technology (KACST) in Saudi Arabia.</p>
 <p>Robots that move through spaces shared with people need to anticipate where those people are going, not just react to where they are. My work focuses on the conditions that make this hard in practice: predictions that run in real time on board the robot, environments that change as the robot moves through them, and uncertainty estimates that a planner can use to stay safe.</p>
 </div>
-{% include prediction-figure.html %}
+{% include figure.html src="/assets/images/struct-gp/figures/results-compact.webp" alt="Line plot of negative log-likelihood versus prediction horizon up to 2000 ms for DLow, Motron, and my structured Gaussian process; mine is lowest at every step." caption="Full-body motion prediction on Human3.6M: negative log-likelihood of the true motion over a 2 s horizon (lower is better). <a href='/projects/struct-gp/'>Read the writeup →</a>" %}
 </div>
 {% for item in site.data.research %}{% if item.current %}{% include industry-item.html item=item %}{% endif %}{% endfor %}
 

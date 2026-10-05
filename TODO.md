@@ -5,8 +5,10 @@ Open work only. Current layout and authoring rules live in `AGENTS.md` and
 
 ## Project writeups and evidence to add while sending applications
 
-- [ ] **Human motion prediction (`struct-gp`).** Add an approved cover, figure or
-      prediction loop, and a public code link if available.
+- [ ] **Human motion prediction (`struct-gp`).** Writeup, metadata, video hero, and cover
+      are done; cover approved. Jinger to review the writeup wording. Add a `code` link once
+      `github.com/jingerchong/struct-gp` is public (the arXiv paper already cites it; it
+      returned 404 on 2026-10-05). Update tier/status if the ICRA 2027 decision arrives.
 - [ ] **Perception-aware safety (`safety-metrics`).** Add an approved cover,
       figure or diagram, and a public code link if available.
 - [ ] **Autonomous Pool-Playing Robot.** Add a simulation screenshot or short loop,
@@ -17,7 +19,6 @@ Open work only. Current layout and authoring rules live in `AGENTS.md` and
       team, and approved comparisons or failure cases.
 - [ ] **Granular-Jamming Vise (ReVise).** Consider a shorter account of design
       iterations and the resulting outcome.
-- [ ] Replace the illustrative Research diagram with an approved research figure.
 - [ ] Add approved off-the-clock photos when available.
 
 ### Parked drafts — keep hidden until Jinger supplies details
@@ -38,6 +39,10 @@ Open work only. Current layout and authoring rules live in `AGENTS.md` and
 
 ## Site improvements during applications
 
+- [ ] **Multi-Function Hinge patent PDF.** The patent's PDF link currently points to a local copy
+      (`downloads/multi-function-hinge-US20260143604A1.pdf`, from USPTO Patent Public Search).
+      When Google Patents shows a Download PDF button for US20260143604A1, switch `links.paper`
+      to that patentimages URL and remove the local copy. Recheck if the application is amended or granted.
 - [ ] Add a short teaching writeup for the Spring 2023 2.00B Lab Instructor role if there are
       approved photos and useful detail (Fusion 360 and Illustrator workshops for 70+ students;
       coached a six-member team).

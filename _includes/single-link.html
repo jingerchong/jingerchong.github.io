@@ -1,4 +1,4 @@
 {%- assign link_path = include.target | split: '?' | first | split: '#' | first | downcase -%}
 {%- assign extension = link_path | slice: -4, 4 -%}
-<a href="{{ include.target | relative_url }}"{% if include.target contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{% case include.key %}{% when 'paper' %}{% if extension == '.pdf' or include.target contains 'arxiv.org/pdf/' %}PDF{% else %}Paper{% endif %}{% when 'arxiv' %}arXiv{% when 'google_patents' %}Google Patents{% else %}{{ include.key | replace: '_', ' ' | capitalize }}{% endcase %}</a>
+<a href="{{ include.target | relative_url }}"{% if include.target contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{% case include.key %}{% when 'paper' %}{% if extension == '.pdf' or include.target contains 'arxiv.org/pdf/' %}PDF{% else %}Paper{% endif %}{% when 'ieee' %}IEEE Xplore{% when 'arxiv' %}arXiv{% when 'google_patents' %}Google Patents{% else %}{{ include.key | replace: '_', ' ' | capitalize }}{% endcase %}</a>
 {%- if include.key != 'paper' %}{%- if extension == '.pdf' or include.target contains 'arxiv.org/pdf/' %} <span class="meta-t">(PDF)</span>{% endif -%}{% endif -%}

@@ -4,6 +4,6 @@
 <div>
 <h3 class="item">{{ include.pub.title }}</h3>
 <p class="small">{{ include.pub.authors | replace: 'J. Chong', '<strong>J. Chong</strong>' }}{% if is_patent %} · {{ include.pub.venue }}{% endif %}</p>
-<div class="linkrow">{% include link-row.html links=include.pub.links %}{% if include.pub.bibtex and is_patent == false %}<button type="button" class="cite" data-bibtex="{{ include.pub.bibtex | strip | escape }}" aria-label="Copy BibTeX for {{ include.pub.title | escape }}">Cite</button><span class="visually-hidden" role="status"></span>{% endif %}</div>
+<div class="linkrow">{% include link-row.html links=include.pub.links %}{% if include.pub.bibtex %}<button type="button" class="cite" data-bibtex="{{ include.pub.bibtex | strip | escape }}" aria-label="Copy BibTeX for {{ include.pub.title | escape }}">Cite</button><span class="visually-hidden" role="status"></span>{% endif %}</div>
 </div>
 </li>

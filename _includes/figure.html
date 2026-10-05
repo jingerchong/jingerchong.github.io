@@ -1,0 +1,2 @@
+{%- comment -%}One captioned image. Params: src (site path), alt, optional caption (HTML allowed).{%- endcomment -%}
+<figure class="fig"><img loading="lazy" src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}">{% if include.caption %}<figcaption class="meta-t">{{ include.caption }}</figcaption>{% endif %}</figure>

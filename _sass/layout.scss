@@ -243,8 +243,9 @@ h2.sec, .project-writeup h2 { @include section-heading; }
 // ---------- Research ----------
 .rgrid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--sp-4); align-items: start; margin-bottom: var(--sp-3); }
 .fig { margin: 0; }
-.fig svg { display: block; width: 100%; height: auto; border: 1px solid var(--light); background: #fff; }
+.fig img { display: block; width: 100%; height: auto; background: #fff; }
 .fig figcaption { margin-top: var(--sp-1); }
+.project-writeup .fig { margin: var(--sp-3) 0; }
 
 // ---------- Projects index ----------
 .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-3); }

@@ -26,7 +26,7 @@ appears only in the banner. Banner tagline and status are configured in `_config
 Publication `paper` links to PDFs display PDF, while non-PDF paper targets display
 Paper. Other PDF links retain their descriptive label and a (PDF) suffix.
 CITE is a button that copies the entry's `bibtex` value to the clipboard; patents
-have no citation button. The public site uses HTTPS for clipboard access.
+show it too when they have `bibtex`. The public site uses HTTPS for clipboard access.
 
 Project links belong in front matter when they should appear above the hero.
 Missing metadata and media are omitted; missing covers use blueprint tiles in

@@ -109,12 +109,14 @@ old URL; do not create a redirect for it.
   Use `youtube.html` with `id`, `title`, and optional `caption` for embeds;
   use `video.html` with `mp4` and/or `webm`, `title`, optional `poster` and
   `caption` for local loops. Local loops have controls and respect reduced motion.
+  Use `figure.html` with `src`, `alt`, and optional `caption` for one captioned image or plot.
 - **Publication or patent:** Copy the commented entry in
   `_data/publications.yml`. Fill `title`, `authors`, `venue`, and `year`; add
   `status` and verified `links.paper` / `links.arxiv` when available. `bibtex: |`
   stores the exact citation copied by CITE (`assets/citations.js`), with accessible
   success/failure feedback; do not use a dropdown. Patents use `type: patent` or
-  `links.google_patents` and have no CITE. File order controls homepage order.
+  `links.google_patents` and may also have CITE. Set `links.writeup` to a project URL
+  to show a Writeup link here and the same CITE button on that project page. File order controls homepage order.
   No image is needed.
 - **Industry role:** Copy the commented entry in `_data/industry.yml`. Fill
   `org`, `role`, `start`, `end`, `location`, and `bullets`; `link` is optional.
