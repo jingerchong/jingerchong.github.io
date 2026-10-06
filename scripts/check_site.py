@@ -8,6 +8,8 @@ import sys
 
 SITE = Path(sys.argv[1] if len(sys.argv) > 1 else "_site").resolve()
 PUBLIC_HOST = "jingerchong.com"
+LOCAL_HOSTS = {"localhost", "127.0.0.1"}
+CV_PATH = "/downloads/jinger-chong-cv.pdf"
 BAD_TEXT = ("TODO:", "Project writeups are coming soon", "Lorem ipsum")
 
 
@@ -28,14 +30,20 @@ class PageParser(HTMLParser):
             self.in_anchor = True
             href = attrs.get("href", "")
             parsed = urlsplit(href)
-            if parsed.scheme in ("http", "https") and parsed.hostname not in (
-                PUBLIC_HOST, f"www.{PUBLIC_HOST}"
-            ):
+            same_site_hosts = {PUBLIC_HOST, f"www.{PUBLIC_HOST}", *LOCAL_HOSTS}
+            is_external = (
+                parsed.scheme in ("http", "https")
+                and parsed.hostname not in same_site_hosts
+            )
+            is_cv = parsed.path == CV_PATH
+            if is_external or is_cv:
                 rel = set(attrs.get("rel", "").split())
                 if attrs.get("target") != "_blank":
-                    self.accessibility.append(f"external link does not open in a new tab: {href}")
+                    kind = "CV" if is_cv else "external"
+                    self.accessibility.append(f"{kind} link does not open in a new tab: {href}")
                 if not {"noopener", "noreferrer"}.issubset(rel):
-                    self.accessibility.append(f"external link lacks safe rel attributes: {href}")
+                    kind = "CV" if is_cv else "external"
+                    self.accessibility.append(f"{kind} link lacks safe rel attributes: {href}")
         if attrs.get("id"):
             if attrs["id"] in self.ids:
                 self.accessibility.append(f"duplicate id: {attrs['id']}")
