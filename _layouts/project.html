@@ -7,7 +7,7 @@ layout: default
 <h1 class="p-title"><span>{{ page.title }}</span></h1>
 {%- capture metadata -%}
 {%- assign fields = 'role,team,award' | split: ',' -%}
-{%- for field in fields -%}{%- assign value = page[field] | strip -%}{%- if value != empty -%}<dt>{{ field }}</dt><dd>{{ value }}</dd>{%- endif -%}{%- endfor -%}
+{%- for field in fields -%}{%- assign value = page[field] | strip -%}{%- if value != empty -%}<dt>{{ field }}</dt><dd>{%- if field == 'award' and page.award_url -%}<a href="{{ page.award_url | relative_url }}"{% if page.award_url contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ value }}</a>{%- else -%}{{ value }}{%- endif -%}</dd>{%- endif -%}{%- endfor -%}
 {%- if page.stack.size > 0 -%}<dt>Stack</dt><dd><span class="chips">{% for item in page.stack %}<span class="chip">{{ item }}</span>{% endfor %}</span></dd>{%- endif -%}
 {%- endcapture -%}
 {%- assign metadata = metadata | strip -%}{%- if metadata != empty %}

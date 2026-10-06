@@ -47,4 +47,5 @@ exclude:
   - examples
   - vendor
   - Claude outputs
+  - private
   - "*.psd"

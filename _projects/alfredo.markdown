@@ -1,32 +1,37 @@
 ---
-title: Autonomous Racecar Stack
+title: Autonomous Racecar Navigation
 tier: featured
-order: 2
+order: 4
 year: 2022
 context: '6.141 Robotics: Science and Systems'
-summary: Vision-based lane following and RRT/PRM path planning for a 1/10-scale autonomous racecar.
+role: LiDAR sensor model for localization; path shortcutting; experimental evaluation
+team: Team of 5
+summary: Wall following, visual servoing, particle-filter localization, and sampling-based planning on a 1/10-scale autonomous racecar.
+tldr: >-
+  A 1/10-scale racecar learned to follow walls, track lines and cones with a camera, localize
+  itself in a known map, and plan paths through it. Its particle filter localized the car to
+  within 2.3 cm on average in simulation, and path shortcutting made sampled paths 10–15%
+  shorter.
 stack:
 - ROS
 - C++
 image: /assets/images/alfredo/cover.webp
+links:
+  code: https://github.com/rss2022-3
 ---
 
-For 6.141 Robotics: Science and Systems, I helped program our racecar, named Alfredo, to localize, plan, and navigate autonomously across a series of increasingly complex tasks.
+In 6.141 Robotics: Science and Systems, our team of five built up the full autonomy stack for a 1/10-scale racecar, one capability at a time, testing each on the real car. Over the semester, our car, Alfredo, learned to follow walls with LiDAR, park in front of a cone and follow a taped line with a camera, localize itself in a known map, and plan and track paths through it. I also wrote the experimental evaluations for three of our four lab reports, comparing our approaches against measured benchmarks.
 
-By the end of the course, Alfredo drove laps autonomously on an indoor track at up to 5 m/s, staying in its lane with computer vision and a pure-pursuit controller. For navigation, it planned paths through a loaded map with bidirectional rapidly-exploring random trees (RRT) or probabilistic roadmaps (PRM).
+For wall following, a PID controller was unstable on hardware because of communication delays, so we switched to a pure-pursuit controller with a 2 m look-ahead. It tracked the wall with about 12 cm of average error at both 1 m/s and 4 m/s. Counterintuitively, it turned more accurately at the higher speed, because the fixed look-ahead distance suits faster driving. A safety controller predicted the car's stopping footprint from a bicycle model and braked if any LiDAR return fell inside it.
 
-### Wall following
+{% include youtube.html id="HGhFOR1zcz0" title="Alfredo wall following demonstration" caption="Wall following on the racecar." %}
 
-{% include youtube.html id="HGhFOR1zcz0" title="Alfredo wall following demonstration" %}
+For localization, we implemented Monte Carlo localization, a particle filter that combines an odometry motion model with a LiDAR sensor model. I wrote the sensor model, which scores each particle by how likely the current scan is from that pose in the known map. It mixes four cases: a correct hit on the mapped surface, an unexpectedly short reading from an unmapped obstacle, a missed return at maximum range, and random noise. In simulation, the filter localized the car with 2.3 cm of average error, compared with 1.24 m from the motion model alone.
 
-### Cone parking
+{% include youtube.html id="4E7E7nPVFV8" title="Alfredo line following on a zigzag course" caption="Visual servoing: following a taped line on a zigzag course." %}
 
-{% include youtube.html id="uoZ6DRbXyKo" title="Alfredo cone parking demonstration" %}
+For path planning, we split into subteams that built A* search, bidirectional rapidly-exploring random trees (BiRRT), and probabilistic roadmaps (PRM) on a map of the Stata Center basement, with pure pursuit to track the result. I worked on the sampling-based side and implemented path shortcutting, which straightens the jagged paths these planners produce and shortened them by 10–15%. Once its roadmap was built, PRM answered a query in 0.42 s, compared with about 12 s for A* and BiRRT.
 
-### Line following on a zigzag course
+The planners traded speed for tracking quality. PRM queried fastest, but its paths were harder to follow: the car tracked them with over 0.5 m of average error, compared with 0.25 m for BiRRT. The bigger lesson was about teamwork. Our localization lab, squeezed between midterms and spring break, exposed communication gaps in the team. After we talked them through, we split the path-planning lab into subteams from the first day, and it became our most organized and best-benchmarked lab.
 
-{% include youtube.html id="4E7E7nPVFV8" title="Alfredo line following on a zigzag course" %}
-
-### Line following on a circular course
-
-{% include youtube.html id="OMkYFuFPJ6c" title="Alfredo line following on a circular course" %}
+{% include youtube.html id="uoZ6DRbXyKo" title="Alfredo cone parking demonstration" caption="Visual servoing: parking in front of a cone." %}

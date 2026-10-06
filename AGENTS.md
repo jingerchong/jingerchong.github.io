@@ -54,7 +54,7 @@ to the PDF configured by `cv_url`.
   MORE lists `archive`, with title/context on the left and dates aligned at the right
   edge on desktop and phones. Changing the heading does not change tier behavior.
 - About: OFF THE CLOCK with a floated square headshot, Education, Skills,
-  Teaching, Service. Research uses NOW and BEFORE.
+  Teaching, Service. Research uses NOW, WRITEUPS (cards for `research: true` projects), and BEFORE.
 - Project detail: back link, context/year kicker, title, optional metadata and
   stack chips, links, optional cover/video, TL;DR, article, previous/next.
   Previous/next follows the FEATURED grid and uses `rel="prev"` / `rel="next"`.
@@ -64,7 +64,7 @@ to the PDF configured by `cv_url`.
   `fonts.scss` and `layout.scss`; section rules use one mixin. Keep keyboard focus
   and reduced-motion behavior. Test the banner and navigation down to 320px.
 - `project-card.html` is the grid card; `project-row.html` is the compact Home row.
-  Both reuse `project-image.html`, `blueprint.html`, and `kicker.html`.
+  Both reuse `project-image.html` and `kicker.html`.
 - `examples/design/` contains historical visual references, not current authoring
   instructions. Current source and this guide take precedence over their old labels.
 - `TODO.md` contains only future actions and decisions not to implement. Remove
@@ -88,15 +88,21 @@ old URL; do not create a redirect for it.
   More row. Lower `order` values appear earlier within the relevant list.
   Write the full article below the front matter; use descriptive `##` headings
   only for longer articles. Optional `tldr` (2–3 sentences, falling back to
-  `summary`), `role`, `team`, `award`, and `stack` appear on the detail page.
+  `summary`), `role`, `team`, `award`, and `stack` appear on the detail page;
+  optional `award_url` links the award text to a verified source. An `award` also
+  appears as a yellow badge beside the kicker on cards, Home rows, and the project page.
+  `research: true` also shows the card under WRITEUPS on `/research/` (it stays in the
+  Projects grid as well).
   Verified `links` appear at the top in `paper`, `arxiv`, `code`, `video`, `report`,
   `slides`, `poster`, `website` order, then other keys. A `paper` PDF is labeled
   PDF (other paper URLs: Paper); other PDF targets get a `(PDF)` suffix.
   Empty and `#` targets are skipped. Keep public PDF writeups in `downloads/<slug>/`.
-  Missing covers use blueprint
-  tiles in listings and no detail-page hero; set `placeholder` to `pool`,
-  `quadrotor`, `prediction`, or `safety` to pick the tile drawing (anything else
-  gets a generic arm).
+  A project without a cover shows no image in listings and no detail-page hero.
+- **Writeup format:** Follow `struct-gp`: no `##`/`###` section headers; a short problem
+  paragraph, method and individual contribution, results with numbers, then tradeoffs or
+  next steps, with `figure.html` figures between paragraphs. Write `tldr` and `summary` in an
+  impact-focused, mostly impersonal voice; first person belongs in the prose. Course
+  teammates stay unnamed. Use at most one gallery per page, with 2 or 4 curated images.
 - **Gallery:** Place files under `assets/images/<slug>/<descriptive-name>/`
   as `01.webp`, `02.webp`, and so on. Add
   `{% include gallery.html dir="descriptive-name" title="Descriptive title" %}`
@@ -116,8 +122,12 @@ old URL; do not create a redirect for it.
   stores the exact citation copied by CITE (`assets/citations.js`), with accessible
   success/failure feedback; do not use a dropdown. Patents use `type: patent` or
   `links.google_patents` and may also have CITE. Set `links.writeup` to a project URL
-  to show a Writeup link here and the same CITE button on that project page. File order controls homepage order.
-  No image is needed.
+  to make the title and thumbnail open that writeup (otherwise they open `paper`) and to show
+  the same CITE button on that project page; `writeup` never appears in the link row. File
+  order controls homepage order. The kicker reads `VENUE · YEAR` (`Patent · YEAR`), and any
+  `status` other than Published appears as an outlined chip beside it, mirroring project
+  rows (`CONTEXT · YEAR` plus an award chip). Optional `image` adds a 16:10 thumbnail in place
+  of the left-column label, which then moves above the title.
 - **Industry role:** Copy the commented entry in `_data/industry.yml`. Fill
   `org`, `role`, `start`, `end`, `location`, and `bullets`; `link` is optional.
   The homepage Experience list shows one line per role; `home: false` hides a
@@ -151,6 +161,10 @@ old URL; do not create a redirect for it.
 - Keep the private résumé, phone number, street address, proprietary work,
   and unpublished patent material out of public output. The public CV is
   `downloads/jinger-chong-cv.pdf`; verify redaction before replacing it.
+- Course-project pages never name teammates: write "my teammate" and use
+  `team: Team of N`. Publication co-authors may be named. Course report PDFs
+  stay in `private/reports/<slug>/` (Git-ignored and excluded from the build);
+  put their key points and figures in the writeup instead of linking the PDF.
 - Jinger approved the remaining K–12 outreach photos for public display.
 - Missing media should disappear cleanly. Record the asset needed in
   `TODO.md`; do not add a broken image, dead `href="#"`, or invented media.

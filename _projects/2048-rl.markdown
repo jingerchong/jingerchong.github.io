@@ -4,16 +4,18 @@ tier: unlisted
 order: 2
 year: 2020
 context: NCTU Computer Games and Intelligence Lab
-summary: A temporal-difference learning agent developed during an NCTU CGI Lab internship.
+summary: A temporal-difference learning agent that reaches a 93% win rate at 2048 and shows how the game's random tile spawns shape learning.
+tldr: >-
+  A temporal-difference learning agent, written in C++, learns to play 2048 from self-play.
+  It first reached the 2048 tile after 2,000 training rounds and won 93% of games after 20,000,
+  and the study measures how the chance of spawning a 4-tile affects score and learning speed.
 image: /assets/images/2048-rl/cover.webp
+links:
+  code: https://github.com/jingerchong/2048
 ---
 
-During a research internship at National Chiao Tung University's Computer Games and Intelligence Lab, I trained a temporal-difference learning agent to play 2048. The agent learns a value function over board states and selects moves greedily with respect to that estimate.
+2048 is simple to play but hard to master, because new tiles appear at random after every move. During a research internship at National Chiao Tung University's Computer Games and Intelligence Lab, I trained a temporal-difference learning agent to play it. The agent learns a value function over board states from its own games and picks each move greedily with respect to that estimate.
 
-The agent first reached the 2048 tile after 2,000 training rounds, and hit a 93% win rate after 20,000. I also investigated how changing the probability of spawning a 4-tile in the environment affects the final score and the learning speed.
+The agent first reached the 2048 tile after 2,000 training rounds and hit a 93% win rate after 20,000. I also varied how often the game spawns a 4-tile instead of a 2-tile, to see how that randomness affects the final score and how quickly the agent learns.
 
-Full C++ implementation on [GitHub](https://github.com/jingerchong/2048).
-
-### Some results
-
-{% include gallery.html dir="some-results" title="Some results" %}
+{% include gallery.html dir="gallery" title="Maximum score and win rate versus training rounds for different 4-tile spawn probabilities" %}

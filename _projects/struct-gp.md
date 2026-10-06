@@ -1,16 +1,16 @@
 ---
 title: Structured Gaussian Processes for Human Motion Prediction
 tier: normal
-order: 5
+research: true # Also shown as a card under Writeups on /research/
+order: 1
 year: 2026
 context: MIT Mechatronics Research Lab
 summary: A compact structured Gaussian process for full-body human motion prediction with closed-form, temporally structured uncertainty.
 tldr: >-
-  Robots that share space with people need human motion predictions with reliable uncertainty,
-  not just accurate means. I developed a structured multitask Gaussian process that predicts 2 s
-  of full-body motion in closed form. On Human3.6M, it assigns higher likelihood to the true
-  motion than Motron and DLow at every prediction step, with about seven times fewer parameters
-  than Motron.
+  Robots that share space with people need motion predictions with reliable uncertainty, not
+  just accurate means. A structured multitask Gaussian process predicts 2 s of full-body motion
+  in closed form. On Human3.6M, it assigns higher likelihood to the true motion than Motron and
+  DLow at every prediction step, with about seven times fewer parameters than Motron.
 role: First author
 stack: [Python, PyTorch, GPyTorch, scikit-learn, RoMa, NumPy, Matplotlib]
 links:
@@ -27,7 +27,7 @@ My model predicts the full 2 s horizon in one shot, so uncertainty does not comp
 
 {% include figure.html src="/assets/images/struct-gp/figures/model.webp" alt="Diagram: H past time steps for each of D dimensions feed separate GPs (GP 1 to GP D), each producing a Gaussian at each of F future time steps." caption="Model architecture for a single joint with D dimensions. Each joint–dimension pair is modeled by a GP that maps H past time steps to F future time steps and produces a Gaussian predictive distribution at each future step. Replicated for all joints, this gives 96 parallel GPs, each with a full temporal covariance over the prediction horizon." %}
 
-On Human3.6M, the model achieves lower KDE negative log-likelihood than [Motron](https://arxiv.org/abs/2203.04132) and [DLow](https://arxiv.org/abs/2003.08386) at every prediction step, 22–52 nats below Motron over the 2 s horizon. Its empirical coverage is conservative at the 50% and 80% levels and close to nominal at 95%. The probabilistic model uses 0.24 M parameters, about seven times fewer than Motron. A separately trained 0.35 M-parameter deterministic variant has a mean angle error 3–22% higher than Motron's, a gap that narrows to 3% at 1 s. Ablations confirmed the benefit of the 6D representation, and showed that at a fixed training budget, factorized joint outputs beat coupled alternatives while using less memory.
+On Human3.6M, the model achieves lower KDE negative log-likelihood than [Motron](https://arxiv.org/abs/2203.04132){: target="_blank" rel="noopener noreferrer" } and [DLow](https://arxiv.org/abs/2003.08386){: target="_blank" rel="noopener noreferrer" } at every prediction step, 22–52 nats below Motron over the 2 s horizon. Its empirical coverage is conservative at the 50% and 80% levels and close to nominal at 95%. The probabilistic model uses 0.24 M parameters, about seven times fewer than Motron. A separately trained 0.35 M-parameter deterministic variant has a mean angle error 3–22% higher than Motron's, a gap that narrows to 3% at 1 s. Ablations confirmed the benefit of the 6D representation, and showed that at a fixed training budget, factorized joint outputs beat coupled alternatives while using less memory.
 
 {% include figure.html src="/assets/images/struct-gp/figures/results.webp" alt="Line plot of negative log-likelihood versus prediction horizon up to 2000 ms for DLow, Motron, and the proposed model; the proposed model is lowest at every step." caption="KDE NLL (lower is better) of our final model, Motron, and DLow. Our model is lowest at every time step and 22–52 nats below Motron across the full 2 s horizon." %}
 

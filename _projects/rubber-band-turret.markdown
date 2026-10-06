@@ -1,29 +1,15 @@
 ---
-title: Rubber Band Turret
+title: Joystick-Controlled Rubber Band Turret
 tier: archive
-order: 4
+order: 3
 year: 2019
 context: Freshman engineering seminar
-summary: A freshman engineering seminar mechanism.
+summary: An Arduino turret that aims and fires rubber bands from a custom handheld controller.
 image: /assets/images/rubber-band-turret/cover.webp
+links:
+  code: https://github.com/jingerchong/rubber-band-turret
 ---
 
-A fun rubber band shooting contraption for EC.A790 Engineering, Art, Science freshman seminar.
+For the freshman seminar EC.A790 Engineering, Art, Science, I built a turret that aims and fires rubber bands. It went from a rough prototype to a laser-cut, gear-driven base designed in CAD, and then to a custom handheld joystick controller.
 
-Arduino code uploaded on [GitHub](https://github.com/jingerchong/rubber-band-turret).
-
-### Rough prototyping
-
-{% include gallery.html dir="rough-prototyping" title="Rough prototyping" %}
-
-### CAD and laser cutting
-
-{% include gallery.html dir="cad-and-laser-cutting" title="CAD and laser cutting" %}
-
-### Adding joystick
-
-{% include gallery.html dir="adding-joystick" title="Adding joystick" %}
-
-### Upgrading controller and field test
-
-{% include gallery.html dir="upgrading-controller-and-field-test" title="Upgrading controller and field test" %}
+{% include gallery.html dir="gallery" title="Turret and controller, in CAD and built" %}

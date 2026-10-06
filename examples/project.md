@@ -14,8 +14,9 @@ published: false                              # Remove after public-content revi
 # team: Verified team size or collaborators
 # stack: [Python, ROS]                         # Optional: detail-page chips
 # award: Verified award                        # Optional: detail-page metadata
+# award_url: https://example.com              # Optional: links the award text to its source
+# research: true                               # Optional: also show as a card under Writeups on /research/
 # links: {video: https://example.com}          # Optional; omit unknown links
-# placeholder: quadrotor                     # pool, quadrotor, prediction, safety; default arm
 # hero_video: YouTube ID                       # Optional; replaces cover in the page hero
 # image: /assets/images/<slug>/cover.webp      # Optional; social share cover
 # sitemap: false                               # For an intentionally empty archival page
@@ -23,8 +24,8 @@ published: false                              # Remove after public-content revi
 
 Write the complete project here in Markdown. Put a cover, if available, at
 `assets/images/<slug>/cover.webp`; the page discovers it automatically. Cards
-use a 16:10 crop and the page hero uses 16:9. Missing covers use a blueprint
-tile in listings and no hero on the detail page. Previous/next follows grid order.
+use a 16:10 crop and the page hero uses 16:9. Missing covers show no image in
+listings and no hero on the detail page. Previous/next follows grid order.
 
 The Projects page combines `featured` and `normal` projects under FEATURED;
 only the first three `featured` projects appear on Home. `archive` goes under

@@ -56,6 +56,7 @@ h2.sec, .project-writeup h2 { @include section-heading; }
   box-decoration-break: clone;
 }
 .kicker.outline { background: #fff; color: var(--theme); box-shadow: inset 0 0 0 1px var(--theme); }
+.kicker.award { background: var(--accent); color: var(--theme); font-weight: 600; }
 .chips { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
 .chip {
   display: inline-block;
@@ -130,22 +131,11 @@ h2.sec, .project-writeup h2 { @include section-heading; }
 .lc li:hover .item .t { box-shadow: inset 0 -.3em 0 var(--accent); }
 .pubs .item { margin: 0 0 .15em; }
 .pubs .v .meta-t { display: block; margin-top: .15em; }
+.pubs .ck { line-height: 1.9; }
+.pubs .has-th .item { margin-top: .3em; }
 .th { display: block; position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--paper); }
 .th img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-// Blueprint tile: temporary fallback for missing covers.
-.bp {
-  position: absolute;
-  inset: 0;
-  background-color: var(--theme);
-  background-image:
-    linear-gradient(rgba(217, 220, 214, .13) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(217, 220, 214, .13) 1px, transparent 1px),
-    linear-gradient(rgba(217, 220, 214, .06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(217, 220, 214, .06) 1px, transparent 1px);
-  background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
-}
-.bp svg { position: absolute; right: 7%; top: 8%; width: 50%; height: auto; }
 
 // ---------- List (.list): Home experience, Teaching, Service, Projects "More" ----------
 .list li {
@@ -348,12 +338,16 @@ dl.meta dd { margin: 0; }
   .hero .status { max-width: 100%; text-align: left; letter-spacing: 0; }
 
   .lc > li { gap: var(--sp-1) var(--sp-2); }
-  .lc.pubs > li { grid-template-columns: 1fr; }
+  .lc.pubs > li:not(.has-th) { grid-template-columns: 1fr; }
   .pubs .v .meta-t { display: inline; margin-left: .6em; }
   .list li { flex-direction: column; gap: 0; padding: var(--sp-1) 0; }
   .ent .h { gap: 0 var(--sp-2); }
 
-  .me img { width: var(--col); height: var(--col); margin-left: var(--sp-2); }
+  .me img {
+    width: calc(var(--col) + var(--sp-2));
+    height: calc(var(--col) + var(--sp-2));
+    margin-left: var(--sp-2);
+  }
   .skills { grid-template-columns: 1fr; gap: var(--sp-1); }
   .skills .label:not(:first-child) { margin-top: var(--sp-2); }
   .rgrid, .project-grid, .fgrid, .grid ul { grid-template-columns: 1fr; }

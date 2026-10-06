@@ -29,8 +29,7 @@ CITE is a button that copies the entry's `bibtex` value to the clipboard; patent
 show it too when they have `bibtex`. The public site uses HTTPS for clipboard access.
 
 Project links belong in front matter when they should appear above the hero.
-Missing metadata and media are omitted; missing covers use blueprint tiles in
-listings. Select pool, quadrotor, prediction, or safety with `placeholder`.
+Missing metadata and media are omitted, including covers (no image in listings).
 Use the shared gallery and video includes shown in `project.md`.
 
 ## Design references

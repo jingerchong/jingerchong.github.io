@@ -7,6 +7,7 @@ import sys
 
 
 SITE = Path(sys.argv[1] if len(sys.argv) > 1 else "_site").resolve()
+PUBLIC_HOST = "jingerchong.com"
 BAD_TEXT = ("TODO:", "Project writeups are coming soon", "Lorem ipsum")
 
 
@@ -25,6 +26,16 @@ class PageParser(HTMLParser):
             if self.in_anchor:
                 self.accessibility.append("nested anchor (malformed link)")
             self.in_anchor = True
+            href = attrs.get("href", "")
+            parsed = urlsplit(href)
+            if parsed.scheme in ("http", "https") and parsed.hostname not in (
+                PUBLIC_HOST, f"www.{PUBLIC_HOST}"
+            ):
+                rel = set(attrs.get("rel", "").split())
+                if attrs.get("target") != "_blank":
+                    self.accessibility.append(f"external link does not open in a new tab: {href}")
+                if not {"noopener", "noreferrer"}.issubset(rel):
+                    self.accessibility.append(f"external link lacks safe rel attributes: {href}")
         if attrs.get("id"):
             if attrs["id"] in self.ids:
                 self.accessibility.append(f"duplicate id: {attrs['id']}")

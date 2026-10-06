@@ -4,6 +4,7 @@
 #   venue: Example venue              # Required
 #   year: 2026                        # Required
 #   status: Published                 # Optional, displayed after the year
+#   image: /assets/images/slug/cover.webp # Optional 16:10 thumbnail; links to writeup or paper
 #   links:                           # Optional; verified URLs only
 #     paper: https://example.com/paper.pdf # PDF label for PDF targets
 #     arxiv: https://arxiv.org/abs/IDENTIFIER
@@ -16,6 +17,7 @@
   venue: ICRA
   year: 2027
   status: Under review
+  image: /assets/images/struct-gp/cover.webp
   links: {arxiv: https://arxiv.org/abs/2603.07096, paper: https://arxiv.org/pdf/2603.07096, video: https://youtu.be/9IB6VJWT0Nc, writeup: /projects/struct-gp/}
   bibtex: |
     @misc{chong2026structuredmultitaskgaussianprocesses,
@@ -32,7 +34,8 @@
   venue: ICRA
   year: 2024
   status: Published
-  links: {paper: https://arxiv.org/pdf/2312.07744, arxiv: https://arxiv.org/abs/2312.07744, ieee: https://ieeexplore.ieee.org/document/10610657, writeup: /projects/safety-metrics/}
+  image: /assets/images/safety-metrics/cover.webp
+  links: {paper: /downloads/perception-affect-safety-icra-2024.pdf, ieee: https://ieeexplore.ieee.org/document/10610657, video: https://youtu.be/Wzxi5bz6Ysg, writeup: /projects/safety-metrics/}
   bibtex: |
     @INPROCEEDINGS{10610657,
       author={Zhang, Xiaotong and Chong, Jinger and Youcef-Toumi, Kamal},
@@ -49,6 +52,7 @@
   venue: US 2026/0143604 A1
   year: 2026
   status: Pending
+  image: /assets/images/publications/multi-function-hinge.webp
   links: {paper: /downloads/multi-function-hinge-US20260143604A1.pdf, google_patents: https://patents.google.com/patent/US20260143604/}
   bibtex: |
     @misc{chong2026multifunctionhinge,

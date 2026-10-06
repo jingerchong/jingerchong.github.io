@@ -1,8 +1,11 @@
 {%- assign is_patent = false -%}{%- if include.pub.type == 'patent' or include.pub.links.google_patents -%}{%- assign is_patent = true -%}{%- endif -%}
-<li>
-<div class="v"><span class="kicker{% if is_patent %} outline{% endif %}">{% if is_patent %}PATENT{% else %}{{ include.pub.venue }} {{ include.pub.year }}{% endif %}</span>{% if include.pub.status %}<span class="meta-t">{{ include.pub.status }}</span>{% endif %}</div>
+{%- capture venue -%}<span class="kicker">{% if is_patent %}Patent{% else %}{{ include.pub.venue }}{% endif %} · {{ include.pub.year }}</span>{% if include.pub.status and include.pub.status != 'Published' %} <span class="kicker outline">{{ include.pub.status }}</span>{% endif %}{%- endcapture -%}
+{%- assign thumb_href = include.pub.links.writeup | default: include.pub.links.paper -%}
+<li{% if include.pub.image %} class="has-th"{% endif %}>
+{% if include.pub.image %}{% if thumb_href %}<a class="th" href="{{ thumb_href | relative_url }}"{% if thumb_href contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %} tabindex="-1" aria-hidden="true">{% else %}<div class="th">{% endif %}<img loading="lazy" src="{{ include.pub.image | relative_url }}" alt="">{% if thumb_href %}</a>{% else %}</div>{% endif %}{% else %}<div class="v">{{ venue }}</div>{% endif %}
 <div>
-<h3 class="item">{{ include.pub.title }}</h3>
+{% if include.pub.image %}<div class="ck">{{ venue }}</div>{% endif %}
+<h3 class="item">{% if thumb_href %}<a class="t" href="{{ thumb_href | relative_url }}"{% if thumb_href contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ include.pub.title }}</a>{% else %}{{ include.pub.title }}{% endif %}</h3>
 <p class="small">{{ include.pub.authors | replace: 'J. Chong', '<strong>J. Chong</strong>' }}{% if is_patent %} · {{ include.pub.venue }}{% endif %}</p>
 <div class="linkrow">{% include link-row.html links=include.pub.links %}{% if include.pub.bibtex %}<button type="button" class="cite" data-bibtex="{{ include.pub.bibtex | strip | escape }}" aria-label="Copy BibTeX for {{ include.pub.title | escape }}">Cite</button><span class="visually-hidden" role="status"></span>{% endif %}</div>
 </div>

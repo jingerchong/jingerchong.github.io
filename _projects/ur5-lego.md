@@ -3,7 +3,7 @@
 published: false
 title: Lego-Stacking UR5 Robot Arm
 tier: normal
-order: 7
+order: 9
 year: 2022
 # context: TODO course
 summary: A UR5 arm that picks individual bricks out of a pile using RGB-D perception and a custom self-aligning gripper.

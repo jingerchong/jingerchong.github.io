@@ -14,5 +14,10 @@ permalink: /research/
 </div>
 {% for item in site.data.research %}{% if item.current %}{% include industry-item.html item=item %}{% endif %}{% endfor %}
 
+{% assign research_projects = site.projects | where: 'research', true | sort: 'order' %}
+{% if research_projects.size > 0 %}<h2 class="sec">Writeups</h2>
+<div class="project-grid">{% for item in research_projects %}{% include project-card.html item=item %}{% endfor %}</div>
+{% endif %}
+
 <h2 class="sec">Before</h2>
 {% for item in site.data.research %}{% unless item.current %}{% include industry-item.html item=item %}{% endunless %}{% endfor %}

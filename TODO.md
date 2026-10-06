@@ -5,29 +5,45 @@ Open work only. Current layout and authoring rules live in `AGENTS.md` and
 
 ## Project writeups and evidence to add while sending applications
 
+Course report PDFs and original media live in the ignored `private/` folder; writeups use
+figures and loops exported to `assets/images/<slug>/`.
+
 - [ ] **Human motion prediction (`struct-gp`).** Writeup, metadata, video hero, and cover
       are done; cover approved. Jinger to review the writeup wording. Add a `code` link once
       `github.com/jingerchong/struct-gp` is public (the arXiv paper already cites it; it
       returned 404 on 2026-10-05). Update tier/status if the ICRA 2027 decision arrives.
-- [ ] **Perception-aware safety (`safety-metrics`).** Add an approved cover,
-      figure or diagram, and a public code link if available.
-- [ ] **Autonomous Pool-Playing Robot.** Add a simulation screenshot or short loop,
-      Jinger's specific contribution, and a clearer result or limitation if documented.
-- [ ] **Autonomous Racecar Stack (Alfredo).** Add Jinger's individual role and main
-      technical challenge; add a standalone code link only if useful and public.
-- [ ] **Water Bottle Flipping Quadrotor.** Add a cover or simulation clip, role,
-      team, and approved comparisons or failure cases.
-- [ ] **Granular-Jamming Vise (ReVise).** Consider a shorter account of design
-      iterations and the resulting outcome.
+- [ ] **Perception-aware safety (`safety-metrics`).** Jinger to state her specific contribution
+      to the paper (the UR5 camera rig was used in other lab projects, not this paper; it stays
+      in the Research entry). Confirm the YOLOv7 image-cropping sentence. Cover (problem-setup diagram) and two paper
+      figures are added from the LaTeX source in `private/source/safety-metrics/`.
+- [ ] **Autonomous Pool-Playing Robot.** Writeup, video hero, Deepnote code, award link,
+      cover, and four figures are done. Jinger to review the wording. The YouTube video is on
+      the teammate's channel; re-upload to Jinger's channel if the name should not appear.
+- [ ] **Autonomous Racecar Navigation (`alfredo`).** Rewritten from the team's public lab reports
+      (rss2022-3.github.io/website). Jinger to confirm her role, the `C++` stack chip (the labs
+      may have been Python), and whether to restore the old "5 m/s laps" claim (the reports show
+      4 m/s wall-following tests; the final race was capped at 4 m/s).
+- [ ] **Bottle-Flipping Quadrotor.** Writeup, video hero, Deepnote code, two figures, and a
+      strobe-style cover from the simulation video are done (alternatives in
+      `private/figures/bottle-flip/cover-options/`). Jinger to review the wording and cover.
+- [ ] **ReVise (`revise`).** Rewritten with two figures; galleries and the product sheet (which
+      lists all teammates) moved to `private/`; a name-free product sheet is linked from
+      `downloads/revise/`. Jinger to review the wording and stack chips.
 - [ ] Add approved off-the-clock photos when available.
 
 ### Parked drafts — keep hidden until Jinger supplies details
 
+- [ ] `novel-view-sythesis.md`: writeup, five figures, two local video loops, and cover are done.
+      Jinger to supply her individual role, review the wording, and optionally upload
+      `private/videos/nerf-gs-montage.mp4` to YouTube (unlisted is fine) for `hero_video`.
+      The code repository is private, so there is no code link. Ready to publish after that.
+- [ ] `infant-gaze.md`: writeup, accuracy-vs-k plot, per-video bar chart, and teammate's public
+      code link are done. Results were inconclusive; Jinger to decide whether to publish and
+      confirm the course name. Never publish the infant face crops kept in `private/`.
+- [ ] `eigenfaces.md` (archive tier): drafted from the final report with the public code
+      link. Jinger to confirm the course name (18.0651) and decide whether to publish. If
+      published, add the accuracy-vs-components or classifier plot (no face images).
 - [ ] `jansens-linkage.markdown`: obtain an approved blurb or restore its essay/media before publishing.
-- [ ] `novel-view-sythesis.md`: identify the actual task, Jinger's implementation, datasets,
-      comparison, results, and approved figures. The current file is a skeleton with TODO text.
-- [ ] `infant-gaze.md`: confirm course/lab and Jinger's role; supply before/after accuracy
-      and evaluation details. Use diagrams and aggregate metrics, with no identifiable infant frames.
 - [ ] `ur5-lego.md`: confirm course, Jinger's role, success rate or stack height, and
       approved photos/video.
 - [ ] **Edventures / Edgerton STEM Mentor:** wait for articles or media links and Jinger's story.
@@ -62,7 +78,6 @@ Open work only. Current layout and authoring rules live in `AGENTS.md` and
 - Numbered figure captions.
 - Facts strip under the banner.
 - Consistent cover treatment.
-- Hosting the ICRA 2024 accepted manuscript if the existing public PDF becomes insufficient.
 
 ## Decided not to do
 
