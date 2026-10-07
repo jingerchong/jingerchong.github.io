@@ -56,7 +56,8 @@ h2.sec, .project-writeup h2 { @include section-heading; }
   box-decoration-break: clone;
 }
 .kicker.outline { background: #fff; color: var(--theme); box-shadow: inset 0 0 0 1px var(--theme); }
-.kicker.award { background: var(--accent); color: var(--theme); font-weight: 600; }
+// Yellow highlights (banner status, award) share one look: accent fill, navy semibold mono.
+.kicker.award { background: var(--accent); color: var(--theme); font-weight: 600; padding: .2em .5em; }
 .chips { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
 .chip {
   display: inline-block;
@@ -79,20 +80,11 @@ h2.sec, .project-writeup h2 { @include section-heading; }
 }
 .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--text); }
 .status {
-  display: inline-flex;
-  align-items: center;
-  gap: .5em;
-  padding: .42em .65em;
+  display: inline-block;
+  padding: .2em .5em;
   background: var(--accent);
-  color: var(--text);
+  color: var(--theme);
   font-weight: 600;
-}
-.status::before {
-  content: "";
-  flex: 0 0 .55em;
-  height: .55em;
-  border-radius: 50%;
-  background: var(--green);
 }
 .linkrow { font-size: var(--fs-small); margin: .2em 0 0; }
 .linkrow .sep { color: var(--grey); margin: 0 .35em; }
