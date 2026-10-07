@@ -12,10 +12,6 @@ figures and loops exported to `assets/images/<slug>/`.
       are done; cover approved. Jinger to review the writeup wording. Add a `code` link once
       `github.com/jingerchong/struct-gp` is public (the arXiv paper already cites it; it
       returned 404 on 2026-10-05). Update tier/status if the ICRA 2027 decision arrives.
-- [ ] **Perception-aware safety (`safety-metrics`).** Jinger to state her specific contribution
-      to the paper (the UR5 camera rig was used in other lab projects, not this paper; it stays
-      in the Research entry). Confirm the YOLOv7 image-cropping sentence. Cover (problem-setup diagram) and two paper
-      figures are added from the LaTeX source in `private/source/safety-metrics/`.
 - [ ] **Autonomous Pool-Playing Robot.** Writeup, video hero, Deepnote code, award link,
       cover, and four figures are done. Jinger to review the wording. The YouTube video is on
       the teammate's channel; re-upload to Jinger's channel if the name should not appear.

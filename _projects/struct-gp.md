@@ -33,4 +33,4 @@ On Human3.6M, the model achieves lower KDE negative log-likelihood than [Motron]
 
 There are tradeoffs. The model is trained for predictive likelihood rather than sample diversity, so its best-of-50 displacement errors are higher than those of most baselines. Joints are also predicted independently, and the evaluation covers a single benchmark of single-subject activities, so the benefit for robot behavior is still to be shown. Next, I want to integrate these distributions into closed-loop planners and test them on human–robot interaction tasks.
 
-I also released a public preprocessing pipeline that reconstructs the now-unavailable exponential-map archive of Human3.6M used in prior work, with verification and 3D visualization tools. The paper, written with Xiaotong Zhang and Kamal Youcef-Toumi, is under review for ICRA 2027.
+I also released a public preprocessing pipeline that reconstructs the now-unavailable exponential-map archive of Human3.6M used in prior work, with verification and 3D visualization tools. The paper is under review for ICRA 2027.

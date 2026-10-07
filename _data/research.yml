@@ -17,7 +17,7 @@
   bullets:
   - Developing <a href="/projects/struct-gp/">structured multitask Gaussian processes for probabilistic full-body human motion prediction</a>
   - Built a test rig pairing a UR5 arm with adjustable cameras for evaluating object detection and manipulation algorithms
-  - Evaluated and visualized how image cropping affects YOLOv7 object detection on a large-scale dataset, which led to our <a href="https://ieeexplore.ieee.org/document/10610657" target="_blank" rel="noopener noreferrer">ICRA 2024 paper</a> on how perception affects safety
+  - Prepared the evaluation dataset and produced the results section of the demonstration video for our <a href="https://ieeexplore.ieee.org/document/10610657" target="_blank" rel="noopener noreferrer">ICRA 2024 paper</a> on how perception affects safety
 - org: NCTU Computer Games and Intelligence Lab
   role: Research Intern
   start: Jun 2020
