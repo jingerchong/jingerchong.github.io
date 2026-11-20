@@ -13,7 +13,7 @@ title: Home
 
 <h2 class="sec"><span>Experience</span><a class="more" href="{{ '/industry/' | relative_url }}">All experience →</a></h2>
 <ul class="list">
-<li><span>Incoming Machine Learning Engineering Intern (PhD), <em>Waymo</em></span><span class="meta-t">Summer 2027</span></li>
+<li><span>Incoming Machine Learning Engineering Intern, <em>Waymo</em></span><span class="meta-t">2027</span></li>
 {%- for item in site.data.industry -%}{%- unless item.home == false %}
 {%- assign start_year = item.start | split: ' ' | last %}
 <li><span>{{ item.home_role | default: item.role }}, <em>{{ item.org }}</em></span><span class="meta-t">{{ item.home_date | default: start_year }}</span></li>
